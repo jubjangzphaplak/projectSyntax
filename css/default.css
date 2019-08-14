@@ -1,0 +1,11 @@
+/* ==== Google font ==== */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+body{
+    font-family: 'Saira Stencil One', cursive;
+    font-family: 'Play', sans-serif;
+  }
+  nav{
+    background-image: linear-gradient( 115.7deg,  rgb(45, 47, 48) 6.2%, rgb(89, 102, 104) 112.9% );
+  }
+  
+

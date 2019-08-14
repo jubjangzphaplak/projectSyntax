@@ -43,13 +43,19 @@
                  
                 </ul>
               </nav><br><center>
-    <div><h2>Openfile Xml</h2></div>
+             <br>   
+    <div class="textopen">Openfile Xml</div><br>
+    <div class="data">
     <form id="xmlForm" name="xmlForm">
         <br><input id="input" type="file"> <input type="submit" class="btn btn-danger">
     </form>
     <br>
-    <hr class="my-2">
+    <hr class="my-2"><br>
    <h3><div class="show" id="show"></div></h3>
+
+
+
+
     <script>
        var readXml=null;
        $('#xmlForm').submit(function(event) {
@@ -60,8 +66,6 @@
            reader.onload = function(e) {
                readXml=e.target.result;
                console.log(readXml);
-              
-               
                $("#show").html(readXml); 
                var parser = new DOMParser();
                var doc = parser.parseFromString(readXml, "application/xml");
@@ -73,6 +77,6 @@
       
        });
     
-    </script>
+    </script></div>
 </center></body>
 </html>

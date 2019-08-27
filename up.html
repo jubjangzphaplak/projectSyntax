@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/default.css">
   <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-    
-    </script>
-    <title>Browse Xml</title>
-    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+
+  </script>
+  <title>Browse Xml</title>
+
 </head>
 <style>
-        body {
-          background-image: url("img/pic3.jpg");
-          background-repeat: no-repeat;
-          background-size: cover;
-      
-        }
-      </style>
-<body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
-                &nbsp;&nbsp;<ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
-                  </li> 
-                  <li class="nav-item">
-                    <a class="nav-link" href="analysis.html">&nbsp;&nbsp;Syntax Testing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="testcase.html">&nbsp;&nbsp;Test Case</a></b>
-                  </li>
-                 
-                </ul>
-              </nav>
-    <div><h2>Openfile Xml</h2></div>
-    <form id="xmlForm" name="xmlForm">
-        <input id="input" type="file"> <input type="submit">
-    </form>
-    <br>
-   <h3><div class="show" id="show"></div></h3>
-    <script>
-       var readXml=null;
-       $('#xmlForm').submit(function(event) {
-           event.preventDefault();
-           var selectedFile = document.getElementById('input').files[0];
-           console.log(selectedFile);
-           var reader = new FileReader();
-           reader.onload = function(e) {
-               readXml=e.target.result;
-               console.log(readXml);
-              
-               
-               $("#show").html(readXml); 
-               var parser = new DOMParser();
-               var doc = parser.parseFromString(readXml, "application/xml");
-               console.log(doc);
-           }
-           reader.readAsText(selectedFile);
+  body {
+    background-image: url("img/pic3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-         
-      
-       });
-    
-    </script>
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+    &nbsp;&nbsp;<ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="analysis.html">&nbsp;&nbsp;Syntax Testing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="testcase.html">&nbsp;&nbsp;Test Case</a></b>
+      </li>
+
+    </ul>
+  </nav>
+  <div>
+    <h2>Openfile Xml</h2>
+  </div>
+  <form id="xmlForm" name="xmlForm">
+    <input id="input" type="file"> <input type="submit">
+  </form>
+
+  <br>
+  <h3>
+    <div class="show" id="show"></div>
+  </h3>
+
+
+
+  <script>
+    var readXml = null;
+    $('#xmlForm').submit(function (event) {
+      event.preventDefault();
+      var selectedFile = document.getElementById('input').files[0];
+      console.log(selectedFile);
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        readXml = e.target.result;
+        console.log(readXml);
+
+
+        $("#show").html(readXml);
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(readXml, "application/xml");
+        console.log(doc);
+      }
+      reader.readAsText(selectedFile);
+
+
+
+    });
+
+  </script>
 </body>
+
 </html>

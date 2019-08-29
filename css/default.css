@@ -13,12 +13,12 @@ nav{
 
 }
 
-.data{
+/* .data{
   color: rgb(255, 254, 254);
   height: 500px;
   width: 75%;
   background-color: rgba(0, 0, 0, 0.342);
-}
+} */
 .jumbotron{
   color: rgb(255, 254, 254);
   text-shadow: 2px 2px black;

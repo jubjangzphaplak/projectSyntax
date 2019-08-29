@@ -58,17 +58,18 @@
       <br> <br>
       <h3><b>Browse XSD file </b></h3> 
       <form id="xmlForm1" name="xmlForm1">
-        <br><input id="input" type="file"><input id="text" class="form-control" placeholder="Browse for file XSD" readonly=""><br> <input type="submit" class="btn btn-success"  value="Submit ">
+        <br><input id="input1" type="file"><input id="text" class="form-control" placeholder="Browse for file XSD" readonly=""><br> <input type="submit" class="btn btn-success"  value="Submit1 ">
       </form>
       
       <hr class="my-2"><br>
       <h3>
         <div class="show" id="show"></div>
-      </h3></div>
-
-
-
-
+      </h3>
+      <hr class="my-2"><br>
+      <h3>
+          <div class="show" id="show1"></div>
+        </h3></div>
+ 
       <script>
         var readXml = null;
         $('#xmlForm').submit(function (event) {
@@ -89,8 +90,32 @@
 
 
         });
+        
 
       </script>
+      <script>
+          var readXml1 = null;
+          $('#xmlForm1').submit(function (event) {
+            event.preventDefault();
+            var selectedFile = document.getElementById('input1').files[0];
+            console.log(selectedFile);
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              readXml = e.target.result;
+              console.log(readXml);
+              $("#show1").html(readXml);
+              var parser = new DOMParser();
+              var doc = parser.parseFromString(readXml, "application/xml");
+              console.log(doc);
+            }
+            reader.readAsText(selectedFile);
+  
+  
+  
+          });
+          
+  
+        </script>
     </div>
   </center>
 </body>

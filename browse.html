@@ -47,53 +47,59 @@
   </nav><br>
   <center>
     <br>
-    <div class="textopen">Openfile Xml</div><br></center>
-    <div class="data">
-      <br>
-      <div class="container">
-     <h3><b>Browse XML file</b> </h3> 
+    <div class="textopen">Openfile Xml</div><br>
+  </center>
+  <div class="data">
+    <br>
+    <div class="container">
+      <h3><b>Browse XML file</b> </h3>
       <form id="xmlForm" name="xmlForm">
-        <br><input id="input" type="file"><input id="text" class="form-control" placeholder="Browse for file XML" readonly=""><br> <input type="submit" class="btn btn-success"  value="Submit ">
+        <br><input id="input" type="file"><input id="text" class="form-control" placeholder="Browse for file XML"
+          readonly=""><br> <input type="submit" class="btn btn-success" value="Submit ">
       </form>
       <br> <br>
-      <h3><b>Browse XSD file </b></h3> 
+      <h3><b>Browse XSD file </b></h3>
       <form id="xmlForm1" name="xmlForm1">
-        <br><input id="input1" type="file"><input id="text" class="form-control" placeholder="Browse for file XSD" readonly=""><br> <input type="submit" class="btn btn-success"  value="Submit1 ">
+        <br><input id="input1" type="file"><input id="text" class="form-control" placeholder="Browse for file XSD"
+          readonly=""><br> <input type="submit" class="btn btn-success" value="Submit1 ">
       </form>
-      
+
       <hr class="my-2"><br>
       <h3>
         <div class="show" id="show"></div>
       </h3>
       <hr class="my-2"><br>
       <h3>
-          <div class="show" id="show1"></div>
-        </h3></div>
- 
-      <script>
-        var readXml = null;
-        $('#xmlForm').submit(function (event) {
-          event.preventDefault();
-          var selectedFile = document.getElementById('input').files[0];
-          console.log(selectedFile);
-          var reader = new FileReader();
-          reader.onload = function (e) {
-            readXml = e.target.result;
-            console.log(readXml);
-            $("#show").html(readXml);
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(readXml, "application/xml");
-            console.log(doc);
-          }
-          reader.readAsText(selectedFile);
+        <div class="show" id="container"></div>
+      </h3>
+    </div>
+
+    <script>
+      var readXml = "";
+      $('#xmlForm').submit(function (event) {
+        event.preventDefault();
+        var selectedFile = document.getElementById('input').files[0];
+        var reader = new FileReader();
+        reader.onload = function (file) {
+          readXml = file.target.result;
+          //เจนเนอเรต
+          var Library = $(readXml).find("Library");
+          $(readXml).find("Library").each(function () {
+            $("#container").append(" Id:- " + $(this).find("id").text());
+            $("#container").append(" First Name:- " + $(this).find("name").text());
+            $("#container").append(" Typebook:- " + $(this).find("typebook").text());
+            $("#container").append(" Date:- " + $(this).find("date").text() + "<br />" + "<br />");
+          });
+
+        }
+        reader.readAsText(selectedFile);
+
+      });
 
 
+    </script>
 
-        });
-        
-
-      </script>
-      <script>
+    <script>
           var readXml1 = null;
           $('#xmlForm1').submit(function (event) {
             event.preventDefault();
@@ -116,7 +122,7 @@
           
   
         </script>
-    </div>
+  </div>
   </center>
 </body>
 

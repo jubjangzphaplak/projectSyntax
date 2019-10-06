@@ -9,12 +9,15 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/default.css">
   <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
 <style>
@@ -23,6 +26,31 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+  }
+
+  .btn-danger {
+
+    background-color: hsl(351, 68%, 11%) !important;
+    background-repeat: repeat-x;
+    background-image: -o-linear-gradient(top, #d12741, #2f080e);
+    background-image: linear-gradient(#d12741, #2f080e);
+    border-color: #2f080e #2f080e hsl(351, 68%, 1.5%);
+    color: #fff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.62);
+  }
+
+  .btn-danger:hover,
+  .btn-danger:focus,
+  .btn-danger:active,
+  .btn-danger.active,
+  .open .dropdown-toggle.btn-danger {
+
+    background-color: hsl(360, 68%, 60%) !important;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(#fbeded, #de5353);
+    border-color: #de5353 #de5353 hsl(360, 68%, 51%);
+    color: #333 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.59);
   }
 </style>
 
@@ -34,10 +62,10 @@
         <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="analysis.html">&nbsp;&nbsp;Syntax Testing</a>
+        <a class="nav-link" href="Newanalysis.html">&nbsp;&nbsp;Syntax Testing</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="testcase.html">&nbsp;&nbsp;Test Case</a></b>
+        <a class="nav-link" href="Newtestcase.html">&nbsp;&nbsp;Test Case</a></b>
       </li>
 
     </ul>
@@ -51,23 +79,49 @@
     <br>
     <div class="jumbotron">
       <CENTER>
-        <h1 class="display-4">SYNTAX TESTING GENERATION</h1>
+        <h1 class="display-4"> SYNTAX TESTING GENERATION </h1>
       </CENTER>
 
       <hr class="my-2">
       <br>
       <div class="button">
         <p class="lead">
-          <center> <a class="btn btn-danger" href="browse.html" role="button">
+          <center>
+
+            <a class="btn btn-danger" href="browse.html" role="button">
+
               <h3>Getting started</h3>
-            </a></center>
+
+            </a>
+
+            <!-- <button type="button" id="btn-one" class="btn btn-danger">
+              <h3>Getting started</h3>
+            </button> -->
+          </center>
+
+
         </p>
       </div>
     </div>
   </div>
+
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+
+
+  <!-- <script>
+    $('#btn-one').click(function () {
+      $('#btn-one').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
+    });
+    
+  </script> -->
+
+
+
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

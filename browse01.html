@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Browse Xml</title>
+  <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/default.css">
+  <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+  </script>
+
+
+</head>
+<style>
+  body {
+    background-image: url("img/pic3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+    &nbsp;&nbsp;<ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="analysis.html">&nbsp;&nbsp;Syntax Testing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="testcase.html">&nbsp;&nbsp;Test Case</a></b>
+      </li>
+
+
+    </ul>
+  </nav><br>
+  <center>
+    <br>
+    <div class="textopen">Openfile Xml</div><br>
+  </center>
+  <div class="data">
+    <br>
+    <div class="container">
+      <h3><b>Browse XML file</b> </h3>
+      <form id="xmlForm" name="xmlForm">
+        <br><input id="input" type="file"><input id="text" class="form-control" placeholder="Browse for file XML"
+          readonly=""><br> <input type="submit" class="btn btn-success" value="Submit ">
+      </form>
+
+      <br> <br>
+      <h3><b>Browse ----------------- </b></h3>
+
+      <form id="xmlForm1" name="xmlForm1">
+        <br>
+        <input id="input1" type="file">
+        <input id="text" class="form-control" placeholder="Browse for file XSD" readonly=""><br> <input type="submit"
+          class="btn btn-success" value="Submit1 ">
+        </form>
+
+
+      <p id="demo"></p>
+      <hr class="my-2"><br>
+      <h3>
+        <!-- <div class="show" id="show1"></div> -->
+        <ul></ul>
+      </h3>
+
+      <hr class="my-2"><br>
+      <h3>
+        <div class="show" id="container"></div>
+      </h3>
+
+
+    </div>
+
+
+
+
+    <!-- function call read xml -->
+
+    <script>
+      var readXml = "";
+      $('#xmlForm').submit(function (event) {
+        event.preventDefault();
+        var selectedFile = document.getElementById('input').files[0];
+        var reader = new FileReader();
+        reader.onload = function (file) {
+          readXml = file.target.result;
+          //เจนเนอเรต
+          var Library = $(readXml).find("Library");
+          $(readXml).find("Library").each(function () {
+            //check value in string is num?
+            var isnum = /^\d+$/.test($(this).find("id").text());
+            console.log(isnum);
+            if (isnum == true) {
+              $("#container").append(" Id:- " + $(this).find("id").text());
+              $("#container").append(" First Name:- " + $(this).find("name").text());
+              $("#container").append(" Typebook:- " + $(this).find("typebook").text());
+              $("#container").append(" IdBook:- " + $(this).find("idbook").text());
+              $("#container").append(" Date:- " + $(this).find("date").text() + "<br />" + "<br />");
+              loadDoc()
+            }
+            else {
+              alert("IDไม่เป็นString")
+            }
+          });
+
+        }
+        reader.readAsText(selectedFile);
+
+      });
+
+
+
+      var readXml1 = null;
+      $('#xmlForm1').submit(function (event) {
+        event.preventDefault();
+        loadXMLDoc()
+        // var selectedFile = document.getElementById('input1').files[0];
+        // console.log(selectedFile);
+        // var reader = new FileReader();
+        // reader.onload = function (e) {
+        //   readXml = e.target.result;
+        //   console.log(readXml);
+        //   $("#show1").html(readXml);
+        //   var parser = new DOMParser();
+        //   var doc = parser.parseFromString(readXml, "application/xml");
+        //   console.log(doc);
+        // }
+        // reader.readAsText(loadXMLDoc());
+
+
+
+      });
+      // /////////////// เรียก xml
+
+      //           function loadDoc() {
+      //     var xhttp = new XMLHttpRequest();
+      //     xhttp.open("GET", "C:\Users\Rectoe\Desktop\examinput.xml", true);
+      //     xhttp.send();
+      //     myFunction(xhttp);//(this);
+      // }
+      // function myFunction(xml)
+      // {
+      //     var xmlDoc = xml.responseXML;
+      //     var parser = new DOMParser();
+      //     // var xmlDoc = parser.parseFromString(xml.responseText, "application/xml");
+
+      //     var txt = "";
+      //     var y;
+      //     y = xmlDoc.getElementsByTagName("xs:element").length//.childNodes[0];
+      //     alert(y);
+
+
+      // }
+
+
+
+
+
+
+      function loadXMLDoc() {
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            myFunction(this);
+
+
+          }
+        };
+        xmlhttp.open("GET", "library.xml", true);
+        xmlhttp.send();
+
+      }
+
+
+
+
+
+
+        //   Load by ajax call Xml File //
+
+      function myFunction(xml) {
+ 
+        $.ajax({
+          type: "GET",
+          url: "./library.xml",
+          dataType: "xml",
+
+          error: function (e) {
+            alert("An error occurred while processing XML file");
+            console.log("XML reading Failed: ", e);
+          },
+
+          success: function (response) {
+
+            // make sure the ul is empty
+            // before appending data inot it
+            $("ul").children().remove();
+
+            $(response).find("member").each(function () {
+              var _name = 'Firstname: ' + $(this).find('firstname').text();
+              console.log(_name);
+              var _last = 'Lastname: ' + $(this).find('lastname').text();
+              console.log(_last);
+              var _id = 'ID Book: ' + $(this).find('idbook').text();
+              console.log(_id);
+              var _typebook = 'Type Book: ' + $(this).find('typebook').text();
+              console.log(_typebook);
+              var _dates = 'Date: ' + $(this).find('date').text();
+              console.log(_dates);
+
+            
+              // add content to the HTML          
+              $("ul").append('<li>' + _name + '</li>');
+              $("ul").append('<li>' + _last + '</li>');
+              $("ul").append('<li>' + _id + '</li>');
+              $("ul").append('<li>' + _typebook + '</li>');
+              $("ul").append('<li>' + _dates + '</li>');
+ 
+
+              
+
+            });
+          }
+        });
+
+
+      }
+      // --------------------------------------------------------------------------------------
+
+     
+      
+    </script>
+
+  </div>
+  </center>
+</body>
+
+</html>

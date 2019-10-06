@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+         
+
+        <button onclick="numnum()">num</button>
+
+        <button onclick="TestText()">text</button>
+        <p id="demo"></p>
+        <p id="demo2"></p>
+     
+
+
+
+
+        <div id="show"></div>
+        <center>
+            <div id="show3"></div>
+        </center>
+        <p>random Valid</p>
+        <div id="show1"></div>
+
+        <p>random InValid</p>
+        <center>
+            <div id="show2"></div>
+        </center>
+   <div class="row">
+                    <div class="col-sm-6">.col-sm-6</div>
+                    <div class="col-sm-6">.col-sm-6</div>
+                  </div>
+                </div>
+
+    </div>
+
+
+    <script>
+
+        //  Valid Random
+        function numnum() {
+            var str = "[0-9][0-9][0-9]";
+
+            var patt1 = /\d/g;
+            //   var result = str.match(patt1);
+            var Array = str.match(patt1);
+
+
+            document.getElementById("demo").innerHTML = Array;
+
+
+
+            var no = 1;
+            document.getElementById("show").innerHTML = "";
+            document.getElementById("show1").innerHTML = "";
+            for (var i = 0; i < Array.length; i++) {
+
+                if (i % 2 == 0) {
+                    //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+                    document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+
+                    document.getElementById("show1").innerHTML += "xy" + no + " = " + [Math.floor(Math.random() * Array.length)] + "<br>";
+
+                } else {
+                    console.log("y" + no + " = " + [Math.floor(Math.random() * Array.length)]);
+                    document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+                    // document.getElementById("show2").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+                    no++
+
+
+                }
+            }
+            numnum2();
+        }
+
+        //    Invalid test 1
+        function numnum2() {
+
+
+            var str = "[0-9][0-9][0-9][0-9]";
+
+            var patt1 = /\d/g;
+            //   var result = str.match(patt1);
+            var Array = str.match(patt1);
+
+
+            // document.getElementById("demo2").innerHTML = Array;
+
+
+
+            var no = 1;
+            document.getElementById("show3").innerHTML = "";
+            document.getElementById("show2").innerHTML = "";
+            for (var i = 0; i < Array.length; i++) {
+
+                if (i % 2 == 0) {
+                    //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+                    // document.getElementById("show3").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+
+                    document.getElementById("show2").innerHTML += "xy" + no + " = " + [Math.floor(Math.random() * Array.length)] + "<br>";
+
+                    // document.getElementById("show1").innerHTML +=  [Math.floor(Math.random()* Array.length)]
+                } else {
+                    // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+                    // document.getElementById("show3").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+                    // document.getElementById("show2").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+                    no++
+
+
+                }
+            }
+        }
+
+//   Invalid Value  ค่าเกิน
+//         function TestText() {
+//             var name = "tanawat";
+
+//             var patt2 = /[a-zA-z]/g;
+
+//             var myArray2 = name.match(patt2); 
+
+
+//             document.getElementById("demo2").innerHTML = myArray2;
+
+
+
+
+//             var to = 1;
+//             for (var i = 0; i < myArray2.length; i++) {
+
+
+//                 if (i % 1 == 0) {
+//                     console.log("x" + to + " = " + myArray2[i]);
+//                     document.getElementById("demo2").innerHTML += "<br>" + "x" + to + " = " + myArray2[i];
+
+//                     to++
+//                 } else {
+
+//                 }
+//             }
+
+//         }
+
+
+
+// var typebook, text, fLen, i;
+// typebook = ["Math", "Computer", "Internet"];
+// fLen = typebook.length;
+
+// text = "<ul>";
+// for (i = 0; i < fLen; i++) {
+//   text += "<li>" + typebook[i] + "</li>";
+// }
+// text += "</ul>";
+
+// document.getElementById("demo4").innerHTML = text;
+
+
+
+// ----------------------------------------
+
+// var jsonObj = { 
+//      MyRoot : {
+//                 test: 'success',
+//                 test2 : { 
+//                     item : [ 'val1', 'val2' ]
+//                 },
+//                 test3 : { 
+//                     item : [ 'val1', 'val2' ]
+//                 }
+//       }
+// };
+
+// console.log(jsonObj.MyRoot.test);
+
+// var test = {
+// 	"schema": {
+// 		"element": [
+// 			{
+// 				"simpleType": {
+// 					"restriction": {
+// 						"pattern": {
+// 							"_id": "1",
+// 							"_value": "[0-9][0-9][0-9][0-9]",
+// 							"__prefix": "xs"
+// 						},
+// 						"_base": "xs:integer",
+// 						"__prefix": "xs"
+// 					},
+// 					"__prefix": "xs"
+// 				},
+// 				"_name": "id",
+// 				"__prefix": "xs"
+// 			},
+// 			{
+// 				"simpleType": {
+// 					"restriction": {
+// 						"pattern": {
+// 							"_id": "2",
+// 							"_value": "[a-zA-z][a-zA-z][a-zA-z][a-zA-z]",
+// 							"__prefix": "xs"
+// 						},
+// 						"_base": "xs:string",
+// 						"__prefix": "xs"
+// 					},
+// 					"__prefix": "xs"
+// 				},
+// 				"_name": "firstname",
+// 				"__prefix": "xs"
+// 			},
+// 			{
+// 				"simpleType": {
+// 					"restriction": {
+// 						"enumeration": [
+// 							{
+// 								"_id": "3",
+// 								"_value": "Computer",
+// 								"__prefix": "xs"
+// 							},
+// 							{
+// 								"_id": "4",
+// 								"_value": "Math",
+// 								"__prefix": "xs"
+// 							},
+// 							{
+// 								"_id": "5",
+// 								"_value": "History",
+// 								"__prefix": "xs"
+// 							}
+// 						],
+// 						"_base": "xs:string",
+// 						"__prefix": "xs"
+// 					},
+// 					"__prefix": "xs"
+// 				},
+// 				"_name": "TypeBook",
+// 				"__prefix": "xs"
+// 			},
+// 			{
+// 				"simpleType": {
+// 					"restriction": {
+// 						"pattern": {
+// 							"_id": "6",
+// 							"_value": "[0-9][0-9][0-9]",
+// 							"__prefix": "xs"
+// 						},
+// 						"_base": "xs:integer",
+// 						"__prefix": "xs"
+// 					},
+// 					"__prefix": "xs"
+// 				},
+// 				"_name": "IdBook",
+// 				"__prefix": "xs"
+// 			},
+// 			{
+// 				"_name": "start",
+// 				"_id": "7",
+// 				"_type": "xs:date",
+// 				"__prefix": "xs"
+// 			}
+// 		],
+// 		"_xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+// 		"__prefix": "xs"
+// 	}
+// }    
+// console.log(test.schema.element[0]); 
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

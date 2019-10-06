@@ -1,0 +1,18 @@
+<? xml version="1.0" encoding="UTF-8"?>
+<!-- this defines the version of xml file -->
+<te><!-- This is root tag -->
+
+<id>001</id>
+<name>Alice</name>
+<typebook>Computer</typebook>
+<idbook>611</idbook>
+<date>12-Jun-2019</date>
+</Library><br>
+<Library>
+<id>002</id>
+<name>Nanny</name>
+<typebook>Testing </typebook>
+<idbook>700</idbook>
+<date>15-Jun-2019</date>
+
+</te>

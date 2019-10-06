@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Syntax Analysis</title>
+  <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/default.css">
+  <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/default.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+
+  </script>
+
+
+</head>
+<style>
+  body {
+    background-color: #7979798e;
+    /* background-image: url("img/pic3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 60%;
+    border: 1px solid #ddd;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 16px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  .fa-check {
+    color: green;
+  }
+
+  .fa-remove {
+    color: red;
+  }
+  
+</style>
+
+
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+    &nbsp;&nbsp;<ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="Newanalysis.html">&nbsp;&nbsp;Syntax Testing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Newtestcase.html">&nbsp;&nbsp;Test Case</a></b>
+      </li>
+
+
+    </ul>
+  </nav><br>
+
+
+
+  <div class="container">
+    <center>
+      <br>
+      <h1><b>Syntax Testcase</b></h1>
+      <br>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
+          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </center>
+
+
+    <center>
+      <br>
+      
+      <button onclick="numID(),numIDbook(),numIDcard()" class="btn btn-warning">
+        <h5><b>Test Generation</b></h5>
+      </button>
+    </center>
+
+    <br>
+    
+    <h3><b>&nbsp;&nbsp;&nbsp;Syntax ID</b></h3>
+    <center>
+      <table class="bg-primary">
+        <tr>
+          <th><b>Variable</b></th>
+          <th><b>Testcase</b></th>
+
+          <th><b>Note</b></th>
+
+          <!-- ตาราง id  -->
+        </tr>
+        <tr class="table-light">
+          <td>
+          <b><div id="displayid"></div></b>  
+
+          </td>
+          <td>
+            <div id="randomid"></div>
+          </td>
+          <td><b><font color="green">
+           <div id="showvalidTest"></div> </font>
+            </b></td>
+        </tr>
+
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidinvalid1"></div>
+          </td>
+          <td><b>
+              <font color="red"><div id="showinvalid1"></div>
+            </font></b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <b>-</b>
+          </td>
+          <td><b>
+              <font color="red"><div id="showinvalid2"></div></font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidinvalid3"></div>
+          </td>
+          <td><b>
+              <font color="red"> <div id="showinvalid3"></div></font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+          </td>
+          <td>
+            <div id="randomidinvalid4"></div>
+          </td>
+          <td><b>
+              <font color="red"> <div id="showinvalid4"></div></font>
+            </b></td>
+        </tr>
+
+        <!-- ตารางไอดี book -->
+
+        <tr class="table-info">
+          <td>
+           <b><div id="displayidbook"></div></b> 
+
+          </td>
+          <td>
+            <div id="randomidbook"></div>
+          </td>
+          <td><b>
+              <font color="green">   <div id="displayvalididbook"></div>
+           </font> </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidbookinvalid1"></div>
+          </td>
+          <td><b>
+              <font color="red">  <div id="showinvalidIDbook1"></div>
+           </font> </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>
+
+          </td>
+          <td>
+            <div id="">-</div>
+          </td>
+          <td><b>
+              <font color="red">    <div id="showinvalidIDbook2"></div>
+           </font> </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidbookinvalid3"></div>
+          </td>
+          <td><b>
+              <font color="red">   <div id="showinvalidIDbook3"></div>
+           </font> </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidbookinvalid4"></div>
+          </td>
+          <td><b>
+              <font color="red">  <div id="showinvalidIDbook4"></div>
+          </font>
+          </b></td>
+        </tr>
+        <!-- --------------------------ตาราง บัตรประชาชน -->
+        <tr class="table-light">
+          <td>
+            <b> <div id="displayidcard"></div></b> 
+              
+          </td>
+          <td>
+            <div id="randomidcard"></div>
+          </td>
+          <td><b>
+              <font color="green">   <div id="displayvalididcard"></div>
+           </font> </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidcardinvalid1"></div>
+          </td>
+          <td><b>
+              <font color="red">    <div id="showinvalidIdcard1"></div>
+        </font>    </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <div id="">-</div>
+          </td>
+          <td><b>
+              <font color="red">  <div id="showinvalidIdcard2"></div>
+           </font> </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidcardinvalid3"></div>
+          </td>
+          <td><b>
+              <font color="red">     <div id="showinvalidIdcard3"></div>
+           </font> </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidcardinvalid4"></div>
+          </td>
+          <td><b>
+              <font color="red">    <div id="showinvalidIdcard4"></div>
+           </font> </b></td>
+        </tr>
+
+
+
+      </table>
+
+      <br><br>
+      <p><a href="Newanalysis.html" class="btn btn-success btn-lg"><b> Back </b> </a></p>
+    </center>
+
+
+
+
+    <br><br><br>
+
+
+  </div>
+
+
+
+  <!-- Script gen syntax -->
+  <script>
+    var strID = "[0-9][0-9][0-9]";
+    var disid = "ID";
+    var showValid = "Valid Testcase";
+    var showinvalidText1 = "Invalid (Value)";
+    var showinvalidText2 = " (Substitution)";
+    var showinvalidText3 = "Invalid (Omission)";
+    var showinvalidText4 = "Invalid (Addition)";
+    var pattID = /\d/g;
+    //   var result = str.match(patt1);
+
+
+
+
+
+
+    var Array = strID.match(pattID);
+
+    //  Valid Random\
+    var test = ''
+    function numID() {
+
+
+
+
+      // display table id name  in TD //
+      document.getElementById("displayid").innerHTML = disid;
+      document.getElementById("showvalidTest").innerHTML = showValid;
+      document.getElementById("showinvalid1").innerHTML = showinvalidText1;
+      document.getElementById("showinvalid2").innerHTML = showinvalidText2;
+      document.getElementById("showinvalid3").innerHTML = showinvalidText3;
+      document.getElementById("showinvalid4").innerHTML = showinvalidText4;
+
+
+
+      // var no = 1;
+      // document.getElementById("patternid").innerHTML = strID;
+      // document.getElementById("perid").innerHTML = "";
+      // document.getElementById("valueid").innerHTML = "";
+
+      document.getElementById("randomid").innerHTML = "";
+      document.getElementById("randomidinvalid1").innerHTML = "";
+      document.getElementById("randomidinvalid3").innerHTML = "";
+      document.getElementById("randomidinvalid4").innerHTML = "!@#";
+
+      console.log(Array);
+
+
+      for (var i = 0; i < Array.length; i++) {
+
+        if (i % 2 == 0) {
+          //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+          // document.getElementById("perid").innerHTML += "Lower Bound" + no + " = " + Array[i] + "<br>";
+          console.log(Array[i + 1]);
+          var a = parseInt(Array[i + 1])
+          var b = parseInt(Array[i])
+          test = Math.floor(Math.random() * a) + b;
+
+          console.log(test);
+
+          //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+        } else {
+          // document.getElementById("perid").innerHTML += "Upper Bound" + no + " = " + Array[i] + "<br>";
+
+          foo(i)
+          console.log(no);
+
+
+
+          // no++
+
+        }
+        // ค่าที่เกินนน
+      } document.getElementById("randomidinvalid3").innerHTML += substr.substring(0, 2);
+      substr = ''
+      no = 1
+
+    }
+
+
+    var no = 1;
+    var substr = ''
+    function foo(x) {
+
+
+
+      //   ?? [0-9]
+      dance:
+      for (var i = 1; i > 0; i++) {
+        if (i % 2 == 0) {
+
+
+          dance2:
+          for (var j = 1; j > 0; j++) {
+            var a = parseInt(Array[i - 1])
+            var b = parseInt(Array[i])
+            var t = Math.floor(Math.random() * a) + b
+            //  console.log(test, t);
+
+            // console.log('Break');
+
+            if (test == t) {
+              console.log("Break", test, t);
+              console.log(typeof test);
+              //  ค่า substr ที่รับ test เป็น String 
+              substr += test.toString()
+              // document.getElementById("valueid").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+              document.getElementById("randomid").innerHTML += test;
+              document.getElementById("randomidinvalid1").innerHTML += test * test;
+              document.getElementById("randomidinvalid4").innerHTML += test;
+
+
+
+              console.log(substr.substring(0, 2));
+
+              no = no + 1;
+              break dance2;
+            }
+
+
+            // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+            // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+          }
+
+
+          break dance;
+        }
+      }
+    }
+    // ------------------------------------------------------------------------------------------------------------------------
+
+    var strIDbook = "[0-9][0-9][0-9][0-9]";
+    var disidbook = "ID Book";
+    var patternidbook = /\d/g;
+    //   var result = str.match(patt1);
+    var showValidbook = "Valid Testcase";
+    var showinvalidIDbook1 = "Invalid (Value)";
+    var showinvalidIDbook2 = " (Substitution)";
+    var showinvalidIDbook3 = "Invalid (Omission)";
+    var showinvalidIDbook4 = "Invalid (Addition)";
+    var Arraybook = strIDbook.match(patternidbook);
+
+    //  Valid Random\
+    var test = ''
+    function numIDbook() {
+
+
+
+      // แสดงค่าโชว์หน้าจอในตารางตอนกด gen display table idbook name  in TD //
+      document.getElementById("displayidbook").innerHTML = disidbook;
+      document.getElementById("displayvalididbook").innerHTML = showValidbook;
+      document.getElementById("showinvalidIDbook1").innerHTML = showinvalidIDbook1;
+      document.getElementById("showinvalidIDbook2").innerHTML = showinvalidIDbook2;
+      document.getElementById("showinvalidIDbook3").innerHTML = showinvalidIDbook3;
+      document.getElementById("showinvalidIDbook4").innerHTML = showinvalidIDbook4;
+      ///  จบแสดงค่าโชว์หน้าจอในตารางตอนกด gen .//
+
+
+
+      // var no = 1;
+      // document.getElementById("patternidbook").innerHTML = strIDbook;
+      // document.getElementById("peridbook").innerHTML = "";
+      // document.getElementById("valueidbook").innerHTML = "";
+      document.getElementById("randomidbook").innerHTML = "";
+      document.getElementById("randomidbookinvalid1").innerHTML = "";
+      document.getElementById("randomidbookinvalid3").innerHTML = "";
+      document.getElementById("randomidbookinvalid4").innerHTML = "$%";
+      console.log(Array);
+
+
+      for (var i = 0; i < Arraybook.length; i++) {
+
+        if (i % 2 == 0) {
+          //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+          // document.getElementById("peridbook").innerHTML += "Lower Bound" + no + " = " + Arraybook[i] + "<br>";
+          console.log(Arraybook[i + 1]);
+          var a = parseInt(Arraybook[i + 1])
+          var b = parseInt(Arraybook[i])
+          test = Math.floor(Math.random() * a) + b;
+          console.log(test);
+
+          //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+        } else {
+          // document.getElementById("peridbook").innerHTML += "Upper Bound" + no + " = " + Arraybook[i] + "<br>";
+
+          foo2(i)
+          console.log(no);
+
+
+
+          // no++
+
+        }
+      } no = 1
+      document.getElementById("randomidbookinvalid3").innerHTML += substr.substring(0, 3);
+      substr = ''
+
+    }
+
+
+    var no = 1;
+    var substr = ''
+    function foo2(x) {
+
+
+
+      //   ?? [0-9]
+      dance:
+      for (var i = 1; i > 0; i++) {
+        if (i % 2 == 0) {
+
+
+          dance2:
+          for (var j = 1; j > 0; j++) {
+            var a = parseInt(Array[i - 1])
+            var b = parseInt(Array[i])
+            var t = Math.floor(Math.random() * a) + b
+            //  console.log(test, t);
+
+            // console.log('Break');
+
+            if (test == t) {
+              console.log("Break", test, t);
+              substr += test.toString()
+              // document.getElementById("valueidbook").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+              document.getElementById("randomidbook").innerHTML += test;
+              document.getElementById("randomidbookinvalid1").innerHTML += test * test;
+              document.getElementById("randomidbookinvalid4").innerHTML += test;
+
+              no = no + 1;
+              break dance2;
+            }
+
+            // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+            // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+          } break dance;
+        }
+      }
+    }
+
+    // -----------------------------------------------------------------------------------------
+
+    var strIDcard = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]";
+    var disidcard = "ID Card";
+    var patternidcard = /\d/g;
+    // ตัวแปรค่าแสดงชื่อแต่ละตารางในหน้าจอตอนกด GEN
+    var showValidcard = "Valid Testcase";
+    var showinvalidIdcard1 = "Invalid (Value)";
+    var showinvalidIdcard2 = " (Substitution)";
+    var showinvalidIdcard3 = "Invalid (Omission)";
+    var showinvalidIdcard4 = "Invalid (Addition)";
+    //
+    //   var result = str.match(patt1);
+    var Arraycard = strIDcard.match(patternidcard);
+
+    //  Valid Random\
+    var test = ''
+    function numIDcard() {
+
+      // แสดงค่าโชว์หน้าจอในตารางตอนกด gen display table idbook name  in TD //
+      document.getElementById("displayidcard").innerHTML = disidcard;
+      document.getElementById("displayvalididcard").innerHTML = showValidcard;
+      document.getElementById("showinvalidIdcard1").innerHTML = showinvalidIdcard1;
+      document.getElementById("showinvalidIdcard2").innerHTML = showinvalidIdcard2;
+      document.getElementById("showinvalidIdcard3").innerHTML = showinvalidIdcard3;
+      document.getElementById("showinvalidIdcard4").innerHTML = showinvalidIdcard4;
+      ///  จบแสดงค่าโชว์หน้าจอในตารางตอนกด gen .//
+
+      document.getElementById("randomidcard").innerHTML = "";
+      document.getElementById("randomidcardinvalid1").innerHTML = "";
+      document.getElementById("randomidcardinvalid3").innerHTML = "";
+      document.getElementById("randomidcardinvalid4").innerHTML = "*-*-";
+
+
+
+      console.log(Array);
+
+
+      for (var i = 0; i < Arraycard.length; i++) {
+
+        if (i % 2 == 0) {
+          //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+          // document.getElementById("peridcard").innerHTML += "Lower Bound" + no + " = " + Arraycard[i] + "<br>";
+          console.log(Arraycard[i + 1]);
+          var a = parseInt(Arraycard[i + 1])
+          var b = parseInt(Arraycard[i])
+          test = Math.floor(Math.random() * a) + b;
+          console.log(test);
+
+          //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+        } else {
+          // document.getElementById("peridcard").innerHTML += "Upper Bound" + no + " = " + Arraycard[i] + "<br>";
+
+          foo3(i)
+          console.log(no);
+
+
+
+          // no++
+
+        }
+
+      } no = 1
+      document.getElementById("randomidcardinvalid3").innerHTML += substr.substring(0, 10);
+      substr = ''
+    }
+
+
+    var no = 1;
+    function foo3(x) {
+
+
+
+      //   ?? [0-9]
+      dance:
+      for (var i = 1; i > 0; i++) {
+        if (i % 2 == 0) {
+
+
+          dance2:
+          for (var j = 1; j > 0; j++) {
+            var a = parseInt(Array[i - 1])
+            var b = parseInt(Array[i])
+            var t = Math.floor(Math.random() * a) + b
+            //  console.log(test, t);
+
+            // console.log('Break');
+
+            if (test == t) {
+              console.log("Break", test, t);
+              substr += test.toString()
+              // document.getElementById("valueidcard").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+              document.getElementById("randomidcard").innerHTML += test;
+              document.getElementById("randomidcardinvalid1").innerHTML += test * test;
+              document.getElementById("randomidcardinvalid4").innerHTML += test;
+              no = no + 1;
+              break dance2;
+            }
+
+            // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+            // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+          } break dance;
+        }
+      }
+    }
+
+  </script>
+
+
+</body>
+
+</html>

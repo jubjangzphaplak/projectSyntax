@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>SYNT</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/default.css">
+  <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+
+</head>
+<style>
+  body {
+    background-image: url("img/pic3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+    &nbsp;&nbsp;<ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="analysis.html">&nbsp;&nbsp;Syntax Testing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="testcase.html">&nbsp;&nbsp;Test Case</a></b>
+      </li>
+
+    </ul>
+  </nav>
+  <!-- BODY -->
+  <br>
+  <div class="container">
+    <br>
+
+
+    <button onclick="TestText()">TestText</button>
+    <br><br>
+    <h2>
+      <p id="ShowText"></p>
+    </h2>
+
+    <br>
+    <button onclick="Testnumber()">TestNumber</button>
+    <p id="number"></p>
+    <div id="shownum"></div>
+
+
+
+    <br>
+    <br>
+    <button onclick="TestType()">Tbook</button>
+    <p id="TBook"></p>
+
+
+
+
+    <script>
+
+      // -------------------------- Function Test Number ------------------------//
+      function Testnumber() {
+        var str = "[0-9][0-9][0-9][0-9][0-1]";
+        var patt1 = /[0-9]/g;
+        //   var result = str.match(patt1);
+        var myArray = str.match(patt1);
+
+
+        document.getElementById("number").innerHTML = myArray;
+
+        // console.log("x1 =" + myArray[0]);
+        // console.log("y1 =" + myArray[1]);
+        // console.log("x2 =" + myArray[2]);
+        // console.log("y2 =" + myArray[3]);
+        // console.log("x3 =" + myArray[4]);
+        // console.log("y3 =" + myArray[5]);
+        // console.log("x4 =" + myArray[6]);
+        // console.log("y4 =" + myArray[7]);
+
+        var no = 1;
+        for (var i = 0; i < myArray.length; i++) {
+
+
+          // แสดง xy 4 ตัว
+          // if (i % 2 == 0) {
+          //   console.log("x" + no + " = " + myArray[i]);
+          //   document.getElementById("shownum").innerHTML += "x" + no + " = " + myArray[i] + "<br>";
+          // } else {
+          //   console.log("y" + no + " = " + myArray[i]);
+          //   document.getElementById("shownum").innerHTML += "y" + no + " = " + myArray[i] + "<br>";
+          //   no++
+
+          if (i % 2 == 0) {
+                    console.log("x" + no + " = " + [Math.floor(Math.random()* myArray.length)] );
+                    document.getElementById("number").innerHTML += "x" + no + " = " + myArray[i] + "<br>";
+                    document.getElementById("shownum").innerHTML +="x" + no + " = " + [Math.floor(Math.random()* myArray.length)] + "<br>";
+                } else {
+                    console.log("y" + no + " = " + [Math.floor(Math.random()* myArray.length)]);
+                    document.getElementById("number").innerHTML += "y" + no + " = " + myArray[i] + "<br>";
+                    document.getElementById("shownum").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* myArray.length)] + "<br>";
+                    no++
+                }
+          }
+        }
+
+      
+
+
+
+      // Use Analysis Text A-Z a-z //
+      function TestText() {
+
+        var name = "Tanawat";
+
+        var patt2 = /[a-zA-z]/g;
+        //   var result = str.match(patt1);
+        var myArray2 = name.match(patt2);
+
+
+        document.getElementById("ShowText").innerHTML = myArray2;
+
+
+
+
+        var to = 1;
+        for (var i = 0; i < myArray2.length; i++) {
+
+          if (i % 1 == 0) {
+            console.log("x" + to + " = " + myArray2[i]);
+            document.getElementById("ShowText").innerHTML += "<br>" + "x" + to + " = " + myArray2[i];
+            to++
+          } else {
+
+          }
+        }
+
+      }
+
+      // ----------------------------------------------------------------------------//
+      // Use Analysis Text Lastname A-Z a-z //
+      // var lastname = "Wick";
+      // if (lastname) {
+      //   var patt1 = /[a-zA-Z]/g;
+      //   var result = lastname.match(patt1);
+      //   document.getElementById("ShowText").innerHTML = result;
+      //   console.log(result)
+
+      // } else {
+      //   document.getElementById("ShowText").innerHTML = "error";
+
+
+      // }
+      // ----------------------------------------------------------------------------//
+
+
+
+
+      
+
+
+      //Function check type book //
+
+      function TestType() {
+        var typebook = ["History", "Computer", "Math"];
+        if (typebook) {
+          document.getElementById("TBook").innerHTML = typebook;
+          console.log(typebook)
+
+        } else {
+          document.getElementById("TBook").innerHTML = "Error";
+        }
+      }
+
+    </script>
+    <!-- Close Javascript  -->
+
+
+
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
+
+</body>
+
+</html>

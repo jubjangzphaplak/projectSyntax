@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <button onclick="numnum()">num</button>
+    <button onclick="numnumtel()">tel</button>
+
+    
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <!-- <p id="demo2"></p>
+    <p id="demo3"></p>
+	<p id="demo4"></p> -->
+
+
+
+
+
+    <div id="show"></div>
+    <div id="showtel"></div>
+    <p>random Valid</p>
+
+    <div id="show4"></div>
+    <div id="showtel1"></div>
+    <center>
+        <div id="show3"></div>
+    </center>
+    <p>Complete</p>
+    <div id="show1"></div>
+    <div id="showtel3"></div>
+
+
+    
+
+
+
+
+
+    <script>
+        var str = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]";
+
+        var patt1 = /\d/g;
+        //   var result = str.match(patt1);
+        var Array = str.match(patt1);
+
+        //  Valid Random\
+        var test = ''
+        function numnum() {
+
+
+            document.getElementById("demo").innerHTML = Array;
+
+
+
+            // var no = 1;
+            document.getElementById("show").innerHTML = "";
+            document.getElementById("show1").innerHTML = "";
+            document.getElementById("show4").innerHTML = "";
+
+
+            console.log(Array);
+
+
+            for (var i = 0; i < Array.length; i++) {
+
+                if (i % 2 == 0) {
+                    //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+                    document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+                    console.log(Array[i + 1]);
+                    var a = parseInt(Array[i + 1])
+                    var b = parseInt(Array[i])
+                    test = Math.floor(Math.random() * a) + b;
+                    console.log(test);
+
+                    //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+                } else {
+                    document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+
+                    foo(i)
+                    console.log(no);
+
+
+
+                   // no++
+
+                }
+
+            } no=1
+
+        }
+
+
+        var no = 1;
+        function foo(x) {
+
+            
+
+//   ?? [0-9]
+            dance:
+            for (var i = 1; i > 0; i++) {
+                if (i % 2 == 0) {
+
+
+                    dance2:
+                    for (var j = 1; j > 0; j++) {
+                        var a = parseInt(Array[i-1])
+                        var b = parseInt(Array[i])
+                        var t = Math.floor(Math.random() * a) + b
+                        //  console.log(test, t);
+
+                        // console.log('Break');
+
+                        if (test == t) {
+                            console.log("Break", test, t);
+
+                            document.getElementById("show4").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                            document.getElementById("show1").innerHTML +=  test ;
+                            no=no+1;
+                            break dance2;
+                        }
+
+                        // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+                        // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+                    } break dance;
+                }
+            }
+        }
+// ---------------------------------------------------------------------------------------------
+
+
+        var strtel = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]";
+
+var patttel = /\d/g;
+//   var result = str.match(patt1);
+var Arraytel = strtel.match(patttel);
+console.log(Arraytel);
+
+//  Valid Random\
+var test = ''
+function numnumtel() {
+
+
+    document.getElementById("demo2").innerHTML = Arraytel + "<br>";
+
+
+
+    //var no = 1;
+    document.getElementById("showtel1").innerHTML = "";
+    document.getElementById("showtel3").innerHTML = "+66";
+   
+
+
+    console.log(Array);
+
+
+    for (var i = 0; i < Arraytel.length; i++) {
+
+        if (i % 2 == 0) {
+            //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+            document.getElementById("demo2").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+            console.log(Array[i + 1]);
+            var a = parseInt(Array[i + 1])
+            var b = parseInt(Array[i])
+            test = Math.floor(Math.random() * a) + b;
+            console.log(test);
+
+            //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+        } else {
+            document.getElementById("demo2").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+
+            foo2(i)
+            
+
+
+
+            //no++
+
+        }
+
+    }to=1
+
+}
+
+
+var to = 1;
+function foo2(x) {
+console.log(x);
+
+   
+
+//   ?? [0-9]
+    dance:
+    for (var i = 1; i > 0; i++) {
+        if (i % 2 == 0) {
+
+           
+            dance2:
+            
+            for (var j = 1; j > 0; j++) {
+                var a = parseInt(Array[i-1])
+                //console.log(Array[i-1],Array[i]);
+                
+                var b = parseInt(Array[i])
+                var t = Math.floor(Math.random() * a) + b
+                //  console.log(test, t);
+
+                // console.log('Break');
+
+                if (test == t) {
+                    console.log("Break", test, t);
+                    console.log(to);
+                    document.getElementById("showtel1").innerHTML += "x" + to + " = " + test + "&nbsp;" + "&nbsp;" + "y" + to + " = " + t + "<br>";
+                    document.getElementById("showtel3").innerHTML +=  test ;
+                    
+                   
+                    to=to+1;
+                    break dance2;
+                }
+
+                // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+                // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+            } 
+           
+            break dance;
+        }
+    }
+} 
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

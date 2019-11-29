@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Syntax Analysis</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+
+    </script>
+
+
+</head>
+<style>
+    body {
+        background-color: #7979798e;
+        /* background-image: url("img/pic3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .fa-check {
+        color: green;
+    }
+
+    .fa-remove {
+        color: red;
+    }
+</style>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="analysisUp.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="TestcaseUp.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+
+
+        </ul>
+    </nav><br>
+
+
+
+    <div class="container">
+        <center>
+            <br>
+            <h1><b>Syntax Testcase</b></h1>
+            <br>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </center>
+
+
+        <center>
+            <br>
+
+            <button onclick=" numnum()" class="btn btn-warning">
+                <h5><b>Test Generation</b></h5>
+            </button>
+        </center>
+
+        <br>
+
+        <h3><b>&nbsp;&nbsp;&nbsp;Syntax ID</b></h3>
+        <center>
+            <table class="bg-primary">
+                <tr>
+                    <th><b>Variable</b></th>
+                    <th><b>Testcase</b></th>
+
+                    <th><b>Note</b></th>
+
+                    <!-- ตาราง id  -->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="showValue"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showsyntax"></div>
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="showValid"></div>
+                            </font>
+                        </b></td>
+                </tr>
+                <!-- -----------------------------------------Start Invalid------------------------------- -->
+
+                <!-- invalid 1 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalid1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalid1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <!-- invalid 2 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalid2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalid2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- invalid 3 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalid3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalid3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- invalid 4 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalid4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalid4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+            </table>
+
+            <!-- -----------------------------------------Close Invalid------------------------------- -->
+            <br>
+            <p><a href="analysisUp.html" class="btn btn-success btn-lg"><b> Back </b> </a></p>
+            <br><br>
+
+
+
+
+            <script>
+                var strmix = "[0-9][0-9][0-9][0-9]";
+                var value = "Surname + Yaer - + Sequence";
+                var disValid = "Value Valid"
+                var showinvalidText1 = "Invalid (Value)";
+                var showinvalidText2 = "Invalid (Substitution)";
+                var showinvalidText3 = "Invalid (Omission)";
+                var showinvalidText4 = "Invalid (Addition)";
+
+                var s = "9999";
+                var patt1 = /\d/g;
+                //   var result = str.match(patt1);
+                var Array = strmix.match(patt1);
+
+                //  Valid Random\
+                var test1 = ''
+                function numnum() {
+                    document.getElementById("showValue").innerHTML = "";
+                    document.getElementById("showValid").innerHTML = "";
+                    document.getElementById("showValue").innerHTML = value;
+                    document.getElementById("showValid").innerHTML = disValid;
+
+                    document.getElementById("showinvalid1").innerHTML = showinvalidText1;
+                    document.getElementById("showinvalid2").innerHTML = showinvalidText2;
+                    document.getElementById("showinvalid3").innerHTML = showinvalidText3;
+                    document.getElementById("showinvalid4").innerHTML = showinvalidText4;
+
+                    document.getElementById("randomidinvalid1").innerHTML = "";
+                    document.getElementById("randomidinvalid2").innerHTML = "";
+                    document.getElementById("randomidinvalid3").innerHTML = "";
+                    document.getElementById("randomidinvalid4").innerHTML = "";
+
+
+
+
+
+                    console.log(Array);
+
+
+                    for (var i = 0; i < Array.length; i++) {
+
+                        if (i % 2 == 0) {
+                            //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+                            // document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+                            console.log(Array[i + 1]);
+                            var a = parseInt(Array[i + 1])
+                            var b = parseInt(Array[i])
+                            test = Math.floor(Math.random() * a) + b;
+                            console.log(test);
+
+                            //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+                        } else {
+                            // document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+
+                            foo4(i)
+                            console.log(no);
+
+
+
+                            // no++
+
+                        }
+
+                    } no = 1
+                    randomString()
+                    arr = ''
+
+                    var set1 = localStorage.getItem('get1');
+                    var set2 = localStorage.getItem('get2');
+                    var set3 = localStorage.getItem('get3');
+
+                    // child.parentNode.insertBefore(text, child);
+
+
+                }
+
+
+
+
+                var no = 1;
+
+                var arr = ''
+                function foo4(x) {
+
+
+
+                    //   วน [0-9]
+
+                    dance:
+                    for (var i = 1; i > 0; i++) {
+                        if (i % 2 == 0) {
+
+
+                            dance2:
+                            for (var j = 1; j > 0; j++) {
+
+                                var a = parseInt(Array[i - 1])
+                                var b = parseInt(Array[i])
+                                var t = Math.floor(Math.random() * a) + b
+                                //  console.log(test, t);
+
+                                // console.log('Break');
+
+                                if (test == t) {
+                                    console.log("Break", test, t);
+                                    arr += test;
+                                    console.log(arr);
+
+                                    // document.getElementById("show4").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                                    // document.getElementById("show1").innerHTML += test;
+
+                                    no = no + 1;
+                                    break dance2;
+
+
+                                }
+
+
+
+                                // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+                                // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+                            } break dance;
+
+                        }
+                    }
+
+
+
+                }
+
+
+                function randomString() {
+                    var text = "syntax"
+                    var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+                    console.log(chars);
+                    var string_length = 1;
+                    var randomstring = '';
+                    for (var i = 0; i < string_length; i++) {
+                        var rnum = Math.floor(Math.random() * chars.length);
+                        randomstring += chars.substring(rnum, rnum + 1);
+                    } // document.getElementById("showsyntax").innerHTML = randomstring;
+                    console.log(randomstring);
+
+                    document.getElementById("showsyntax").innerHTML = "";
+                    var text1 = "syntax"
+                    var chars1 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+                    console.log(chars1); 
+
+
+                    // random จำนวนที่ต้องการว่าต้องการกี่ตัว Math.floor(Math.random() * 4) + 1
+                    var string_length1 =4;
+                    var randomstring1 = '';
+                    for (var i = 0; i < string_length1; i++) {
+                        var rnum1 = Math.floor(Math.random() * chars1.length);
+                        randomstring1 += chars1.substring(rnum1, rnum1 + 1);
+                    }
+
+                    document.getElementById("showsyntax").innerHTML += randomstring + randomstring1 + arr + "-" + s;
+                    document.getElementById("randomidinvalid1").innerHTML += randomstring + randomstring1 + arr*arr + "-" + s;
+                    document.getElementById("randomidinvalid2").innerHTML += arr + randomstring + randomstring1 +   "-" + s;
+                    document.getElementById("randomidinvalid3").innerHTML += arr + randomstring1 +   "-" + s;
+                    document.getElementById("randomidinvalid4").innerHTML += randomstring + randomstring1 + arr + "-"  + s + "Extra";
+                    localStorage.setItem('get1', randomstring);
+                    localStorage.setItem('get2', randomstring1);
+                    localStorage.setItem('get3', s);
+                    // console.log(aaa+"AAAA");
+
+
+                    // ---------------------------------------------------------------------------------------------
+
+                }
+
+            </script>
+</body>
+
+</html>

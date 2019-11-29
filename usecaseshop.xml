@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <UC>
+      <Input>
+        <IDproduct>ID Product</IDproduct>
+            <Condition id="1" value="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z][A-Z][0-9][0-9]" type="integer" />
+       </Input>
+      <Input>
+        <Nameuser>Name</Nameuser>
+        <Condition id="2" value="[A-Z][a-z][a-z][a-z][a-z]" type="string" />
+     </Input>
+     <Input>
+        <Productname>Productname</Productname>
+        <Condition id="3" value="[A-Z][a-z][a-z][a-z][a-z]" type="string" />
+     </Input>
+     <Input>
+        <Typeproduct>Typeproduct</Typeproduct>
+        <Condition id="4" value="[Electronic | Dress | Cosmetic | Appliance ]" type="string" />
+     </Input>
+     <Input>
+        <Totalproduct>Number</Totalproduct>
+        <Condition id="5" value="[0-9]" type="integer" />
+     </Input>
+      <Input>
+        <Ems>Ems</Ems>
+        <Condition id="6" value="[E | R | P | V][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][T][H]" type="string" />
+     </Input>
+     <Input>
+        <Date>Date</Date>
+        <Condition id="7" value="[0-9][0-9][Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec][0-9][0-9][0-9][0-9]" type="string" />
+     </Input>
+      <Input>
+        <Postcode>Postcode</Postcode>
+        <Condition id="8" value="[AB| AL| B | BA| BD | BF | BH |BL | BN |BR | BS | BT | CA |CB | CF | CH | CM | CO | CR | CT | CV | CW | DA | DD | DE |DG |DH | DL| DN | DT | DY |E | EC | EH | EN | EX | FK | FY | G | GL | GU | HA | HD | HG | HP | HR | HS | HU | HX | IG | IP | IV | KA | KT | KW | KY | L |LA | LD | LE | LL | LN | LS | LU | M | ME | MK | ML |N | NE | NG | NN | NP | NR | NW | OL | OX | PA | PE | PH | PL | PO| PO | PR | PG | RG | RH | RM | S | SA | SE | SL | SM | SN |SO |SP | SR | SS | ST | SW | SY |TA |TD |TF |TN |TQ |TR |TS | TW |UB |W |WA | WC | WD |WF | WN | WR | WS | WV | YO | ZE][0-9]  [0-9][A-Z][A-Z]" type="integer" />
+     </Input>
+</UC>

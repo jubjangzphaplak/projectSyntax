@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Browse Xml</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+    </script>
+
+
+</head>
+<style>
+    body {
+        /* background-image: url("img/pic3.jpg"); */
+        background-color: #7979798e;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .jumbotron {
+        color: rgb(201, 190, 190);
+        text-shadow: 2px 2px rgb(255, 255, 255);
+        background-color: rgba(94, 94, 94, 0.705);
+    }
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Newanalysis.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Newtestcase.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+
+
+        </ul>
+    </nav>
+    <div class="container">
+        <center>
+            <br>
+            <button onclick="randomString()">Test Gen Syntax</button>
+            <br><br>
+            <h3>
+            <p id="showsyntax"></p></h3>
+            <br>
+
+
+
+           
+        </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+    //   Random ตัวอักษร Name  Smith // 
+        function randomString() {
+            var text = "syntax"
+            var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+            console.log(chars);
+            var string_length = 1;
+            var randomstring = '';
+            for (var i = 0; i < string_length; i++) {
+                var rnum = Math.floor(Math.random() * chars.length);
+                randomstring += chars.substring(rnum, rnum + 1);
+            } // document.getElementById("showsyntax").innerHTML = randomstring;
+            console.log(randomstring);
+            
+            document.getElementById("showsyntax").innerHTML = "";
+            var text1  = "syntax"
+            var chars1 = String.fromCharCode( 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+            console.log(chars1);
+            var string_length1 = 4;
+            var randomstring1 = '';
+            for (var i = 0; i < string_length1; i++) {
+                var rnum1 = Math.floor(Math.random() * chars1.length);
+                randomstring1 += chars1.substring(rnum1, rnum1 + 1);
+            }
+           
+            document.getElementById("showsyntax").innerHTML += randomstring+randomstring1;
+            console.log(randomstring1);
+        }
+
+
+      // --------------------------------------------------------------------------------------
+
+
+
+    </script>
+
+    </div>
+    </center>
+</body>
+
+</html>

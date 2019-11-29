@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charsCaret="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Syntax Analysis</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+
+    </script>
+
+
+</head>
+<style>
+    body {
+        background-color: #7979798e;
+        /* background-image: url("img/pic3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .fa-check {
+        color: green;
+    }
+
+    .fa-remove {
+        color: red;
+    }
+</style>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="analysisUp.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="TestcaseUp.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+
+
+        </ul>
+    </nav><br>
+
+
+
+    <div class="container">
+        <center>
+            <br>
+            <h1><b>Syntax Testcase</b></h1>
+            <br>
+            <div class="progress">
+                <div class="progress-bar progress-bar-cariped bg-success" role="progressbar" style="width: 100%"
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </center>
+
+
+        <center>
+            <br>
+
+            <button onclick="numCar()" class="btn btn-warning">
+                <h5><b>Test Generation</b></h5>
+            </button>
+        </center>
+
+        <br>
+
+        <h3><b>&nbsp;&nbsp;&nbsp;Syntax ID</b></h3>
+        <center>
+            <table class="bg-primary">
+                <tr>
+                    <th><b>Variable</b></th>
+                    <th><b>Testcase</b></th>
+
+                    <th><b>Note</b></th>
+
+                    <!-- ตาราง id  -->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="cartext"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showcarrandom"></div>
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValidcar"></div>
+                            </font>
+                        </b></td>
+                </tr>
+                <!-- -----------------------------------------Start Invalid------------------------------- -->
+
+                <!-- invalid 1 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalidcar1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalidcar1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <!-- invalid 2 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalidcar2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalidcar2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- invalid 3 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalidcar3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalidcar3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- invalid 4 -->
+                <tr class="table-light">
+                    <td></td>
+                    <td>
+                        <div id="randomidinvalidcar4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="showinvalidcar4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+            </table>
+
+            <!-- -----------------------------------------Close Invalid------------------------------- -->
+            <br>
+            <p><a href="analysisUp.html" class="btn btn-success btn-lg"><b> Back </b> </a></p>
+            <br><br>
+
+
+
+
+            <script>
+                var car = "[0-9][0-9][0-9][0-9]";
+                var cartext = "License plate";
+                var disValidcar = "Value Valid"
+                var showinvalidcar1 = "Invalid (Value)";
+                var showinvalidcar2 = "Invalid (Substitution)";
+                var showinvalidcar3 = "Invalid (Omission)";
+                var showinvalidcar4 = "Invalid (Addition)";
+
+              
+                var patt1 = /\d/g;
+                //   var result = car.match(patt1);
+                var Arraycar = car.match(patt1);
+
+                //  Valid Random\
+                var test = ''
+                function numCar() {
+                    document.getElementById("cartext").innerHTML = "";
+                    document.getElementById("disValidcar").innerHTML = "";
+                    document.getElementById("cartext").innerHTML = cartext;
+                    document.getElementById("disValidcar").innerHTML = disValidcar;
+
+                    document.getElementById("showinvalidcar1").innerHTML = showinvalidcar1;
+                    document.getElementById("showinvalidcar2").innerHTML = showinvalidcar2;
+                    document.getElementById("showinvalidcar3").innerHTML = showinvalidcar3;
+                    document.getElementById("showinvalidcar4").innerHTML = showinvalidcar4;
+
+                    document.getElementById("randomidinvalidcar1").innerHTML = "";
+                    document.getElementById("randomidinvalidcar2").innerHTML = "";
+                    document.getElementById("randomidinvalidcar3").innerHTML = "";
+                    document.getElementById("randomidinvalidcar4").innerHTML = "";
+
+
+
+
+
+                    console.log(Arraycar);
+
+
+                    for (var i = 0; i < Arraycar.length; i++) {
+
+                        if (i % 2 == 0) {
+                            //  console.log("x" + no + " = " + [Math.floor(Math.random()* Arraycar.length)] );
+                            // document.getElementById("show").innerHTML += "x" + no + " = " + Arraycar[i] + "<br>";
+                            console.log(Arraycar[i + 1]);
+                            var a = parseInt(Arraycar[i + 1])
+                            var b = parseInt(Arraycar[i])
+                            test = Math.floor(Math.random() * a) + b;
+                            console.log(test);
+
+                            //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+                        } else {
+                            // document.getElementById("show").innerHTML += "y" + no + " = " + Arraycar[i] + "<br>";
+
+                            foo5(i)
+                            console.log(no);
+                            // no++
+
+                        }
+
+                    } no = 1
+                    randomCar()
+                    arr = ''
+                    var set1 = localStorage.getItem('get1');
+                    var set2 = localStorage.getItem('get2');
+                    var set3 = localStorage.getItem('get3');
+
+                    // child.parentNode.insertBefore(text, child);
+                }
+
+
+
+                var no = 1;
+                var arr = ''
+                function foo5(x) {
+                    //   วน [0-9]
+                  dance:
+                    for (var i = 1; i > 0; i++) {
+                        if (i % 2 == 0) {
+                             dance2:
+                            for (var j = 1; j > 0; j++) {
+
+                                var a = parseInt(Arraycar[i - 1])
+                                var b = parseInt(Arraycar[i])
+                                var t = Math.floor(Math.random() * a) + b
+                                //  console.log(test, t);
+
+                                // console.log('Break');
+
+                                if (test == t) {
+                                    console.log("Break", test, t);
+                                    arr += test;
+                                    console.log(arr);
+
+                                    // document.getElementById("show4").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                                    // document.getElementById("show1").innerHTML += test;
+
+                                    no = no + 1;
+                                    break dance2;
+                                }
+                                // console.log("y" + no + " = " + [Math.floor(Math.random()* Arraycar.length)]);
+
+                                // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Arraycar.length)] + "<br>";
+
+                            } break dance;
+
+                        }
+                    }
+                }
+
+
+                function randomCar() {
+                    var text = "syntax"
+                    var charsCar = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+                    console.log(charsCar);
+                    var string4_length = 2;
+                    var randomnumcar = '';
+                    for (var i = 0; i < string4_length; i++) {
+                        var rnum = Math.floor(Math.random() * charsCar.length);
+                        randomnumcar += charsCar.substring(rnum, rnum + 1);
+                    } // document.getElementById("showsyntax").innerHTML = randomnumcar;
+                    console.log(randomnumcar);
+
+                    document.getElementById("showcarrandom").innerHTML = "";
+                  
+
+
+                    document.getElementById("showcarrandom").innerHTML += randomnumcar + arr ;
+                    document.getElementById("randomidinvalidcar1").innerHTML += randomnumcar + arr*arr ;
+                    document.getElementById("randomidinvalidcar2").innerHTML += arr + randomnumcar;
+                    document.getElementById("randomidinvalidcar3").innerHTML += arr ;
+                    document.getElementById("randomidinvalidcar4").innerHTML += randomnumcar + "Extra";
+                    localStorage.setItem('get1', randomnumcar);
+                    localStorage.setItem('get2', randomnumcar);
+                    // localStorage.setItem('get3', s);
+                    // console.log(aaa+"AAAA");
+
+
+                }
+
+            </script>
+</body>
+
+</html>

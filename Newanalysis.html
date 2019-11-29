@@ -48,7 +48,7 @@
 
     .btn-warning {
         box-shadow: 5px 2px 5px rgb(44, 44, 44);
-
+        
     }
 
     .btn-primary {
@@ -68,16 +68,17 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
         &nbsp;&nbsp;<ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="Newanalysis.html">&nbsp;&nbsp;Syntax Testing</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Newtestcase.html">&nbsp;&nbsp;Test Case</a></b>
             </li>
+           
 
 
         </ul>
@@ -87,12 +88,14 @@
 
     <div class="container">
         <center>
-            <p><b>
-                    <h1><b> Test Analysis</b></h1>
-                </b></p>
+            <div class="textanalysis">
+                <p><b>
+                      <b> Test Analysis</b>
+                    </b></p>
+            </div>
             <div class="progress">
                 <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%"
-                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
             </div>
             <br>
 
@@ -114,12 +117,12 @@
         </center> -->
         <p id="demo3"></p>
         <p id="demo4"></p>
-
-
+        <!-- Button on click  -->
 
         <center>
-            <button onclick="numID(),numIDbook(),numIDcard(),numIDtell()" class="btn btn-warning">
-                <h5> &nbsp;&nbsp;&nbsp;&nbsp;Analysis&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+            <button onclick="numID(),numIDbook(),numIDcard(),numIDtell(),TestText(),Text1(),post1(),car(),Ems()"
+                class="btn btn-warning">
+              <h5> <b>  &nbsp;&nbsp;&nbsp;&nbsp;Analysis&nbsp;&nbsp;&nbsp;&nbsp;</h5></b>
             </button><br></center>
         <!-- <center>
             <p id="demo"></p> -->
@@ -127,35 +130,44 @@
         <!-- </center> -->
 
 
-        <!-- <center>
+
+        <h3><b>Data Dictionary</b></h3> <br>
+    </div>
+
+    <!-- <center>
         <div id="show2"></div>
     </center> -->
-        <br>
-    </div>
+
     <center>
         <table class="bg-info">
             <tr>
                 <th>Variable</th>
+                <th>Description</th>
+                <th>Data Type</th>
                 <th>Syntax</th>
-                <th>Permission Value</th>
-                <th> Value</th>
+                <th>Permissible Value</th>
+
             </tr>
 
             <!--   ID -->
             <tr>
                 <td><b>
                         <div id="displayid"></div>
-
                     </b></td>
+                <td>
+                    <div id="displaydes"></div>
+                </td>
+                <td>
+                    <div id="displaytypeid"></div>
+                </td>
                 <td>
                     <div id="patternid"></div>
                 </td>
                 <td>
                     <div id="perid"></div>
                 </td>
-                <td>
-                    <div id="valueid"></div>
-                </td>
+
+
             </tr>
             <!--   ID book -->
             <tr>
@@ -163,14 +175,19 @@
                         <div id="displayidbook"></div>
                     </b></td>
                 <td>
+                    <div id="showscriptbook"></div>
+                </td>
+                <td>
+                    <div id="displaytypebook"></div>
+                </td>
+                <td>
                     <div id="patternidbook"></div>
                 </td>
                 <td>
                     <div id="peridbook"></div>
                 </td>
-                <td>
-                    <div id="valueidbook"></div>
-                </td>
+
+
             </tr>
 
 
@@ -180,14 +197,19 @@
                         <div id="displayidcard"></div>
                     </b></td>
                 <td>
+                    <div id="showscriptidcard"></div>
+                </td>
+                <td>
+                    <div id="displaytypecard"></div>
+                </td>
+                <td>
                     <div id="patternidcard"></div>
                 </td>
                 <td>
                     <div id="peridcard"></div>
                 </td>
-                <td>
-                    <div id="valueidcard"></div>
-                </td>
+
+
             </tr>
 
 
@@ -197,15 +219,120 @@
                         <div id="displayidtell"></div>
                     </b></td>
                 <td>
+                    <div id="showscriptidtell"></div>
+                </td>
+                <td>
+                    <div id="displaytypetell"></div>
+                </td>
+                <td>
                     <div id="patternidtel"></div>
                 </td>
                 <td>
                     <div id="peridtel"></div>
                 </td>
+
+            </tr>
+
+            <!--   name -->
+            <tr>
+                <td><b>
+                        <div id="displayname"></div>
+                    </b></td>
                 <td>
-                    <div id="valueidtel"></div>
+                    <div id="showscriptname"></div>
+                </td>
+                <td>
+                    <div id="displaytypename"></div>
+                </td>
+                <td>
+                    <div id="patternText"></div>
+                </td>
+                <td>
+                    <div id="analysisText"></div>
                 </td>
             </tr>
+
+            <!--   Text 1 -->
+            <tr>
+                <td><b>
+                        <div id="showtext1"></div>
+                    </b></td>
+                <td>
+                    <div id="desscripttext1"></div>
+                </td>
+                <td>
+                    <div id="typetext1"></div>
+                </td>
+                <td>
+                    <div id="patterntext1"></div>
+                </td>
+                <td>
+                    <div id="analysisText1"></div>
+                </td>
+            </tr>
+
+            <!--   postcode 1 -->
+            <tr>
+                <td><b>
+                        <div id="showpostcode"></div>
+                    </b></td>
+                <td>
+                    <div id="descriptpost"></div>
+                </td>
+                <td>
+                    <div id="typepost"></div>
+                </td>
+                <td>
+                    <div id="patternpost"></div>
+                </td>
+                <td>
+                    <div id="analysispostcode"></div>
+                </td>
+            </tr>
+            <!--   Car -->
+            <tr>
+                <td><b>
+                        <div id="showcar"></div>
+                    </b></td>
+                <td>
+                    <div id="descriptcar"></div>
+                </td>
+                <td>
+                    <div id="typecar"></div>
+                </td>
+                <td>
+                    <div id="patterncar"></div>
+                </td>
+                <td>
+                    <div id="analysiscar"></div>
+                </td>
+            </tr>
+
+            <!--   ems -->
+            <tr>
+                <td><b>
+                        <div id="nameems"></div>
+                    </b></td>
+                <td>
+                    <div id="descriptems"></div>
+                </td>
+                <td>
+                    <div id="typeems"></div>
+                </td>
+                <td>
+                    <div id="patternems"></div>
+                </td>
+                <td>
+                    <div id="showlist"></div>
+                    <div id="shownum"></div>
+                    <div id="showTH"></div>
+
+                </td>
+
+
+            </tr>
+
+
 
 
 
@@ -223,34 +350,26 @@
     <script>
         var strID = "[0-9][0-9][0-9]";
         var disid = "ID";
+        var descript = "Student ID";
+        var tpyeid = "integer(3)";
 
         var pattID = /\d/g;
         //   var result = str.match(patt1);
         var Array = strID.match(pattID);
-
         //  Valid Random\
         var test = ''
         function numID() {
-
-
-
-
             // display table id name  in TD //
             document.getElementById("displayid").innerHTML = disid;
-
-
-
+            document.getElementById("displaydes").innerHTML = descript;
+            document.getElementById("displaytypeid").innerHTML = tpyeid;
             // var no = 1;
             document.getElementById("patternid").innerHTML = strID;
             document.getElementById("perid").innerHTML = "";
-            document.getElementById("valueid").innerHTML = "";
-
+            // document.getElementById("valueid").innerHTML = "";
 
             console.log(Array);
-
-
             for (var i = 0; i < Array.length; i++) {
-
                 if (i % 2 == 0) {
                     //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
                     document.getElementById("perid").innerHTML += "Lower Bound" + no + " = " + Array[i] + "<br>";
@@ -267,49 +386,33 @@
 
                     foo(i)
                     console.log(no);
-
-
-
                     // no++
-
                 }
-
             } no = 1
 
         }
 
-
         var no = 1;
         function foo(x) {
-
-
-
             //   ?? [0-9]
             dance:
             for (var i = 1; i > 0; i++) {
                 if (i % 2 == 0) {
-
-
                     dance2:
                     for (var j = 1; j > 0; j++) {
                         var a = parseInt(Array[i - 1])
                         var b = parseInt(Array[i])
                         var t = Math.floor(Math.random() * a) + b
-                        //  console.log(test, t);
-
-                        // console.log('Break');
-
+                        //  console.log(test, t); 
+                        // console.log('Break');  
                         if (test == t) {
                             console.log("Break", test, t);
-
-                            document.getElementById("valueid").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                            // document.getElementById("valueid").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
                             // document.getElementById("show4").innerHTML +=  test ;  ผลลัพท์ใส่หน้า testcase
                             no = no + 1;
                             break dance2;
                         }
-
                         // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
-
                         // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
 
                     } break dance;
@@ -319,31 +422,24 @@
         // -----------------------------------------ID BOOk ----------------------------------------------------
         var strIDbook = "[0-9][0-9][0-9][0-9]";
         var disidbook = "ID Book";
+        var descriptbook = "Code id book";
+        var tpyeidbook = "integer(4)";
         var patternidbook = /\d/g;
         //   var result = str.match(patt1);
         var Arraybook = strIDbook.match(patternidbook);
-
         //  Valid Random\
         var test = ''
         function numIDbook() {
-
-
-
             // display table idbook name  in TD //
+            document.getElementById("showscriptbook").innerHTML = descriptbook;
             document.getElementById("displayidbook").innerHTML = disidbook;
-
-
+            document.getElementById("displaytypebook").innerHTML = tpyeidbook;
             // var no = 1;
             document.getElementById("patternidbook").innerHTML = strIDbook;
             document.getElementById("peridbook").innerHTML = "";
-            document.getElementById("valueidbook").innerHTML = "";
-
 
             console.log(Array);
-
-
             for (var i = 0; i < Arraybook.length; i++) {
-
                 if (i % 2 == 0) {
                     //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
                     document.getElementById("peridbook").innerHTML += "Lower Bound" + no + " = " + Arraybook[i] + "<br>";
@@ -360,11 +456,7 @@
 
                     foo2(i)
                     console.log(no);
-
-
-
                     // no++
-
                 }
 
             } no = 1
@@ -374,15 +466,10 @@
 
         var no = 1;
         function foo2(x) {
-
-
-
             //   ?? [0-9]
             dance:
             for (var i = 1; i > 0; i++) {
                 if (i % 2 == 0) {
-
-
                     dance2:
                     for (var j = 1; j > 0; j++) {
                         var a = parseInt(Array[i - 1])
@@ -395,7 +482,7 @@
                         if (test == t) {
                             console.log("Break", test, t);
 
-                            document.getElementById("valueidbook").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                            // document.getElementById("valueidbook").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
                             // document.getElementById("show4").innerHTML +=  test ;  ผลลัพท์ใส่หน้า testcase
                             no = no + 1;
                             break dance2;
@@ -413,6 +500,8 @@
         //    -----------------------------------IDCARd-------------------------------------
         var strIDcard = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]";
         var disidcard = "ID Card";
+        var descriptcard = "ID card code";
+        var tpyeidcard = "integer(13)";
         var patternidcard = /\d/g;
         //   var result = str.match(patt1);
         var Arraycard = strIDcard.match(patternidcard);
@@ -424,18 +513,13 @@
 
             // display table idbook card  in TD //
             document.getElementById("displayidcard").innerHTML = disidcard;
-
-
-
+            document.getElementById("showscriptidcard").innerHTML = descriptcard;
+            document.getElementById("displaytypecard").innerHTML = tpyeidcard;
             // var no = 1;
             document.getElementById("patternidcard").innerHTML = strIDcard;
             document.getElementById("peridcard").innerHTML = "";
-            document.getElementById("valueidcard").innerHTML = "";
-
 
             console.log(Array);
-
-
             for (var i = 0; i < Arraycard.length; i++) {
 
                 if (i % 2 == 0) {
@@ -489,7 +573,7 @@
                         if (test == t) {
                             console.log("Break", test, t);
 
-                            document.getElementById("valueidcard").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                            // document.getElementById("valueidcard").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
                             // document.getElementById("show4").innerHTML +=  test ;  ผลลัพท์ใส่หน้า testcase
                             no = no + 1;
                             break dance2;
@@ -506,6 +590,8 @@
         // ----------------------------ID TEL--------------------
         var strIDtell = "[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]";
         var disidtell = "Tell";
+        var descriptell = "Telephone Number";
+        var tpyeidtell = "integer(10)";
         var patternidtell = /\d/g;
         //   var result = str.match(patt1);
         var Arraytell = strIDtell.match(patternidtell);
@@ -516,19 +602,13 @@
 
             // display table tell name  in TD //
             document.getElementById("displayidtell").innerHTML = disidtell;
-
-
-
-
+            document.getElementById("showscriptidtell").innerHTML = descriptell;
+            document.getElementById("displaytypetell").innerHTML = tpyeidtell;
             // var no = 1;
             document.getElementById("patternidtel").innerHTML = strIDtell;
             document.getElementById("peridtel").innerHTML = "";
-            document.getElementById("valueidtel").innerHTML = "";
-
 
             console.log(Array);
-
-
             for (var i = 0; i < Arraytell.length; i++) {
 
                 if (i % 2 == 0) {
@@ -547,9 +627,6 @@
 
                     foo4(i)
                     console.log(no);
-
-
-
                     // no++
 
                 }
@@ -561,9 +638,6 @@
 
         var no = 1;
         function foo4(x) {
-
-
-
             //   ?? [0-9]
             dance:
             for (var i = 1; i > 0; i++) {
@@ -582,7 +656,7 @@
                         if (test == t) {
                             console.log("Break", test, t);
 
-                            document.getElementById("valueidtel").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                            // document.getElementById("valueidtel").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
                             // document.getElementById("show4").innerHTML +=  test ;  ผลลัพท์ใส่หน้า testcase
                             no = no + 1;
                             break dance2;
@@ -597,17 +671,453 @@
             }
         }
 
+        function TestText() {
+            var patternText = "[A-Z][a-z][a-z][a-z][a-z]";
+            var disName = "Name";
+            var name = "[A-Z][a-z][a-z][a-z][a-z]";
+            var desscriptname = "์Student name";
+            var typename = "string(5)";
+
+            // display table tell name  in TD //
+            document.getElementById("displayname").innerHTML = disName;
+            document.getElementById("showscriptname").innerHTML = desscriptname;
+            document.getElementById("displaytypename").innerHTML = typename;
+
+            //
+            document.getElementById("patternText").innerHTML = patternText;
+            document.getElementById("analysisText").innerHTML = "";
+            // document.getElementById("valueidtel").innerHTML = "";
+
+            // ตัวเลข
+            var patt2 = /\w/g;
+            //   var result = str.match(patt1);
+            var myArray2 = name.match(patt2);
+
+            // document.getElementById("analysisText").innerHTML = myArray2;
+            var to = 1;
+            for (var i = 0; i < myArray2.length; i++) {
+
+                if (i % 2 == 0) {
+                    console.log("x" + to + " = " + myArray2[i]);
+                    document.getElementById("analysisText").innerHTML += "<br>" + "Lower Bound" + to + " = " + myArray2[i];
+
+                } else {
+                    document.getElementById("analysisText").innerHTML += "<br>" + "Upper Bound" + to + " = " + myArray2[i];
+                    to++
+                }
+            }
+
+        }
+
+        function TestText() {
+            var patternText = "[A-Z][a-z][a-z][a-z][a-z]";
+            var disName = "Name";
+            var name = "[A-Z][a-z][a-z][a-z][a-z]";
+            var desscriptname = "์Student name";
+            var typename = "string(5)";
+
+            // display table tell name  in TD //
+            document.getElementById("displayname").innerHTML = disName;
+            document.getElementById("showscriptname").innerHTML = desscriptname;
+            document.getElementById("displaytypename").innerHTML = typename;
+
+            //
+            document.getElementById("patternText").innerHTML = patternText;
+            document.getElementById("analysisText").innerHTML = "";
+            // document.getElementById("valueidtel").innerHTML = "";
+
+            // ตัวเลข
+            var patt2 = /\w/g;
+            //   var result = str.match(patt1);
+            var myArray2 = name.match(patt2);
+
+            // document.getElementById("analysisText").innerHTML = myArray2;
+            var to = 1;
+            for (var i = 0; i < myArray2.length; i++) {
+
+                if (i % 2 == 0) {
+                    console.log("x" + to + " = " + myArray2[i]);
+                    document.getElementById("analysisText").innerHTML += "<br>" + "Lower Bound" + to + " = " + myArray2[i];
+
+                } else {
+                    document.getElementById("analysisText").innerHTML += "<br>" + "Upper Bound" + to + " = " + myArray2[i];
+                    to++
+                }
+            }
+
+        }
+
+        function Text1() {
+            var patterntext1 = "[A-Z][a-z][a-z][a-z][0-9][0-9][0-9][0-9][9][9][9][9]";
+            var showtext1 = "Name Year - Sequence";
+            var desscripttext1 = "์Student name of year and constant";
+            var typetext1 = "string(5),integer(4),integer(4)";
+            // display table tell name  in TD //
+            document.getElementById("showtext1").innerHTML = showtext1;
+            document.getElementById("desscripttext1").innerHTML = desscripttext1;
+            document.getElementById("typetext1").innerHTML = typetext1;
+            //
+            document.getElementById("patterntext1").innerHTML = patterntext1;
+            document.getElementById("analysisText1").innerHTML = "";
+            // document.getElementById("valueidtel").innerHTML = "";
+
+            // ตัวเลข
+            var patt2 = /\w/g;
+
+
+            //   var result = str.match(patt1);
+            var myArray3 = patterntext1.match(patt2);
+
+
+            // document.getElementById("analysisText").innerHTML = myArray2;
+            var to = 1;
+            for (var i = 0; i < myArray3.length; i++) {
+
+                if (i % 2 == 0) {
+                    console.log("x" + to + " = " + myArray3[i]);
+                    document.getElementById("analysisText1").innerHTML += "<br>" + "Lower Bound" + to + " = " + myArray3[i];
+
+                } else {
+                    document.getElementById("analysisText1").innerHTML += "<br>" + "Upper Bound" + to + " = " + myArray3[i];
+                    to++
+                }
+            }
+
+        }
+
+        var str = "[0-9][0-9][0-9][0-9]";
+        var value = "Surname + Yaer - + Sequence";
+        var disValid = "Value Valid"
+
+
+        var s = "9999";
+        var patt1 = /\d/g;
+        //   var result = str.match(patt1);
+        var Array = str.match(patt1);
+
+        //  Valid Random\
+        var test = ''
+        function numnum() {
+            document.getElementById("showValue").innerHTML = "";
+            document.getElementById("showValid").innerHTML = "";
+            document.getElementById("showValue").innerHTML = value;
+
+
+
+            console.log(Array);
+            for (var i = 0; i < Array.length; i++) {
+
+                if (i % 2 == 0) {
+                    //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+                    // document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+                    console.log(Array[i + 1]);
+                    var a = parseInt(Array[i + 1])
+                    var b = parseInt(Array[i])
+                    test = Math.floor(Math.random() * a) + b;
+                    console.log(test);
+                    //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+                } else {
+                    // document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+
+                    foo(i)
+                    console.log(no);
+                    // no++
+                }
+
+            } no = 1
+            randomString()
+            arr = ''
+
+            var set1 = localStorage.getItem('get1');
+            var set2 = localStorage.getItem('get2');
+            var set3 = localStorage.getItem('get3');
+
+            // child.parentNode.insertBefore(text, child);
+
+
+        }
+
+        var no = 1;
+        var arr = ''
+
+        function foo(x) {
+            //   วน [0-9]
+            dance:
+            for (var i = 1; i > 0; i++) {
+                if (i % 2 == 0) {
+                    dance2:
+                    for (var j = 1; j > 0; j++) {
+                        var a = parseInt(Array[i - 1])
+                        var b = parseInt(Array[i])
+                        var t = Math.floor(Math.random() * a) + b
+                        //  console.log(test, t);
+                        // console.log('Break');
+
+                        if (test == t) {
+                            console.log("Break", test, t);
+                            arr += test;
+                            console.log(arr);
+
+                            // document.getElementById("show4").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+                            // document.getElementById("show1").innerHTML += test;
+
+                            no = no + 1;
+                            break dance2;
+
+
+                        }
+
+
+
+                        // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+                        // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+                    } break dance;
+
+                }
+            }
+        }
+
+        // Analysis postcode //
+        // var postc = "[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][A-Z]{2}$"
+        var postc = "[A-Z][A-Z][0-9][0-9][A-Z][A-Z]";
+        var patt1 = /\w/g;
+        var postcode = "Postcode";
+        var descriptpost = "Code is a series of letters digits,both";
+        var typepost = "string(2),interger(2),string(2)";
+        var Arraypost = postc.match(patt1);
+        var no = 1;
+        // document.getElementById("demo").innerHTML = Array;
+
+
+        function post1() {
+            document.getElementById("patternpost").innerHTML = postc;
+            document.getElementById("showpostcode").innerHTML = postcode;
+            document.getElementById("descriptpost").innerHTML = descriptpost;
+            document.getElementById("typepost").innerHTML = typepost;
+            document.getElementById("analysispostcode").innerHTML = "";
+
+            for (var i = 0; i < Arraypost.length; i++) {
+
+                if (i % 2 == 0) {
+
+                    document.getElementById("analysispostcode").innerHTML += "Lower Bound" + no + " = " + Arraypost[i] + "<br>";
+                } else {
+                    document.getElementById("analysispostcode").innerHTML += "Upper Bound" + no + " = " + Arraypost[i] + "<br>";
+                    no++
+
+                }
+
+            }
+
+        }
+
+
+        function Text1() {
+            var patterntext1 = "[A-Z][a-z][a-z][a-z][0-9][0-9][0-9][0-9][9][9][9][9]";
+            var showtext1 = "Name Year - Sequence";
+            var desscripttext1 = "์Student name of year and constant";
+            var typetext1 = "string(5),integer(4),integer(4)";
+            // display table tell name  in TD //
+            document.getElementById("showtext1").innerHTML = showtext1;
+            document.getElementById("desscripttext1").innerHTML = desscripttext1;
+            document.getElementById("typetext1").innerHTML = typetext1;
+            //
+            document.getElementById("patterntext1").innerHTML = patterntext1;
+            document.getElementById("analysisText1").innerHTML = "";
+            // document.getElementById("valueidtel").innerHTML = "";
+
+            // ตัวเลข
+            var patt2 = /\w/g;
+
+
+            //   var result = str.match(patt1);
+            var myArray3 = patterntext1.match(patt2);
+
+
+            // document.getElementById("analysisText").innerHTML = myArray2;
+            var to = 1;
+            for (var i = 0; i < myArray3.length; i++) {
+
+                if (i % 2 == 0) {
+                    console.log("x" + to + " = " + myArray3[i]);
+                    document.getElementById("analysisText1").innerHTML += "<br>" + "Lower Bound" + to + " = " + myArray3[i];
+
+                } else {
+                    document.getElementById("analysisText1").innerHTML += "<br>" + "Upper Bound" + to + " = " + myArray3[i];
+                    to++
+                }
+            }
+
+        }
+        ///  ป้ายทะเบียนรถ UK 1234 ////
+        function car() {
+            var patterncar = "[A-Z][A-Z][0-9][0-9][0-9][0-9]";
+            var showcar = "License plate";
+            var descriptcar = "์License plate of car";
+            var typecar = "string(2),integer(4)";
+            // display table tell name  in TD //
+            document.getElementById("showcar").innerHTML = showcar;
+            document.getElementById("descriptcar").innerHTML = descriptcar;
+            document.getElementById("typecar").innerHTML = typecar;
+            //
+            document.getElementById("patterncar").innerHTML = patterncar;
+            document.getElementById("analysiscar").innerHTML = "";
+            // document.getElementById("valueidtel").innerHTML = "";
+
+            // ตัวเลข
+            var patt5 = /\w/g;
+
+
+            //   var result = str.match(patt1);
+            var myArray4 = patterncar.match(patt5);
+
+
+            // document.getElementById("analysisText").innerHTML = myArray2;
+            var to = 1;
+            for (var i = 0; i < myArray4.length; i++) {
+
+                if (i % 2 == 0) {
+                    console.log("x" + to + " = " + myArray4[i]);
+                    document.getElementById("analysiscar").innerHTML += "<br>" + "Lower Bound" + to + " = " + myArray4[i];
+
+                } else {
+                    document.getElementById("analysiscar").innerHTML += "<br>" + "Upper Bound" + to + " = " + myArray4[i];
+                    to++
+                }
+            }
+
+        }
+
+
+        var numcar = "[0-9][0-9][0-9][0-9]";
+        var patt1 = /\d/g;
+        //   var result = str.match(patt1);
+        var Array = numcar.match(patt1);
+
+        //  Valid Random\
+        var test1 = ''
+        function numCar() {
+
+            document.getElementById("showValid").innerHTML = "";
+            document.getElementById("showValid").innerHTML = disValid;
+            console.log(Array);
+            for (var i = 0; i < Array.length; i++) {
+                if (i % 2 == 0) {
+                    //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+                    // document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+                    console.log(Array[i + 1]);
+                    var a = parseInt(Array[i + 1])
+                    var b = parseInt(Array[i])
+                    test = Math.floor(Math.random() * a) + b;
+                    console.log(test);
+
+                    //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+                } else {
+                    // document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+
+                    foo4(i)
+                    console.log(no);
+                    // no++
+
+                }
+
+            } no = 1
+            randomString()
+            arr = ''
+            var set1 = localStorage.getItem('get1');
+            var set2 = localStorage.getItem('get2');
+            var set3 = localStorage.getItem('get3');
+
+            // child.parentNode.insertBefore(text, child);
+
+        }
 
 
 
 
+        var no = 1;
+        var arr = ''
+        function foo4(x) {
 
 
 
+            //   วน [0-9]
+
+            dance:
+            for (var i = 1; i > 0; i++) {
+                if (i % 2 == 0) {
 
 
+                    dance2:
+                    for (var j = 1; j > 0; j++) {
 
+                        var a = parseInt(Array[i - 1])
+                        var b = parseInt(Array[i])
+                        var t = Math.floor(Math.random() * a) + b
+                        //  console.log(test, t);
 
+                        // console.log('Break');
+
+                        if (test == t) {
+                            console.log("Break", test, t);
+                            arr += test;
+                            console.log(arr);
+                            no = no + 1;
+                            break dance2;
+                        }
+                    } break dance;
+                }
+            }
+        }
+
+        var ems = "[E | R | P | V][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][T][H]";
+        var pattlist = /[ERPV]/g;
+        var pattnum = /\d/g;
+        var pattTH = /[TH]/g;
+        var nameems = "EMS";
+        var descriptems = "์Code of ems";
+        var typeems = "string(2),integer(9),string(2)";
+        var Arraylist = ems.match(pattlist);
+        var Arraynum = ems.match(pattnum);
+        var ArrayTH = ems.match(pattTH);
+
+        var nolist = 1;
+        var nosum = 1;
+        var noTH = 1;
+
+        function Ems() {
+            document.getElementById("showlist").innerHTML = "";
+            document.getElementById("showTH").innerHTML = "";
+            document.getElementById("shownum").innerHTML = "";
+            document.getElementById("nameems").innerHTML = nameems;
+            document.getElementById("descriptems").innerHTML = descriptems;
+            document.getElementById("typeems").innerHTML = typeems;
+            document.getElementById("patternems").innerHTML = ems;
+            //  array  ของ list
+            for (var i = 0; i < Arraylist.length; i++) {
+                document.getElementById("showlist").innerHTML += "List" + nolist + " = " + Arraylist[i] + "<br>";
+                nolist++
+            }
+
+            //   array ของ ตัวเลข
+            for (var i = 0; i < Arraynum.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("shownum").innerHTML += "Upper" + nosum + " = " + Arraynum[i] + "<br>";
+                } else {
+                    document.getElementById("shownum").innerHTML += "Lower" + nosum + " = " + Arraynum[i] + "<br>";
+                    nosum++
+                }
+            }
+            //  array  ของ TH
+            for (var i = 0; i < ArrayTH.length; i++) {
+                document.getElementById("showTH").innerHTML += "Constant" + noTH + " = " + ArrayTH[i] + "<br>";
+                noTH++
+            }
+        }
 
 
     </script>

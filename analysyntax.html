@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Syntax Analysis</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+    </script>
+
+
+</head>
+<style>
+    body {
+        background-color: #7979798e;
+        /* background-image: url("img/pic3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .btn-warning {
+        box-shadow: 5px 2px 5px rgb(44, 44, 44);
+
+    }
+
+    .btn-primary {
+        background: rgb(0, 33, 179);
+        box-shadow: 5px 2px 5px rgb(134, 134, 134);
+
+    }
+
+    .btn-danger {
+        box-shadow: 8px 3px 5px rgb(216, 187, 190);
+    }
+</style>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="analysisxml.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testcasexml.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="summary.html">&nbsp;&nbsp; <b>Summary</b></a></b>
+            </li>
+
+
+        </ul>
+    </nav><br>
+
+
+
+    <div class="container">
+        <center>
+            <div class="textanalysis">
+                <p><b>
+                        <h1><b> Test Analysis</b></h1>
+                    </b></p>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%"
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <br>
+
+        </center>
+
+
+
+
+        <center>
+            <button onclick="getbookstore()" class="btn btn-warning">
+                <h5> &nbsp;&nbsp;&nbsp;&nbsp;<b>Analysis</b>&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+            </button>
+            
+
+
+           
+        </center> <br> <br><h3><b>Data Dictionary : Case study</b></h3><br> 
+    </div>
+    <center>
+
+        <table class=" table-bordered">
+            <thead class="bg-info">
+                <tr>
+                    <th>Variable</th>
+                    <th>Description</th>
+                    <th>Data Type</th>
+                    <th>Syntax</th>
+                    <th>Lenght</th>
+                    <th>Permissible Value</th>
+
+                </tr>
+            </thead>
+            <tbody class="table-light" id="show">
+            </tbody>
+        </table>
+        <br>
+
+
+
+
+
+        <a href="browse.html" class="btn btn-success btn-lg"><b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger btn-lg" href="testcasexml.html" button">Testcase
+            Generation</a><br><br><br>
+    </center>
+    </div><br>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+<script>
+
+
+    function getbookstore() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "uctestbook.xml", true);
+        xhttp.send();
+
+
+        function myFunction(xml) {
+            var x, i, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            txtvalue = "";
+
+            noid = 1;
+            //  array เก็บ xml
+            var alldata = [];
+            // var ucxmlDescription = [];
+            // var ucxmltype = [];
+            // var ucxmlLenght = [];
+            // var ucxmlvalue = [];
+
+            x = xmlDoc.getElementsByTagName('Condition');
+
+            for (i = 0; i < x.length; i++) {
+                txtname = x[i].getAttribute('name');
+                txtDescription = x[i].getAttribute('Description');
+                txtvalue = x[i].getAttribute('value');
+                txttype = x[i].getAttribute('type');
+                txtLenght = x[i].getAttribute('Lenght');
+
+
+                // เก็บค่า value เข้า array
+                alldata.push({ "name": txtname, "Des": txtDescription, "Value": txtvalue, "Type": txttype, "Lenght": txtLenght });
+
+                console.log(alldata[i].name, " ", alldata[i].Des, "", alldata[i].Value, " ", alldata[i].Type, " ", alldata[i].Lenght);
+                // document.getElementById("showname").innerHTML += "";
+                // document.getElementById("showdes").innerHTML += "";
+                // document.getElementById("showvalue").innerHTML += "";
+                // document.getElementById("showtype").innerHTML += "";
+                // document.getElementById("showlenght").innerHTML += "";
+
+                //  document.getElementById("showtypeid").innerHTML += alldata[i].name  +"&nbsp"+ alldata[i].Des +"&nbsp"+ alldata[i].Value +"&nbsp"+ alldata[i].Type +"&nbsp"+ alldata[i].Lenght +"<br>";
+                // document.getElementById("showname").innerHTML += alldata[i].name + "<br>" + "<br>" + "<br>" + "<br>";
+                // document.getElementById("showdes").innerHTML += alldata[i].Des + "<br>" + "<br>" + "<br>" + "<br>";
+                // document.getElementById("showvalue").innerHTML += alldata[i].Value + "<br>" + "<br>" ;
+                // document.getElementById("showtype").innerHTML += alldata[i].Type  + "<br>"+ "<br>"  ;
+                // document.getElementById("showlenght").innerHTML += alldata[i].Lenght + "<br>"+ "<br>"  ;
+
+
+
+                $('#show').append(
+                    '<tr class="tr-shadow">' +
+
+                    ' <td>' + alldata[i].name + '</td>' +
+                    ' <td class="desc">' +
+                    '<span>' + alldata[i].Des + '</span>' +
+                    ' </td>' +
+                    ' <td>' + alldata[i].Value + '</td>' +
+                    '<td>' + alldata[i].Type +'</td>' +
+                    '<td>' + alldata[i].Lenght +'</td>' +
+                    '<td>' + alldata[i].Lenght +'</td>' +
+                    // '<td>' + 'Lower Bound' + '&nbsp;'+   alldata2 +  '<br>' + 'Upper Bound' +'</td>' +        /// เปลี่ยนตรงนี้ /////////////////////////////////// 
+                    ' </tr>' +
+                    ' <tr class="spacer"></tr>'
+
+                )
+
+            }
+
+        }
+    }
+
+
+
+
+
+
+
+</script>
+
+
+
+</html>

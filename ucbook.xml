@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <UC>
+      <Input>
+        <ID>ID</ID>
+        <Condition id="1" value="[0-9][0-9][0-9]" type="integer(3)" />
+       </Input>
+      <Input>
+        <Name>Name</Name>
+        <Condition id="2" value="[A-Z][a-z][a-z][a-z][a-z]" type="string(5)" />
+     </Input>
+     <Input>
+        <Idbook>Idbook</Idbook>
+        <Condition id="3" value="[0-9][0-9][0-9]" type="integer(3)" />
+     </Input>
+     <Input>
+        <Typebook>Typebook</Typebook>
+        <Condition id="4" value="[Computer,science,information and generalworks | Philosophy and psychology | Religion |Social sciences | Language | PureScience | Technology | Arts and recreation|Literature| History and geography]" type="string" />
+     </Input>
+     <Input>
+        <Totalbook>Number</Totalbook>
+        <Condition id="5" value="[0-9]" type="integer(1)" />
+     </Input>
+     <Input>
+        <Date>Date</Date>
+        <Condition id="6" value="[0-9][0-9][Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec][0-9][0-9][0-9][0-9]" type="string" />
+     </Input>
+</UC>

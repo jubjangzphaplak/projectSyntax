@@ -124,9 +124,12 @@
       // Use Analysis Text A-Z a-z //
       function TestText() {
 
-        var name = "Tanawat";
+        var name = "[A-Z][a-z][a-z][a-z][0-9][0-9][0-9][0-9][9][9][9][9]";
 
-        var patt2 = /[a-zA-z]/g;
+        // ตัวเลข
+        var patt2 = /\w/g; 
+          
+
         //   var result = str.match(patt1);
         var myArray2 = name.match(patt2);
 
@@ -139,12 +142,13 @@
         var to = 1;
         for (var i = 0; i < myArray2.length; i++) {
 
-          if (i % 1 == 0) {
+          if (i % 2 == 0) {
             console.log("x" + to + " = " + myArray2[i]);
             document.getElementById("ShowText").innerHTML += "<br>" + "x" + to + " = " + myArray2[i];
-            to++
+           
           } else {
-
+            document.getElementById("ShowText").innerHTML += "<br>" + "y" + to + " = " + myArray2[i];
+             to++
           }
         }
 

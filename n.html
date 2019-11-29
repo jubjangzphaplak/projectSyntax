@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button onclick="getbookstore()">id</button>
+
+
+    <p id=showname></p>
+    <p id=showdes></p>
+
+    <p id=showvalue></p>
+    <p id=showtype></p>
+    <p id=showlenght></p>
+    <p id=showidbook></p>
+
+
+
+</body>
+
+
+
+
+<script>
+    function getbookstore() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+
+            }
+        };
+        xhttp.open("GET", "yum.xml", true);
+        xhttp.send();
+    }
+
+    function myFunction(xml) {
+        var x, i, xmlDoc, txt;
+        xmlDoc = xml.responseXML;
+        txtvalue = "";
+
+        noid = 1;
+        //  array เก็บ xml
+        var alldata = [];
+        var alldata2 = [];
+        // var ucxmlDescription = [];
+        // var ucxmltype = [];
+        // var ucxmlLenght = [];
+        // var ucxmlvalue = [];
+
+        x = xmlDoc.getElementsByTagName('Condition');
+        console.log("xl" + x.length);
+        let stridbook;
+
+        for (i = 0; i < x.length; i++) {
+            console.log("i" + i);
+            txtname = x[i].getAttribute('name');
+            txtDescription = x[i].getAttribute('Description');
+            txtvalue = x[i].getAttribute('value');
+            txttype = x[i].getAttribute('type');
+            txtLenght = x[i].getAttribute('Lenght');
+
+
+            // เก็บค่า value เข้า array
+            alldata.push({ "name": txtname, "Des": txtDescription, "Value": txtvalue, "Type": txttype, "Lenght": txtLenght });
+
+
+
+            //  console.log(alldata[i].name ," ",alldata[i].Des,"",alldata[i].Value ," ",alldata[i].Type," ",alldata[i].Lenght);
+
+
+            //  document.getElementById("showtypeid").innerHTML += alldata[i].name  +"&nbsp"+ alldata[i].Des +"&nbsp"+ alldata[i].Value +"&nbsp"+ alldata[i].Type +"&nbsp"+ alldata[i].Lenght +"<br>";
+            document.getElementById("showname").innerHTML += alldata[i].name + "<br>";
+            document.getElementById("showdes").innerHTML += alldata[i].Des + "<br>";
+            document.getElementById("showvalue").innerHTML += alldata[i].Value + "<br>";
+            document.getElementById("showtype").innerHTML += alldata[i].Type + "<br>";
+            document.getElementById("showlenght").innerHTML += alldata[i].Lenght + "<br>";
+
+            console.log(alldata[i]);
+
+
+
+
+
+
+            //  -----------------------------------------------------------------------------------------------------------------
+
+            stridbook = alldata[i].Value;
+            let pattidbook = /(Aug|Apr|A|Z|0|9|a|z|Computer,science,information and generalworks | Philosophy and psychology | Religion |Social sciences | Language | PureScience | Technology | Arts and recreation|Literature| History and geography|Jan|Feb|Mar| Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec |Electronic | Dress | Cosmetic | Appliance|E | R | P | V |T |H AB| AL| B | BA| BD | BF | BH |BL | BN |BR | BS | BT | CA |CB | CF | CH | CM | CO | CR | CT | CV | CW | DA | DD | DE |DG |DH | DL| DN | DT | DY |E | EC | EH | EN | EX | FK | FY | G | GL | GU | HA | HD | HG | HP | HR | HS | HU | HX | IG | IP | IV | KA | KT | KW | KY | L |LA | LD | LE | LL | LN | LS | LU | M | ME | MK | ML |N | NE | NG | NN | NP | NR | NW | OL | OX | PA | PE | PH | PL | PO| PO | PR | PG | RG | RH | RM | S | SA | SE | SL | SM | SN |SO |SP | SR | SS | ST | SW | SY |TA |TD |TF |TN |TQ |TR |TS | TW |UB |W |WA | WC | WD |WF | WN | WR | WS | WV | YO | ZE)/g;
+            //   var pattidbook = /\w/g;
+            let Arrayidbook = stridbook.match(pattidbook);
+            alldata2.push(Arrayidbook);
+            console.log("Arrayidbook" + Arrayidbook);
+            noidbook = 1;
+            console.log("alldata2" + alldata2);
+            for (let j = 0; j < Arrayidbook.length; j++) {
+                if (j % 2 == 0) {
+                    let L ="Lower Bound" + noidbook + " = " + Arrayidbook[j] + "<br>"; 
+                    document.getElementById("showidbook").innerHTML += L;
+
+                } else {
+                    let U ="Lower Bound" + noidbook + " = " + Arrayidbook[j] + "<br>";
+                    document.getElementById("showidbook").innerHTML += U;
+                }
+                noidbook = noidbook + 1;
+            }
+
+
+        }
+
+        console.log("alldata2" + alldata2);
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+</script>
+
+
+</html>

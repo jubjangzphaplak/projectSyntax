@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Syntax Analysis</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+    </script>
+
+
+</head>
+<style>
+    body {
+        background-color: #7979798e;
+        /* background-image: url("img/pic3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .btn-warning {
+        box-shadow: 5px 2px 5px rgb(44, 44, 44);
+
+    }
+
+    .btn-primary {
+        background: rgb(0, 33, 179);
+        box-shadow: 5px 2px 5px rgb(134, 134, 134);
+
+    }
+
+    .btn-danger {
+        box-shadow: 8px 3px 5px rgb(216, 187, 190);
+    }
+</style>
+
+
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="analysisxml.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testcasexml.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+         
+
+
+        </ul>
+    </nav><br>
+
+
+
+    <div class="container">
+        <center>
+            <div class="textanalysis">
+                <p><b>
+                        <h1><b> Test Analysis</b></h1>
+                    </b></p>
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%"
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <br>
+
+        </center>
+
+
+
+
+        <center>
+            <button onclick="getbookstore(),getshop()" class="btn btn-warning">
+                <h5> &nbsp;&nbsp;&nbsp;&nbsp;<b>Analysis</b>&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+            </button>
+            <br><br>
+
+
+            <h3><b>Data Dictionary : Case study Library System</b></h3>
+        </center> <br>
+    </div>
+    <center>
+      
+        <table class="bg-primary table-bordered">
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Data Type</th>
+                <th>Syntax</th>
+                <th>Permissible Value</th>
+
+            </tr>
+
+            <!--   ID -->
+            <tr>
+                <td><b>
+                        <div id="displayid"></div>
+                    </b></td>
+                <td>
+                    <div id="descriptid"></div>
+                </td>
+                <td>
+                    <div id="showtypeid"></div>
+                </td>
+                <td>
+                    <div id="showpattid"></div>
+                </td>
+                <td>
+                    <div id="showid"></div>
+                </td>
+            </tr>
+
+            <!--   Name Library -->
+            <tr>
+                <td><b>
+                        <div id="displayname"></div>
+                    </b></td>
+                <td>
+                    <div id="descriptname"></div>
+                </td>
+                <td>
+                    <div id="showtypename"></div>
+                </td>
+                <td>
+                    <div id="showpattname"></div>
+                </td>
+                <td>
+                    <div id="showname"></div>
+                </td>
+            </tr>
+
+            <!--   ID BOOK -->
+            <tr>
+                <td><b>
+                        <div id="displayidbook"></div>
+                    </b></td>
+                <td>
+                    <div id="descriptidbook"></div>
+                </td>
+                <td>
+                    <div id="showtypeidbook"></div>
+                </td>
+                <td>
+                    <div id="showpattidbook"></div>
+                </td>
+                <td>
+                    <div id="showidbook"></div>
+                </td>
+            </tr>
+
+            <!--  Type Book -->
+            <tr>
+                <td><b>
+                        <div id="displaytypebook"></div>
+                    </b></td>
+                <td>
+                    <div id="descripttypebook"></div>
+                </td>
+                <td>
+                    <div id="showtypeTypebook"></div>
+                </td>
+                <td>
+                    <div id="showpattTypebook"></div>
+                </td>
+                <td>
+                    <div id="showTypebook"></div>
+                </td>
+            </tr>
+
+            <!--  Number book Borrow-->
+            <tr>
+                <td><b>
+                        <div id="displaynumbook"></div>
+                    </b></td>
+                <td>
+                    <div id="displaynumbook"></div>
+                </td>
+                <td>
+                    <div id="showtypenumber"></div>
+                </td>
+                <td>
+                    <div id="showpattnumber"></div>
+                </td>
+                <td>
+                    <div id="shownumber"></div>
+                </td>
+            </tr>
+
+            <!--  Date Book-->
+            <tr>
+                <td><b>
+                        <div id="displaydate_b"></div>
+                    </b></td>
+                <td>
+                    <div id="descriptdatebook"></div>
+                </td>
+                <td>
+                    <div id="showtypeDate"></div>
+                </td>
+                <td>
+                    <div id="showpattDate"></div>
+                </td>
+                <td>
+                    <div id="showDate"></div>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+
+        <h3><b>Data Dictionary Case study : Shop Online </b></h3> <br>
+        </div>
+        <center>
+            <table class="bg-info table-bordered">
+
+                <tr>
+                    <th>Variable</th>
+                    <th>Description</th>
+                    <th>Data Type</th>
+                    <th>Syntax</th>
+                    <th>Permissible Value</th>
+
+                </tr>
+
+                <!--   ID Product -->
+                <tr>
+                    <td><b>
+                            <div id="displayidproduct"></div>
+                        </b></td>
+                    <td>
+                        <div id="desscriptid_pro"></div>
+                    </td>
+                    <td>
+                        <div id="showtypeidpro"></div>
+                    </td>
+                    <td>
+                        <div id="showpattidpro"></div>
+                    </td>
+                    <td>
+                        <div id="showidpro"></div>
+                    </td>
+                </tr>
+
+                <!--   Name Product -->
+                <tr>
+                    <td><b>
+                            <div id="displaynameproduct"></div>
+                        </b></td>
+                    <td>
+                        <div id="descriptname_pro"></div>
+                    </td>
+                    <td>
+                        <div id="showtypenamepro"></div>
+                    </td>
+                    <td>
+                        <div id="showpattnamepro"></div>
+                    </td>
+                    <td>
+                        <div id="shownamepro"></div>
+                    </td>
+                </tr>
+
+                <!--   Product Name -->
+                <tr>
+                    <td><b>
+                            <div id="displayproductname"></div>
+                        </b></td>
+                    <td>
+                        <div id="desscriptproduct"></div>
+                    </td>
+                    <td>
+                        <div id="showtypeproname"></div>
+                    </td>
+                    <td>
+                        <div id="showpattproname"></div>
+                    </td>
+                    <td>
+                        <div id="showproname"></div>
+                    </td>
+                </tr>
+
+                <!--  Type Product -->
+                <tr>
+                    <td><b>
+                            <div id="displaytype_pro"></div>
+                        </b></td>
+                    <td>
+                        <div id="descripttypepro"></div>
+                    </td>
+                    <td>
+                        <div id="showtypeTypepro"></div>
+                    </td>
+                    <td>
+                        <div id="showpattTypepro"></div>
+                    </td>
+                    <td>
+                        <div id="showTypepro"></div>
+                    </td>
+                </tr>
+
+                <!--  Number Product ---->
+                <tr>
+                    <td><b>
+                            <div id="displaynumproduct"></div>
+                        </b></td>
+                    <td>
+                        <div id="descriptnum_pro"></div>
+                    </td>
+                    <td>
+                        <div id="showtypenumbershop"></div>
+                    </td>
+                    <td>
+                        <div id="showpattnumbershop"></div>
+                    </td>
+                    <td>
+                        <div id="shownumbershop"></div>
+                    </td>
+                </tr>
+
+                <!--  EMS-->
+                <tr>
+                    <td><b>
+                            <div id="displayems"></div>
+                        </b></td>
+                    <td>
+                        <div id="descriptems"></div>
+                    </td>
+                    <td>
+                        <div id="showtypeEMS"></div>
+                    </td>
+                    <td>
+                        <div id="showpattEMS"></div>
+                    </td>
+                    <td>
+                        <div id="showems"></div>
+                    </td>
+                </tr>
+                <!--  Date shop-->
+                <tr>
+                    <td><b>
+                            <div id="displaydateshop"></div>
+                        </b></td>
+                    <td>
+                        <div id="descriptdate_shop"></div>
+                    </td>
+                    <td>
+                        <div id="showtypeDateshop"></div>
+                    </td>
+                    <td>
+                        <div id="showpattDateshop"></div>
+                    </td>
+                    <td>
+                        <div id="showDateshop"></div>
+                    </td>
+                </tr>
+
+                <!--  Post code shop -->
+                <tr>
+                    <td><b>
+                            <div id="postcode"></div>
+                        </b></td>
+                    <td>
+                        <div id="descriptpost"></div>
+                    </td>
+                    <td>
+                        <div id="showtypePost"></div>
+                    </td>
+                    <td>
+                        <div id="showpattPost"></div>
+                    </td>
+                    <td>
+                        <div id="showPost"></div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+
+
+
+
+            <a href="browse.html" class="btn btn-success btn-lg"><b>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a> &nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger btn-lg" href="testcasexml.html"button">Testcase Generation</a><br><br><br>
+        </center>
+        </div><br>
+        </div>
+
+</body>
+
+
+
+
+<script>
+    function getbookstore() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "ucbooktest.xml", true);
+        xhttp.send();
+
+
+        function myFunction(xml) {
+            var x, i, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            txtvalue = "";
+
+            noid = 1;
+            //  array ???? xml
+            var ucxmlvalue = [];
+            var ucxmltype = [];
+            x = xmlDoc.getElementsByTagName('Condition');
+
+            for (i = 0; i < x.length; i++) {
+                txtvalue = x[i].getAttribute('value');
+                txttype = x[i].getAttribute('type');
+
+
+                // ??????? value ???? array
+                ucxmlvalue.push(txtvalue);
+                ucxmltype.push(txttype);
+
+            }
+            // ---------------------------------Show ID-------------------------------
+            var strid = ucxmlvalue[0];
+            var typeid = ucxmltype[0];
+            var id = "ID";
+            var descriptid = "Student ID";
+            // show integer
+            document.getElementById("showtypeid").innerHTML = typeid;
+            document.getElementById("displayid").innerHTML = id;
+            document.getElementById("descriptid").innerHTML = descriptid;
+            // show [0-9][0-9][0-9][0-9]
+            document.getElementById("showpattid").innerHTML = strid;
+            var pattid = /\d/g;
+            var Arrayid = strid.match(pattid);
+
+
+            // document.getElementById("showpattid").innerHTML = Arrayid;
+
+            for (var i = 0; i < Arrayid.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("showid").innerHTML += "Lower Bound" + noid + " = " + Arrayid[i] + "<br>";
+
+                } else {
+                    document.getElementById("showid").innerHTML += "Upper Bound" + noid + " = " + Arrayid[i] + "<br>";
+                    noid++
+
+                }
+
+            }
+
+            // ----------------------Show Name Library------------------------------------
+
+            noname = 1;
+            var strname = ucxmlvalue[1];
+            var typename = ucxmltype[1];
+            var name = "Name";
+            var descriptname = "Student Name";
+            // show String
+            document.getElementById("showtypename").innerHTML = typename;
+            document.getElementById("displayname").innerHTML = name;
+            document.getElementById("descriptname").innerHTML = descriptname;
+            //  show  [A-Z][a-z][a-z][a-z][a-z]
+            document.getElementById("showpattname").innerHTML = strname;
+
+            var pattname = /\w/g;
+            var Arrayname = strname.match(pattname);
+            for (var i = 0; i < Arrayname.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("showname").innerHTML += "Lower Bound" + noname + " = " + Arrayname[i] + "<br>";
+
+                } else {
+                    document.getElementById("showname").innerHTML += "Upper Bound" + noname + " = " + Arrayname[i] + "<br>";
+                    noname++
+
+                }
+
+            }
+
+            // -----------------------------------Show IDBOOk-------------------------------------------------------------------
+            noidbook = 1;
+            var stridbook = ucxmlvalue[2];
+            var typeidbook = ucxmltype[2];
+            var idbook_id = "ID Book";
+            var descriptidbook = "Code ID Book";
+            // show Integer
+            document.getElementById("showtypeidbook").innerHTML = typeidbook;
+            document.getElementById("displayidbook").innerHTML = idbook_id;
+            document.getElementById("descriptidbook").innerHTML = descriptidbook;
+            //  show  [0-9][0-9][0-9]
+            document.getElementById("showpattidbook").innerHTML = stridbook;
+
+            var pattidbook = /\w/g;
+            var Arrayidbook = stridbook.match(pattidbook);
+            for (var i = 0; i < Arrayidbook.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("showidbook").innerHTML += "Lower Bound" + noidbook + " = " + Arrayidbook[i] + "<br>";
+
+                } else {
+                    document.getElementById("showidbook").innerHTML += "Upper Bound" + noidbook + " = " + Arrayidbook[i] + "<br>";
+                    noidbook++
+
+                }
+
+            }
+
+            // -------------------------------Showtypebook--------------------------------------------------------------------------------
+            noTypebook = 1;
+            var strTypebook = ucxmlvalue[3];
+            var typeTypebook = ucxmltype[3];
+            var type_book = "Typebook";
+            var destypebook = "Book category";
+            // show String
+            document.getElementById("showtypeTypebook").innerHTML = typeTypebook;
+            document.getElementById("displaytypebook").innerHTML = type_book;
+            document.getElementById("descripttypebook").innerHTML = destypebook;
+            //  show  [ Computer,science,information and generalworks | Philosophy and psychology | Religion |Social sciences | Language | PureScience | Technology | Arts and recreation|Literature| History and geography]
+            document.getElementById("showpattTypebook").innerHTML = strTypebook;
+            var pattTypebook = /(Computer,science,information and generalworks | Philosophy and psychology | Religion |Social sciences | Language | PureScience | Technology | Arts and recreation|Literature| History and geography)/g;
+
+            var ArrayTypebook = strTypebook.match(pattTypebook);
+            for (var i = 0; i < ArrayTypebook.length; i++) {
+
+                document.getElementById("showTypebook").innerHTML += "List" + noTypebook + " = " + ArrayTypebook[i] + "<br>";
+
+
+
+                noTypebook++
+            }
+
+
+
+            //       // ---------------------------------------Number Book----------------------------------------------------------------------
+            nonumber = 1;
+            var strnumber = ucxmlvalue[4];
+            var typenumber = ucxmltype[4];
+            var numbook = "Number Book";
+            var descriptnumbook = "Number of books borrowed.";
+            // show Integer
+            document.getElementById("showtypenumber").innerHTML = typenumber;
+            document.getElementById("displaynumbook").innerHTML = numbook;
+            document.getElementById("displaynumbook").innerHTML = descriptnumbook;
+            //  show  [0-9]
+            document.getElementById("showpattnumber").innerHTML = strnumber;
+
+            var pattnumber = /\w/g;
+            var Arraynumber = strnumber.match(pattnumber);
+            for (var i = 0; i < Arraynumber.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("shownumber").innerHTML += "Lower Bound" + nonumber + " = " + Arraynumber[i] + "<br>";
+
+                } else {
+                    document.getElementById("shownumber").innerHTML += "Upper Bound" + nonumber + " = " + Arraynumber[i] + "<br>";
+                    nonumber++
+
+                }
+
+            }
+
+            //       // ------------------------------------Date -------------------------------------------------------------------------------
+            noDate = 1;
+            nolisrDate = 1;
+            var strDate = ucxmlvalue[5];
+            var typeDate = ucxmltype[5];
+            var date_borrow = "Date";
+            var descriptdate_book = "Loan Date";
+            // show String
+            document.getElementById("showtypeDate").innerHTML = typeDate;
+            document.getElementById("displaydate_b").innerHTML = date_borrow;
+            document.getElementById("descriptdatebook").innerHTML = descriptdate_book;
+            //  show  [0-9]
+            document.getElementById("showpattDate").innerHTML = strDate;
+            // ------------------  ?????????? ----------------------------
+            var pattdatenum = /\d/g;
+            var Arraydatenum = strDate.match(pattdatenum);
+            // --------------------?????????------------------------
+            var pattdatemonth = /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/g;
+            var Arraydatemonth = strDate.match(pattdatemonth);
+
+
+
+
+            for (var i = 0; i < Arraydatenum.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("showDate").innerHTML += "Lower Bound" + noDate + " = " + Arraydatenum[i] + "<br>";
+
+                } else {
+                    document.getElementById("showDate").innerHTML += "Upper Bound" + noDate + " = " + Arraydatenum[i] + "<br>";
+                    noDate++
+
+                }
+
+            }
+            for (var i = 0; i < Arraydatemonth.length; i++) {
+
+                document.getElementById("showDate").innerHTML += "list" + nolisrDate + " = " + Arraydatemonth[i] + "<br>";
+
+
+                nolisrDate++
+
+            }
+
+        }
+    }
+
+    // ------------------------------------- XML 2 -------------------------------------------------------//
+    /////////////////////////////////////////////////////////////////////////////////
+
+    function getshop() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "usecaseshop.xml", true);
+        xhttp.send();
+
+
+        function myFunction(xml) {
+            var x, i, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            txtvalue = "";
+
+            noid = 1;
+            //  array ???? xml
+            var ucxmlvalueshop = [];
+            var ucxmltypeshop = [];
+            x = xmlDoc.getElementsByTagName('Condition');
+
+            for (i = 0; i < x.length; i++) {
+                txtvalue = x[i].getAttribute('value');
+                txttype = x[i].getAttribute('type');
+
+
+                // ??????? value ???? array
+                ucxmlvalueshop.push(txtvalue);
+                ucxmltypeshop.push(txttype);
+
+
+            }
+            //  ------------------ID PRODUCT---------------
+
+            noidpro = 1;
+            var stridpro = ucxmlvalueshop[0];
+            var typeidpro = ucxmltypeshop[0];
+            var displayidproduct = "ID Product";
+            var desscriptid_pro = "ID of Product";
+            // show String
+            document.getElementById("showtypeidpro").innerHTML = typeidpro;
+            document.getElementById("displayidproduct").innerHTML = displayidproduct;
+            document.getElementById("desscriptid_pro").innerHTML = desscriptid_pro;
+            //  show  [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z][A-Z][0-9][0-9]
+            document.getElementById("showpattidpro").innerHTML = stridpro;
+            // ------------------  ?????????? ----------------------------
+            var pattidpronum = /\d/g;
+            var Arrayidpronum = stridpro.match(pattidpronum);
+            // --------------------????????????------------------------
+            var pattidprostr = /\w/g;
+            var Arrayidprostr = stridpro.match(pattidprostr);
+
+
+            for (var i = 0; i < Arrayidpronum.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("showidpro").innerHTML += "Lower Bound" + noidpro + " = " + Arrayidpronum[i] + "<br>";
+
+                } else {
+                    document.getElementById("showidpro").innerHTML += "Upper Bound" + noidpro + " = " + Arrayidpronum[i] + "<br>";
+                    noidpro++
+
+                }
+
+                for (var i = 0; i < Arrayidprostr.length; i++) {
+                    if (i % 2 == 0) {
+                        document.getElementById("showidpro").innerHTML += "Lower Bound" + noidpro + " = " + Arrayidprostr[i] + "<br>";
+
+                    } else {
+                        document.getElementById("showidpro").innerHTML += "Upper Bound" + noidpro + " = " + Arrayidprostr[i] + "<br>";
+                        noidpro++
+
+                    }
+
+                }
+            }
+            // ------------------------NAme Product-------------------------------------------------------------------------------------
+
+
+            nonamepro = 1;
+            var strnamepro = ucxmlvalueshop[1];
+            var typenamepro = ucxmltypeshop[1];
+            var name_pro = "User Name";
+            var descriptname_pro = "User name order of product";
+            // show String
+            document.getElementById("showtypenamepro").innerHTML = typenamepro;
+            document.getElementById("displaynameproduct").innerHTML = name_pro;
+            document.getElementById("descriptname_pro").innerHTML = descriptname_pro;
+            //  show  [A-Z][a-z][a-z][a-z][a-z]
+            document.getElementById("showpattnamepro").innerHTML = strnamepro;
+
+            var pattnamepro = /\w/g;
+            var Arraynamepro = strnamepro.match(pattnamepro);
+            for (var i = 0; i < Arraynamepro.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("shownamepro").innerHTML += "Lower Bound" + nonamepro + " = " + Arraynamepro[i] + "<br>";
+
+                } else {
+                    document.getElementById("shownamepro").innerHTML += "Upper Bound" + nonamepro + " = " + Arraynamepro[i] + "<br>";
+                    nonamepro++
+
+                }
+
+            }
+
+
+            // --------------------------Product NAme----------------------------------------------------------
+
+            noproname = 1;
+            var strproname = ucxmlvalueshop[2];
+            var typeproname = ucxmltypeshop[2];
+            var productname = "Product Name";
+            var desscriptproduct = "Name of order product"
+            // show String
+            document.getElementById("showtypeproname").innerHTML = typeproname;
+            document.getElementById("displayproductname").innerHTML = productname;
+            document.getElementById("desscriptproduct").innerHTML = desscriptproduct;
+            //  show  [A-Z][a-z][a-z][a-z][a-z]
+            document.getElementById("showpattproname").innerHTML = strproname;
+
+            var pattproname = /\w/g;
+            var Arrayproname = strnamepro.match(pattnamepro);
+            for (var i = 0; i < Arrayproname.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("showproname").innerHTML += "Lower Bound" + noproname + " = " + Arrayproname[i] + "<br>";
+
+                } else {
+                    document.getElementById("showproname").innerHTML += "Upper Bound" + noproname + " = " + Arrayproname[i] + "<br>";
+                    noproname++
+
+                }
+
+            }
+
+            // -------------------------------Type Product-----------------------------
+            noTypepro = 1;
+            var strTypepro = ucxmlvalueshop[3];
+            var typeTypepro = ucxmltypeshop[3];
+            var typeproduct = "Type Product";
+            var descripttypepro = "Category of product";
+            // show String
+            document.getElementById("showtypeTypepro").innerHTML = typeTypepro;
+            document.getElementById("displaytype_pro").innerHTML = typeproduct;
+            document.getElementById("descripttypepro").innerHTML = descripttypepro;
+            //  show  [ Electronic | Dress | Cosmetic | Appliance]
+            document.getElementById("showpattTypepro").innerHTML = strTypepro;
+            var pattTypetypepro = /(Electronic | Dress | Cosmetic | Appliance)/g;
+            console.log(strTypepro);
+
+            var ArrayTypepro = strTypepro.match(pattTypetypepro);
+            for (var i = 0; i < ArrayTypepro.length; i++) {
+
+                document.getElementById("showTypepro").innerHTML += "List" + noTypepro + " = " + ArrayTypepro[i] + "<br>";
+
+
+
+                noTypepro++
+            }
+            // -----------------------------Number product--------------------------------------------------------
+
+
+            nonumbershop = 1;
+            var strnumbershop = ucxmlvalueshop[4];
+            var typenumbershop = ucxmltypeshop[4];
+            var num_pro = "Number Product";
+            var descriptnum_pro = "Order amount";
+            // show Integer
+            document.getElementById("showtypenumbershop").innerHTML = typenumbershop;
+            document.getElementById("displaynumproduct").innerHTML = num_pro;
+            document.getElementById("descriptnum_pro").innerHTML = descriptnum_pro;
+            //  show  [0-9]
+            document.getElementById("showpattnumbershop").innerHTML = strnumbershop;
+
+            var pattnumbershop = /\w/g;
+            var Arraynumbershop = strnumbershop.match(pattnumbershop);
+            for (var i = 0; i < Arraynumbershop.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("shownumbershop").innerHTML += "Lower Bound" + nonumbershop + " = " + Arraynumbershop[i] + "<br>";
+
+                } else {
+                    document.getElementById("shownumbershop").innerHTML += "Upper Bound" + nonumbershop + " = " + Arraynumbershop[i] + "<br>";
+                   
+                } nonumber++
+
+
+            }
+
+            // ----------------------EMS-------------------------------------
+
+            nolistems = 1;
+            nonumems = 1;
+            nolistTH = 1;
+            noAZems = 1;
+            var strEms = ucxmlvalueshop[5];
+            var typeEms = ucxmltypeshop[5];
+            var ems = "EMS";
+            var descriptems = "Code of ems";
+
+            // show Integer
+            document.getElementById("showtypeEMS").innerHTML = typeEms;
+            document.getElementById("displayems").innerHTML = ems;
+            document.getElementById("descriptems").innerHTML = descriptems;
+            //  show  [0-9]
+            document.getElementById("showpattEMS").innerHTML = strEms;
+
+            var pattlistems = /[ERPV]/g;
+            var pattAZ = /[A,Z]/g;
+            var pattnumems = /\d/g;
+            var pattTH = /[TH]/g;
+
+            var ArrayAZ = strEms.match(pattAZ);
+            var Arraylistems = strEms.match(pattlistems);
+            var Arraynumems = strEms.match(pattnumems);
+            var ArraypattTH = strEms.match(pattTH);
+
+
+
+            for (var i = 0; i < Arraylistems.length; i++) {
+                document.getElementById("showems").innerHTML += "List" + nolistems + " = " + Arraylistems[i] + "<br>";
+
+
+
+                nolistems++
+            }
+            for (var i = 0; i < ArrayAZ.length; i++) {
+
+                if (i % 2 == 0) {
+
+                    document.getElementById("showems").innerHTML += "Upper" + noAZems + " = " + ArrayAZ[i] + "<br>";
+
+
+                } else {
+                    document.getElementById("showems").innerHTML += "Lower" + noAZems + " = " + ArrayAZ[i] + "<br>";
+
+
+                    noAZems++
+
+                }
+
+            }
+            //   array ??? ??????
+            for (var i = 0; i < Arraynumems.length; i++) {
+
+                if (i % 2 == 0) {
+
+                    document.getElementById("showems").innerHTML += "Upper" + nonumems + " = " + Arraynumems[i] + "<br>";
+
+
+                } else {
+                    document.getElementById("showems").innerHTML += "Lower" + nonumems + " = " + Arraynumems[i] + "<br>";
+
+
+                    nonumems++
+
+                }
+
+            }
+
+            for (var i = 0; i < ArraypattTH.length; i++) {
+                document.getElementById("showems").innerHTML += "List" + nolistTH + " = " + ArraypattTH[i] + "<br>";
+
+
+
+                nolistTH++
+            }
+
+
+
+            // --------------------------------Date Shop------------------------------------------------------------------------
+            noDateshop = 1;
+            nolisrDateshop = 1;
+            var strDateshop = ucxmlvalueshop[6];
+            var typeDateshop = ucxmltypeshop[6];
+            var displaydateshop = "Date";
+            var descriptdate_shop = "Date received";
+            // show String
+            document.getElementById("showtypeDateshop").innerHTML = typeDateshop;
+            document.getElementById("displaydateshop").innerHTML = displaydateshop;
+            document.getElementById("descriptdate_shop").innerHTML = descriptdate_shop;
+            //  show  [0-9]
+            document.getElementById("showpattDateshop").innerHTML = strDateshop;
+            // ------------------  สกัดตัวเลข ----------------------------
+            var pattdatenumdate = /\d/g;
+            var Arraydatenumshop = strDateshop.match(pattdatenumdate);
+            // --------------------สกัดเดือน------------------------
+            var pattdatemonthshop = /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/g;
+            var Arraydatemonthshop = strDateshop.match(pattdatemonthshop);
+
+
+
+
+            for (var i = 0; i < Arraydatenumshop.length; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("showDateshop").innerHTML += "Lower Bound" + noDateshop + " = " + Arraydatenumshop[i] + "<br>";
+
+                } else {
+                    document.getElementById("showDateshop").innerHTML += "Upper Bound" + noDateshop + " = " + Arraydatenumshop[i] + "<br>";
+                    noDateshop++
+
+                }
+
+            }
+            for (var i = 0; i < Arraydatemonthshop.length; i++) {
+
+                document.getElementById("showDateshop").innerHTML += "list" + nolisrDateshop + " = " + Arraydatemonthshop[i] + "<br>";
+
+
+                nolisrDateshop++
+
+            }
+
+            // ----------------------Show Postcode--------------------------------
+            nolistpost = 1;
+            nopost2 = 1;
+            nopost3 = 1;
+            var strPost = ucxmlvalueshop[7];
+            var typePost = ucxmltypeshop[7];
+            var postcode = "Post Code";
+            var descriptpost = "Post Code of User";
+            // show String
+            document.getElementById("showtypePost").innerHTML = typePost;
+            document.getElementById("postcode").innerHTML = postcode;
+            document.getElementById("descriptpost").innerHTML = descriptpost;
+            //  show  
+            document.getElementById("showpattPost").innerHTML = strPost;
+            var pattpost = /(AB | AL | B | BA| BD | BF | BH |BL | BN |BR | BS | BT | CA |CB | CF | CH | CM | CO | CR | CT | CV | CW | DA | DD | DE |DG |DH | DL| DN | DT | DY |E | EC | EH | EN | EX | FK | FY | G | GL | GU | HA | HD | HG | HP | HR | HS | HU | HX | IG | IP | IV | KA | KT | KW | KY | L |LA | LD | LE | LL | LN | LS | LU | M | ME | MK | ML |N | NE | NG | NN | NP | NR | NW | OL | OX | PA | PE | PH | PL | PO| PO | PR | PG | RG | RH | RM | S | SA | SE | SL | SM | SN |SO |SP | SR | SS | ST | SW | SY |TA |TD |TF |TN |TQ |TR |TS | TW |UB |W |WA | WC | WD |WF | WN | WR | WS | WV | YO | ZE)/g;
+            var pattnumpost = /\d/g;
+            var postc2 = "[A-Z][A-Z]";
+            var pattpost3 = /[A]|[Z]/g;;
+
+
+            var ArraypostList = strPost.match(pattpost);
+            var Arraypost2 = strPost.match(pattnumpost);
+            var Arraypost3 = postc2.match(pattpost3);
+
+            console.log(Arraypost3);
+
+            //      List
+            for (var i = 0; i < ArraypostList.length; i++) {
+
+                if (i % 2 == 0) {
+
+                    document.getElementById("showPost").innerHTML += "List" + nolistpost + " = " + ArraypostList[i] + "<br>";
+
+
+
+                } else {
+
+
+                    nolistpost++
+
+                }
+
+            }
+            //      [0-9][0-9]
+            for (var i = 0; i < Arraypost2.length; i++) {
+
+                if (i % 2 == 0) {
+
+                    document.getElementById("showPost").innerHTML += "Lower" + nopost2 + " = " + Arraypost2[i] + "<br>";
+
+
+
+                } else {
+                    document.getElementById("showPost").innerHTML += "Upper" + nopost2 + " = " + Arraypost2[i] + "<br>";
+
+                    nopost2++
+
+                }
+
+            }
+
+            //      [A-Z][A-Z]
+            for (var i = 0; i < Arraypost3.length; i++) {
+
+                if (i % 2 == 0) {
+
+                    document.getElementById("showPost").innerHTML += "Lower" + nopost3 + " = " + Arraypost3[i] + "<br>";
+
+
+
+                } else {
+                    document.getElementById("showPost").innerHTML += "Upper" + nopost3 + " = " + Arraypost3[i] + "<br>";
+
+                    nopost3++
+
+                }
+
+            }
+
+        }
+    }
+
+
+</script>
+
+
+</html>

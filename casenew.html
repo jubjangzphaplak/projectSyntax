@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://github.com/fent/randexp.js/releases/download/v0.4.3/randexp.min.js"></script>
+    <title>Test Case Generation</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+</head>
+
+
+<style>
+    body {
+        background-color: #7979798e;
+        /* background-image: url("img/pic3.jpg");
+          background-repeat: no-repeat;
+          background-size: cover; */
+
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .fa-check {
+        color: green;
+    }
+
+    .fa-remove {
+        color: red;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="analysisxml.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testcasexml.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+
+
+
+        </ul>
+    </nav>
+    <div class="container">
+        <center>
+
+
+
+            <br>
+
+            <div class="textanalysis">
+                <b>Syntax Testcase</b></div>
+            <br>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+            </div>
+            <br>
+
+
+
+
+
+
+            <button onclick="getbookstore() " class="btn btn-warning">
+                <h5><b>Test Generation</b></h5>
+            </button>
+        </center><br>
+
+
+
+
+        <!-- <p id=showname></p> -->
+
+
+        <p id=11></p>
+        <center>
+            <table class="bg-primary">
+                <tr>
+                    <th><b>Variable</b></th>
+                    <th><b>Testcase</b></th>
+
+                    <th><b>Note</b></th>
+
+                    <!-- ตาราง id  -->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="showname"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="test"></div>
+
+
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValid"></div>
+                            </font>
+                        </b></td>
+                </tr>
+            </table>
+            <br><br>
+            <a href="aa.html" class="btn btn-success btn-lg"><b> Back </a> &nbsp;&nbsp;&nbsp;&nbsp;<a href=".html"
+                class="btn btn-primary btn-lg"><b> Next </b> </a>
+        </center>
+
+
+
+    </div>
+
+</body>
+
+
+
+<script>
+    function getbookstore() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+
+            }
+        };
+        xhttp.open("GET", "shopshop.xml", true);
+        xhttp.send();
+    }
+
+    function myFunction(xml) {
+        var x, i, xmlDoc, txt;
+        xmlDoc = xml.responseXML;
+        txtvalue = "";
+
+        noid = 1;
+        //  array เก็บ xml
+        var alldata = [];
+        var alldata2 = [];
+        // var ucxmlDescription = [];
+        // var ucxmltype = [];
+        // var ucxmlLenght = [];
+        // var ucxmlvalue = [];
+
+        x = xmlDoc.getElementsByTagName('Condition');
+        console.log("xl" + x.length);
+        let stridbook;
+
+        for (i = 0; i < x.length; i++) {
+            console.log("i" + i);
+            txtname = x[i].getAttribute('name');
+            txtDescription = x[i].getAttribute('Description');
+            txtvalue = x[i].getAttribute('value');
+            txttype = x[i].getAttribute('type');
+            txtLenght = x[i].getAttribute('Lenght');
+
+
+            // เก็บค่า value เข้า array
+            alldata.push({ "name": txtname, "Des": txtDescription, "Value": txtvalue, "Type": txttype, "Lenght": txtLenght });
+
+
+            var disValid = "Value Valid"
+            var disinValid = "InValid (Value)"
+            document.getElementById("disValid").innerHTML += disValid + "<br>" + disinValid + "<br>" + "<br>" + "<br>" + "<br>"+ "<br>";
+            document.getElementById("disValid").innerHTML += "";
+            document.getElementById("showname").innerHTML += alldata[i].name + "<br>"+ "<br>" + "<br>"+ "<br>" + "<br>"+ "<br>" + "<br>" ;
+            /// ทำให้ลูปเข้าใหม่ตลอดดดด
+
+
+            console.log(alldata[i]);
+
+
+
+
+
+
+            //  -----------------------------------------------------------------------------------------------------------------
+
+            stridbook = alldata[i].Value;
+            let pattidbook = /(Aug|Apr|A|Z|0|9|a|z|Computer,science,information and generalworks | Philosophy and psychology | Religion |Social sciences | Language | PureScience | Technology | Arts and recreation|Literature| History and geography|Jan|Feb|Mar| Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec |Electronic | Dress | Cosmetic | Appliance|E | R | P | V |T |H AB| AL| B | BA| BD | BF | BH |BL | BN |BR | BS | BT | CA |CB | CF | CH | CM | CO | CR | CT | CV | CW | DA | DD | DE |DG |DH | DL| DN | DT | DY |E | EC | EH | EN | EX | FK | FY | G | GL | GU | HA | HD | HG | HP | HR | HS | HU | HX | IG | IP | IV | KA | KT | KW | KY | L |LA | LD | LE | LL | LN | LS | LU | M | ME | MK | ML |N | NE | NG | NN | NP | NR | NW | OL | OX | PA | PE | PH | PL | PO| PO | PR | PG | RG | RH | RM | S | SA | SE | SL | SM | SN |SO |SP | SR | SS | ST | SW | SY |TA |TD |TF |TN |TQ |TR |TS | TW |UB |W |WA | WC | WD |WF | WN | WR | WS | WV | YO | ZE)/g;
+            //   var pattidbook = /\w/g;
+            let Arrayidbook = stridbook.match(pattidbook);
+            alldata2.push(Arrayidbook);
+            // console.log("Arrayidbook" + Arrayidbook);
+            noidbook = 1;
+            //  console.log("alldata2" + alldata2);
+
+            let random = Math.floor(Math.random() * 10);
+            let itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+', '[', ']', '/', '', '""', '()', '฿', '<', '>'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+            //ค่า valid testcase
+            let valid1 = new RandExp(stridbook).gen();
+            let INvalid1 = new RandExp(stridbook).gen();
+            let INvalid2 = valid1.substring(1, 7);
+            let INvalid4 = new RandExp(stridbook).gen();
+
+
+            //// Test Case Gen //// ชื่อ   Valid - Valid1
+            /// Value ครบ //
+            document.getElementById("test").innerHTML += valid1 + "<br>" ;
+
+            /// Value เกิน //
+            document.getElementById("test").innerHTML += INvalid1 + random + "<br>";
+
+
+             // Value  สลับตำแหน่ง ///
+             // document.getElementById("test").innerHTML += "-" +"<br>";
+
+
+            // Value  ขาด ///
+            document.getElementById("test").innerHTML += INvalid2 + "<br>";
+ 
+
+
+            // document.getElementById("test").innerHTML +=  "-"+ "<br>";
+
+
+             // Value  พิเศษที่เกินมา ///
+            document.getElementById("test").innerHTML += itemSymbol+INvalid4 + itemSymbol + "<br>"+ "<br>"+"<br>"+"<br>";   
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+</script>
+<br><br>
+
+</html>

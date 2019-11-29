@@ -5,280 +5,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Syntax Analysis</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+    </script>
+
+
 </head>
+<style>
+    body {
+        background-color: #7979798e;
+        /* background-image: url("img/pic3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .btn-warning {
+        box-shadow: 5px 2px 5px rgb(44, 44, 44);
+
+    }
+
+    .btn-primary {
+        background: rgb(0, 33, 179);
+        box-shadow: 5px 2px 5px rgb(134, 134, 134);
+
+    }
+
+    .btn-danger {
+        box-shadow: 8px 3px 5px rgb(216, 187, 190);
+    }
+</style>
+
+
 
 <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Newanalysis.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Newtestcase.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+
+
+        </ul>
+    </nav><br>
+
 
 
     <div class="container">
-         
-
-        <button onclick="numnum()">num</button>
-
-        <button onclick="TestText()">text</button>
-        <p id="demo"></p>
-        <p id="demo2"></p>
-     
-
-
-
-
-        <div id="show"></div>
         <center>
-            <div id="show3"></div>
-        </center>
-        <p>random Valid</p>
-        <div id="show1"></div>
+            <p><b>
+                    <h1><b> Test Analysis</b></h1>
+                </b></p>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 50%"
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <br>
 
-        <p>random InValid</p>
+        </center>
+        <!-- <p id=demo></p> -->
+
+        <p id=show4></p>
+        <p id=show1></p>
+
+
         <center>
-            <div id="show2"></div>
+            <button onclick= "xmltest()"  class="btn btn-warning">
+                <h5> &nbsp;&nbsp;&nbsp;&nbsp;Analysis&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+            </button>
+            <br>
         </center>
-   <div class="row">
-                    <div class="col-sm-6">.col-sm-6</div>
-                    <div class="col-sm-6">.col-sm-6</div>
-                  </div>
-                </div>
-
+        <h3><b>Data Dictionary</b></h3> <br>
+       </div> <center>
+           <hr>
+             <p id=demo></p>
+             <p id=displayid></p>
+             <p id=displaydes></p>
+             <p id=displaytypeid></p>
+             <p id=patternid></p>
+             <p id=showperid></p>
+            <br>
+            <a class="btn btn-danger btn-lg" href="Newtestcase.html" role="button">Testcase Generation</a><br><br><br>
+        </center>
+    </div><br>
     </div>
 
-
-    <script>
-
-        //  Valid Random
-        function numnum() {
-            var str = "[0-9][0-9][0-9]";
-
-            var patt1 = /\d/g;
-            //   var result = str.match(patt1);
-            var Array = str.match(patt1);
-
-
-            document.getElementById("demo").innerHTML = Array;
+</body>
 
 
 
-            var no = 1;
-            document.getElementById("show").innerHTML = "";
-            document.getElementById("show1").innerHTML = "";
-            for (var i = 0; i < Array.length; i++) {
 
-                if (i % 2 == 0) {
-                    //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
-                    document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
-
-                    document.getElementById("show1").innerHTML += "xy" + no + " = " + [Math.floor(Math.random() * Array.length)] + "<br>";
-
-                } else {
-                    console.log("y" + no + " = " + [Math.floor(Math.random() * Array.length)]);
-                    document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
-                    // document.getElementById("show2").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
-                    no++
-
-
-                }
+<script>
+    
+    var test = ''
+    function xmltest() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
             }
-            numnum2();
-        }
+        };
+        xhttp.open("GET", "newuc.xml", true);
+        xhttp.send();
+    }
 
-        //    Invalid test 1
-        function numnum2() {
+    function myFunction(xml) {
+        var x, i, xmlDoc, txt;
+        xmlDoc = xml.responseXML;
+        txt = "";
 
+        x = xmlDoc.getElementsByTagName('Condition');
+        var ucxml = [];
 
-            var str = "[0-9][0-9][0-9][0-9]";
+        for (i = 0; i < x.length; i++) {
+            txt += x[i].getAttribute('value');
 
-            var patt1 = /\d/g;
-            //   var result = str.match(patt1);
-            var Array = str.match(patt1);
-
-
-            // document.getElementById("demo2").innerHTML = Array;
-
-
-
-            var no = 1;
-            document.getElementById("show3").innerHTML = "";
-            document.getElementById("show2").innerHTML = "";
-            for (var i = 0; i < Array.length; i++) {
-
-                if (i % 2 == 0) {
-                    //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
-                    // document.getElementById("show3").innerHTML += "x" + no + " = " + Array[i] + "<br>";
-
-                    document.getElementById("show2").innerHTML += "xy" + no + " = " + [Math.floor(Math.random() * Array.length)] + "<br>";
-
-                    // document.getElementById("show1").innerHTML +=  [Math.floor(Math.random()* Array.length)]
-                } else {
-                    // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
-                    // document.getElementById("show3").innerHTML += "y" + no + " = " + Array[i] + "<br>";
-                    // document.getElementById("show2").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
-                    no++
+            ucxml.push(txt);
 
 
-                }
+
+        } 
+        console.log(ucxml);
+
+        
+        no = 1;
+        var pattID = /\d/g;
+        var strID = "[0-9][0-9][0-9]";
+        var disid = "ID";
+        var descript = "User ID";
+        var tpyeid = "integer(3)";
+
+
+        //   var result = str.match(patt1);
+        var Array = ucxml[0].match(pattID);
+        document.getElementById("demo").innerHTML = Array;  
+        document.getElementById("showperid").innerHTML = "";
+        document.getElementById("displayid").innerHTML = disid;
+        document.getElementById("displaydes").innerHTML = descript;
+        document.getElementById("displaytypeid").innerHTML = tpyeid;
+        // var no = 1;
+        document.getElementById("patternid").innerHTML = strID;
+        // display table id name  in TD //
+
+        // document.getElementById("valueid").innerHTML = "";
+
+        console.log(Array);
+        for (var i = 0; i < Array.length; i++) {
+            if (i % 2 == 0) {
+                //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+                document.getElementById("showperid").innerHTML += "Lower Bound" + no + " = " + Array[i] + "<br>";
+                console.log(Array[i + 1]);
+                var a = parseInt(Array[i + 1])
+                var b = parseInt(Array[i])
+                test = Math.floor(Math.random() * a) + b;
+                console.log(test);
+
+                //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+            } else {
+                document.getElementById("showperid").innerHTML += "Upper Bound" + no + " = " + Array[i] + "<br>";
+
+                // foo(i)
+                console.log(no);
+                // no++
             }
-        }
+        } no = 1
 
-//   Invalid Value  ค่าเกิน
-//         function TestText() {
-//             var name = "tanawat";
-
-//             var patt2 = /[a-zA-z]/g;
-
-//             var myArray2 = name.match(patt2); 
+    }
 
 
-//             document.getElementById("demo2").innerHTML = myArray2;
+</script>
 
 
-
-
-//             var to = 1;
-//             for (var i = 0; i < myArray2.length; i++) {
-
-
-//                 if (i % 1 == 0) {
-//                     console.log("x" + to + " = " + myArray2[i]);
-//                     document.getElementById("demo2").innerHTML += "<br>" + "x" + to + " = " + myArray2[i];
-
-//                     to++
-//                 } else {
-
-//                 }
-//             }
-
-//         }
-
-
-
-// var typebook, text, fLen, i;
-// typebook = ["Math", "Computer", "Internet"];
-// fLen = typebook.length;
-
-// text = "<ul>";
-// for (i = 0; i < fLen; i++) {
-//   text += "<li>" + typebook[i] + "</li>";
-// }
-// text += "</ul>";
-
-// document.getElementById("demo4").innerHTML = text;
-
-
-
-// ----------------------------------------
-
-// var jsonObj = { 
-//      MyRoot : {
-//                 test: 'success',
-//                 test2 : { 
-//                     item : [ 'val1', 'val2' ]
-//                 },
-//                 test3 : { 
-//                     item : [ 'val1', 'val2' ]
-//                 }
-//       }
-// };
-
-// console.log(jsonObj.MyRoot.test);
-
-// var test = {
-// 	"schema": {
-// 		"element": [
-// 			{
-// 				"simpleType": {
-// 					"restriction": {
-// 						"pattern": {
-// 							"_id": "1",
-// 							"_value": "[0-9][0-9][0-9][0-9]",
-// 							"__prefix": "xs"
-// 						},
-// 						"_base": "xs:integer",
-// 						"__prefix": "xs"
-// 					},
-// 					"__prefix": "xs"
-// 				},
-// 				"_name": "id",
-// 				"__prefix": "xs"
-// 			},
-// 			{
-// 				"simpleType": {
-// 					"restriction": {
-// 						"pattern": {
-// 							"_id": "2",
-// 							"_value": "[a-zA-z][a-zA-z][a-zA-z][a-zA-z]",
-// 							"__prefix": "xs"
-// 						},
-// 						"_base": "xs:string",
-// 						"__prefix": "xs"
-// 					},
-// 					"__prefix": "xs"
-// 				},
-// 				"_name": "firstname",
-// 				"__prefix": "xs"
-// 			},
-// 			{
-// 				"simpleType": {
-// 					"restriction": {
-// 						"enumeration": [
-// 							{
-// 								"_id": "3",
-// 								"_value": "Computer",
-// 								"__prefix": "xs"
-// 							},
-// 							{
-// 								"_id": "4",
-// 								"_value": "Math",
-// 								"__prefix": "xs"
-// 							},
-// 							{
-// 								"_id": "5",
-// 								"_value": "History",
-// 								"__prefix": "xs"
-// 							}
-// 						],
-// 						"_base": "xs:string",
-// 						"__prefix": "xs"
-// 					},
-// 					"__prefix": "xs"
-// 				},
-// 				"_name": "TypeBook",
-// 				"__prefix": "xs"
-// 			},
-// 			{
-// 				"simpleType": {
-// 					"restriction": {
-// 						"pattern": {
-// 							"_id": "6",
-// 							"_value": "[0-9][0-9][0-9]",
-// 							"__prefix": "xs"
-// 						},
-// 						"_base": "xs:integer",
-// 						"__prefix": "xs"
-// 					},
-// 					"__prefix": "xs"
-// 				},
-// 				"_name": "IdBook",
-// 				"__prefix": "xs"
-// 			},
-// 			{
-// 				"_name": "start",
-// 				"_id": "7",
-// 				"_type": "xs:date",
-// 				"__prefix": "xs"
-// 			}
-// 		],
-// 		"_xmlns:xs": "http://www.w3.org/2001/XMLSchema",
-// 		"__prefix": "xs"
-// 	}
-// }    
-// console.log(test.schema.element[0]); 
-
-
-
-
-
-    </script>
 
 </body>
 

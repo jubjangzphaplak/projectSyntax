@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Syntax Analysis</title>
+  <title>Syntax Test Case</title>
   <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -56,55 +56,50 @@
   .fa-remove {
     color: red;
   }
-  
 </style>
-
-
 
 <body>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
     &nbsp;&nbsp;<ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="Newanalysis.html">&nbsp;&nbsp;Syntax Testing</a>
+        <a class="nav-link" href="analysisxml.html">&nbsp;&nbsp;Syntax Testing</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="Newtestcase.html">&nbsp;&nbsp;Test Case</a></b>
       </li>
-
-
+      
     </ul>
   </nav><br>
-
-
 
   <div class="container">
     <center>
       <br>
-      <h1><b>Syntax Testcase</b></h1>
+      <div class="textanalysis">
+        <b>Syntax Testcase</b></div>
       <br>
       <div class="progress">
         <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
-          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
       </div>
     </center>
 
 
     <center>
       <br>
-      
-      <button onclick="numID(),numIDbook(),numIDcard()" class="btn btn-warning">
+
+      <button onclick="numID(),numIDbook(),numIDcard(),randomName(),numnum(), post(),numCar(), showaDataems() "
+        class="btn btn-warning">
         <h5><b>Test Generation</b></h5>
       </button>
     </center>
 
     <br>
+
     
-    <h3><b>&nbsp;&nbsp;&nbsp;Syntax ID</b></h3>
     <center>
       <table class="bg-primary">
         <tr>
@@ -117,14 +112,19 @@
         </tr>
         <tr class="table-light">
           <td>
-          <b><div id="displayid"></div></b>  
+            <b>
+              <div id="displayid"></div>
+            </b>
 
           </td>
           <td>
             <div id="randomid"></div>
+
           </td>
-          <td><b><font color="green">
-           <div id="showvalidTest"></div> </font>
+          <td><b>
+              <font color="green">
+                <div id="showvalidTest"></div>
+              </font>
             </b></td>
         </tr>
 
@@ -137,8 +137,10 @@
             <div id="randomidinvalid1"></div>
           </td>
           <td><b>
-              <font color="red"><div id="showinvalid1"></div>
-            </font></b></td>
+              <font color="red">
+                <div id="showinvalid1"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-light">
@@ -149,7 +151,9 @@
             <b>-</b>
           </td>
           <td><b>
-              <font color="red"><div id="showinvalid2"></div></font>
+              <font color="red">
+                <div id="showinvalid2"></div>
+              </font>
             </b></td>
         </tr>
 
@@ -161,7 +165,9 @@
             <div id="randomidinvalid3"></div>
           </td>
           <td><b>
-              <font color="red"> <div id="showinvalid3"></div></font>
+              <font color="red">
+                <div id="showinvalid3"></div>
+              </font>
             </b></td>
         </tr>
 
@@ -172,7 +178,9 @@
             <div id="randomidinvalid4"></div>
           </td>
           <td><b>
-              <font color="red"> <div id="showinvalid4"></div></font>
+              <font color="red">
+                <div id="showinvalid4"></div>
+              </font>
             </b></td>
         </tr>
 
@@ -180,15 +188,20 @@
 
         <tr class="table-info">
           <td>
-           <b><div id="displayidbook"></div></b> 
+            <b>
+              <div id="displayidbook"></div>
+            </b>
 
           </td>
           <td>
             <div id="randomidbook"></div>
+
           </td>
           <td><b>
-              <font color="green">   <div id="displayvalididbook"></div>
-           </font> </b></td>
+              <font color="green">
+                <div id="displayvalididbook"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-info">
@@ -199,8 +212,10 @@
             <div id="randomidbookinvalid1"></div>
           </td>
           <td><b>
-              <font color="red">  <div id="showinvalidIDbook1"></div>
-           </font> </b></td>
+              <font color="red">
+                <div id="showinvalidIDbook1"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-info">
@@ -211,20 +226,22 @@
             <div id="">-</div>
           </td>
           <td><b>
-              <font color="red">    <div id="showinvalidIDbook2"></div>
-           </font> </b></td>
+              <font color="red">
+                <div id="showinvalidIDbook2"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-info">
-          <td>
-
-          </td>
+          <td> </td>
           <td>
             <div id="randomidbookinvalid3"></div>
           </td>
           <td><b>
-              <font color="red">   <div id="showinvalidIDbook3"></div>
-           </font> </b></td>
+              <font color="red">
+                <div id="showinvalidIDbook3"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-info">
@@ -235,22 +252,27 @@
             <div id="randomidbookinvalid4"></div>
           </td>
           <td><b>
-              <font color="red">  <div id="showinvalidIDbook4"></div>
-          </font>
-          </b></td>
+              <font color="red">
+                <div id="showinvalidIDbook4"></div>
+              </font>
+            </b></td>
         </tr>
         <!-- --------------------------ตาราง บัตรประชาชน -->
         <tr class="table-light">
           <td>
-            <b> <div id="displayidcard"></div></b> 
-              
+            <b>
+              <div id="displayidcard"></div>
+            </b>
+
           </td>
           <td>
             <div id="randomidcard"></div>
           </td>
           <td><b>
-              <font color="green">   <div id="displayvalididcard"></div>
-           </font> </b></td>
+              <font color="green">
+                <div id="displayvalididcard"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-light">
@@ -261,32 +283,134 @@
             <div id="randomidcardinvalid1"></div>
           </td>
           <td><b>
-              <font color="red">    <div id="showinvalidIdcard1"></div>
-        </font>    </b></td>
+              <font color="red">
+                <div id="showinvalidIdcard1"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-light">
-          <td>
-
-          </td>
+          <td> </td>
           <td>
             <div id="">-</div>
           </td>
           <td><b>
-              <font color="red">  <div id="showinvalidIdcard2"></div>
-           </font> </b></td>
+              <font color="red">
+                <div id="showinvalidIdcard2"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-light">
-          <td>
-
-          </td>
+          <td> </td>
           <td>
             <div id="randomidcardinvalid3"></div>
           </td>
           <td><b>
-              <font color="red">     <div id="showinvalidIdcard3"></div>
-           </font> </b></td>
+              <font color="red">
+                <div id="showinvalidIdcard3"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td></td>
+          <td>
+            <div id="randomidcardinvalid4"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidIdcard4"></div>
+              </font>
+            </b></td>
+        </tr>
+
+
+        <!-- --------------------------ตาราง ชื่อ -->
+        <tr class="table-info">
+          <td>
+            <b>
+              <div id="showname"></div>
+            </b>
+
+          </td>
+          <td>
+            <div id="showsyntax"></div>
+          </td>
+          <td><b>
+              <font color="green">
+                <div id="displayvalididname"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>
+
+          </td>
+          <td>
+            <div id="randominvalidname1"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidname1"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td> </td>
+          <td>
+            <div id="randominvalidname2"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidname2"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td> </td>
+          <td>
+            <div id="randominvalidname3"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidname3"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td></td>
+          <td>
+            <div id="randominvalidname4"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidname4"></div>
+              </font>
+            </b></td>
+        </tr>
+
+
+        <!-- --------------------------ตาราง ชื่อ ปี -->
+        <tr class="table-light">
+          <td>
+            <b>
+              <div id="showValue"></div>
+            </b>
+
+          </td>
+          <td>
+            <div id="showsyntax1"></div>
+          </td>
+          <td><b>
+              <font color="green">
+                <div id="showValid"></div>
+              </font>
+            </b></td>
         </tr>
 
         <tr class="table-light">
@@ -294,19 +418,265 @@
 
           </td>
           <td>
-            <div id="randomidcardinvalid4"></div>
+            <div id="randomidinvalidmix1"></div>
           </td>
           <td><b>
-              <font color="red">    <div id="showinvalidIdcard4"></div>
-           </font> </b></td>
+              <font color="red">
+                <div id="showinvalid01"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td> </td>
+          <td>
+            <div id="randomidinvalidmix2"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalid02"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td> </td>
+          <td>
+            <div id="randomidinvalidmix3"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalid03"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td></td>
+          <td>
+            <div id="randomidinvalidmix4"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalid04"></div>
+              </font>
+            </b></td>
+        </tr>
+
+
+        <!-- --------------------------ตาราง รหัสไปรษณีย์ -->
+        <tr class="table-info">
+          <td>
+            <b>
+              <div id="postcode"></div>
+            </b>
+
+          </td>
+          <td>
+            <div id="showValidpost"></div>
+          </td>
+          <td><b>
+              <font color="green">
+                <div id="showpostvalid"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidinvalidpost1"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidpost1"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td> </td>
+          <td>
+            <div id="randomidinvalidpost2"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidpost2"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td> </td>
+          <td>
+            <div id="randomidinvalidpost3"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidpost3"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-info">
+          <td></td>
+          <td>
+            <div id="randomidinvalidpost4"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidpost4"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+            <b>
+              <div id="cartext"></div>
+            </b>
+
+          </td>
+          <td>
+            <div id="showcarrandom"></div>
+          </td>
+          <td><b>
+              <font color="green">
+                <div id="disValidcar"></div>
+              </font>
+            </b></td>
+        </tr>
+        <!-- -----------------------------------------Start Invalid------------------------------- -->
+
+        <!-- invalid 1 -->
+        <tr class="table-light">
+          <td></td>
+          <td>
+            <div id="randomidinvalidcar1"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidcar1"></div>
+              </font>
+            </b></td>
+        </tr>
+
+
+        <!-- invalid 2 -->
+        <tr class="table-light">
+          <td></td>
+          <td>
+            <div id="randomidinvalidcar2"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidcar2"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <!-- invalid 3 -->
+        <tr class="table-light">
+          <td></td>
+          <td>
+            <div id="randomidinvalidcar3"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidcar3"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <!-- invalid 4 -->
+        <tr class="table-light">
+          <td></td>
+          <td>
+            <div id="randomidinvalidcar4"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidcar4"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <!-- --------------------------ตาราง ems  -->
+        <tr class="table-light">
+          <td>
+            <b>
+              <div id="emstext"></div>
+            </b>
+
+          </td>
+          <td>
+            <div id="showallems"></div>
+          </td>
+          <td><b>
+              <font color="green">
+                <div id="disValidems"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td>
+
+          </td>
+          <td>
+            <div id="randomidinvalidems1"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidems1"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td> </td>
+          <td>
+            <div id="randomidinvalidems2"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidems2"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td> </td>
+          <td>
+            <div id="randomidinvalidems3"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidems3"></div>
+              </font>
+            </b></td>
+        </tr>
+
+        <tr class="table-light">
+          <td></td>
+          <td>
+            <div id="randomidinvalidems4"></div>
+          </td>
+          <td><b>
+              <font color="red">
+                <div id="showinvalidems4"></div>
+              </font>
+            </b></td>
         </tr>
 
 
 
       </table>
-
       <br><br>
-      <p><a href="Newanalysis.html" class="btn btn-success btn-lg"><b> Back </b> </a></p>
+      <a href="Newanalysis.html" class="btn btn-success btn-lg"><b> Back </a> &nbsp;&nbsp;&nbsp;&nbsp;<a
+        href="patterndev.html" class="btn btn-primary btn-lg"><b> Next </b> </a>
     </center>
 
 
@@ -320,6 +690,8 @@
 
 
   <!-- Script gen syntax -->
+
+  <!-- Short name + Sequence + Calender Year ที่ต้องทำ -->
   <script>
     var strID = "[0-9][0-9][0-9]";
     var disid = "ID";
@@ -432,8 +804,6 @@
               document.getElementById("randomidinvalid1").innerHTML += test * test;
               document.getElementById("randomidinvalid4").innerHTML += test;
 
-
-
               console.log(substr.substring(0, 2));
 
               no = no + 1;
@@ -468,9 +838,6 @@
     //  Valid Random\
     var test = ''
     function numIDbook() {
-
-
-
       // แสดงค่าโชว์หน้าจอในตารางตอนกด gen display table idbook name  in TD //
       document.getElementById("displayidbook").innerHTML = disidbook;
       document.getElementById("displayvalididbook").innerHTML = showValidbook;
@@ -479,8 +846,6 @@
       document.getElementById("showinvalidIDbook3").innerHTML = showinvalidIDbook3;
       document.getElementById("showinvalidIDbook4").innerHTML = showinvalidIDbook4;
       ///  จบแสดงค่าโชว์หน้าจอในตารางตอนกด gen .//
-
-
 
       // var no = 1;
       // document.getElementById("patternidbook").innerHTML = strIDbook;
@@ -511,9 +876,6 @@
 
           foo2(i)
           console.log(no);
-
-
-
           // no++
 
         }
@@ -523,19 +885,13 @@
 
     }
 
-
     var no = 1;
     var substr = ''
     function foo2(x) {
-
-
-
       //   ?? [0-9]
       dance:
       for (var i = 1; i > 0; i++) {
         if (i % 2 == 0) {
-
-
           dance2:
           for (var j = 1; j > 0; j++) {
             var a = parseInt(Array[i - 1])
@@ -622,9 +978,6 @@
 
           foo3(i)
           console.log(no);
-
-
-
           // no++
 
         }
@@ -637,9 +990,6 @@
 
     var no = 1;
     function foo3(x) {
-
-
-
       //   ?? [0-9]
       dance:
       for (var i = 1; i > 0; i++) {
@@ -675,9 +1025,662 @@
       }
     }
 
+
+    function randomName() {
+      var text = "syntax"
+      var name = "Name";
+      var showValidname = "Valid Testcase";
+      var showinvalidname1 = "Invalid (Value)";
+      var showinvalidname2 = " (Substitution)";
+      var showinvalidname3 = "Invalid (Omission)";
+      var showinvalidname4 = "Invalid (Addition)";
+      var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+      console.log(chars);
+      var string_length = 1;
+      var randomstring = '';
+      for (var i = 0; i < string_length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        randomstring += chars.substring(rnum, rnum + 1);
+      }
+      // document.getElementById("showsyntax").innerHTML = randomstring;
+      console.log(randomName);
+      document.getElementById("showname").innerHTML = name;
+      document.getElementById("showsyntax").innerHTML = "";
+      document.getElementById("randominvalidname1").innerHTML = "";
+      document.getElementById("randominvalidname2").innerHTML = "";
+      document.getElementById("randominvalidname3").innerHTML = "";
+      document.getElementById("randominvalidname4").innerHTML = "";
+      document.getElementById("displayvalididname").innerHTML = showValidname;
+      document.getElementById("showinvalidname1").innerHTML = showinvalidname1;
+      document.getElementById("showinvalidname2").innerHTML = showinvalidname2;
+      document.getElementById("showinvalidname3").innerHTML = showinvalidname3;
+      document.getElementById("showinvalidname4").innerHTML = showinvalidname4;
+
+      var text1 = "syntax"
+      var chars1 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+      console.log(chars1);
+      var string_length1 = 4;
+      var randomstring1 = '';
+      for (var i = 0; i < string_length1; i++) {
+        var rnum1 = Math.floor(Math.random() * chars1.length);
+        randomstring1 += chars1.substring(rnum1, rnum1 + 1);
+      }
+
+      document.getElementById("showsyntax").innerHTML += randomstring + randomstring1;
+      document.getElementById("randominvalidname1").innerHTML += randomstring + randomstring1 + randomstring1;
+      document.getElementById("randominvalidname2").innerHTML += randomstring1 + randomstring;
+      document.getElementById("randominvalidname3").innerHTML += randomstring1;
+      document.getElementById("randominvalidname4").innerHTML += randomstring1 + "Extra";
+    }
+
+    // ---------------------------------------------------
+
+    var strmix = "[0-9][0-9][0-9][0-9]";
+    var value = "Surname Yaer-Sequence";
+    var disValid = "Value Valid"
+    var showinvalidText1 = "Invalid (Value)";
+    var showinvalidText2 = "Invalid (Substitution)";
+    var showinvalidText3 = "Invalid (Omission)";
+    var showinvalidText4 = "Invalid (Addition)";
+
+    var s = "9999";
+    var patt1 = /\d/g;
+    //   var result = str.match(patt1);
+    var Array = strmix.match(patt1);
+
+    //  Valid Random\
+    var test1 = ''
+    function numnum() {
+      document.getElementById("showValue").innerHTML = "";
+      document.getElementById("showValid").innerHTML = "";
+      document.getElementById("showValue").innerHTML = value;
+      document.getElementById("showValid").innerHTML = disValid;
+
+      document.getElementById("showinvalid1").innerHTML = showinvalidText1;
+      document.getElementById("showinvalid2").innerHTML = showinvalidText2;
+      document.getElementById("showinvalid3").innerHTML = showinvalidText3;
+      document.getElementById("showinvalid4").innerHTML = showinvalidText4;
+
+      document.getElementById("randomidinvalid1").innerHTML = "";
+      document.getElementById("randomidinvalid2").innerHTML = "";
+      document.getElementById("randomidinvalid3").innerHTML = "";
+      document.getElementById("randomidinvalid4").innerHTML = "";
+
+
+
+
+
+      console.log(Array);
+
+
+      for (var i = 0; i < Array.length; i++) {
+
+        if (i % 2 == 0) {
+          //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+          // document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+          console.log(Array[i + 1]);
+          var a = parseInt(Array[i + 1])
+          var b = parseInt(Array[i])
+          test = Math.floor(Math.random() * a) + b;
+          console.log(test);
+
+          //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+        } else {
+          // document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+
+          foo4(i)
+          console.log(no);
+
+
+
+          // no++
+
+        }
+
+      } no = 1
+      randomString()
+      arr = ''
+
+      var set1 = localStorage.getItem('get1');
+      var set2 = localStorage.getItem('get2');
+      var set3 = localStorage.getItem('get3');
+
+      // child.parentNode.insertBefore(text, child);
+
+
+    }
+
+
+
+
+    var no = 1;
+
+    var arr = ''
+    function foo4(x) {
+
+
+
+      //   วน [0-9]
+
+      dance:
+      for (var i = 1; i > 0; i++) {
+        if (i % 2 == 0) {
+
+
+          dance2:
+          for (var j = 1; j > 0; j++) {
+
+            var a = parseInt(Array[i - 1])
+            var b = parseInt(Array[i])
+            var t = Math.floor(Math.random() * a) + b
+            //  console.log(test, t);
+
+            // console.log('Break');
+
+            if (test == t) {
+              console.log("Break", test, t);
+              arr += test;
+              console.log(arr);
+
+              // document.getElementById("show4").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+              // document.getElementById("show1").innerHTML += test;
+
+              no = no + 1;
+              break dance2;
+
+
+            }
+
+
+
+            // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+            // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+          } break dance;
+
+        }
+      }
+
+
+
+    }
+
+
+    function randomString() {
+      var text = "syntax"
+      var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+      console.log(chars);
+      var string_length = 1;
+      var randomstring = '';
+      for (var i = 0; i < string_length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        randomstring += chars.substring(rnum, rnum + 1);
+      } // document.getElementById("showsyntax").innerHTML = randomstring;
+      console.log(randomstring);
+
+      document.getElementById("showsyntax1").innerHTML = "";
+      var text1 = "syntax"
+      var chars1 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+      console.log(chars1);
+
+
+      // random จำนวนที่ต้องการว่าต้องการกี่ตัว Math.floor(Math.random() * 4) + 1
+      var string_length1 = 4;
+      var randomstring1 = '';
+      for (var i = 0; i < string_length1; i++) {
+        var rnum1 = Math.floor(Math.random() * chars1.length);
+        randomstring1 += chars1.substring(rnum1, rnum1 + 1);
+      }
+
+      document.getElementById("showsyntax1").innerHTML += randomstring + randomstring1 + arr + "-" + s;
+      document.getElementById("randomidinvalid1").innerHTML += randomstring + randomstring1 + arr * arr + "-" + s;
+      document.getElementById("randomidinvalid2").innerHTML += arr + randomstring + randomstring1 + "-" + s;
+      document.getElementById("randomidinvalid3").innerHTML += arr + randomstring1 + "-" + s;
+      document.getElementById("randomidinvalid4").innerHTML += randomstring + randomstring1 + arr + "-" + s + "Extra";
+      localStorage.setItem('get1', randomstring);
+      localStorage.setItem('get2', randomstring1);
+      localStorage.setItem('get3', s);
+      // console.log(aaa+"AAAA");
+    }
+
+    // ---------------------------------------------------------------------------------------------
+
+    var strmix = "[0-9][0-9][0-9][0-9]";
+    var value = "Name Yaer-Sequence";
+    var disValid = "Value Valid"
+    var showinvalidText1 = "Invalid (Value)";
+    var showinvalidText2 = "Invalid (Substitution)";
+    var showinvalidText3 = "Invalid (Omission)";
+    var showinvalidText4 = "Invalid (Addition)";
+
+    var s = "9999";
+    var patt1 = /\d/g;
+    //   var result = str.match(patt1);
+    var Array = strmix.match(patt1);
+
+    //  Valid Random\
+    var test1 = ''
+    function numnum() {
+      document.getElementById("showValue").innerHTML = "";
+      document.getElementById("showValid").innerHTML = "";
+      document.getElementById("showValue").innerHTML = value;
+      document.getElementById("showValid").innerHTML = disValid;
+
+      document.getElementById("showinvalid01").innerHTML = showinvalidText1;
+      document.getElementById("showinvalid02").innerHTML = showinvalidText2;
+      document.getElementById("showinvalid03").innerHTML = showinvalidText3;
+      document.getElementById("showinvalid04").innerHTML = showinvalidText4;
+
+      document.getElementById("randomidinvalidmix1").innerHTML = "";
+      document.getElementById("randomidinvalidmix2").innerHTML = "";
+      document.getElementById("randomidinvalidmix3").innerHTML = "";
+      document.getElementById("randomidinvalidmix4").innerHTML = "";
+
+
+
+
+
+      console.log(Array);
+
+
+      for (var i = 0; i < Array.length; i++) {
+
+        if (i % 2 == 0) {
+          //  console.log("x" + no + " = " + [Math.floor(Math.random()* Array.length)] );
+          // document.getElementById("show").innerHTML += "x" + no + " = " + Array[i] + "<br>";
+          console.log(Array[i + 1]);
+          var a = parseInt(Array[i + 1])
+          var b = parseInt(Array[i])
+          test = Math.floor(Math.random() * a) + b;
+          console.log(test);
+
+          //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+        } else {
+          // document.getElementById("show").innerHTML += "y" + no + " = " + Array[i] + "<br>";
+
+          foo4(i)
+          console.log(no);
+
+
+
+          // no++
+
+        }
+
+      } no = 1
+      randomString()
+      arr = ''
+
+      var set1 = localStorage.getItem('get1');
+      var set2 = localStorage.getItem('get2');
+      var set3 = localStorage.getItem('get3');
+
+      // child.parentNode.insertBefore(text, child);
+
+
+    }
+
+
+
+
+    var no = 1;
+
+    var arr = ''
+    function foo4(x) {
+
+
+
+      //   วน [0-9]
+
+      dance:
+      for (var i = 1; i > 0; i++) {
+        if (i % 2 == 0) {
+
+
+          dance2:
+          for (var j = 1; j > 0; j++) {
+
+            var a = parseInt(Array[i - 1])
+            var b = parseInt(Array[i])
+            var t = Math.floor(Math.random() * a) + b
+            //  console.log(test, t);
+
+            // console.log('Break');
+
+            if (test == t) {
+              console.log("Break", test, t);
+              arr += test;
+              console.log(arr);
+
+              // document.getElementById("show4").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+              // document.getElementById("show1").innerHTML += test;
+
+              no = no + 1;
+              break dance2;
+
+
+            }
+
+
+
+            // console.log("y" + no + " = " + [Math.floor(Math.random()* Array.length)]);
+
+            // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Array.length)] + "<br>";
+
+          } break dance;
+
+        }
+      }
+
+
+
+    }
+
+
+    function randomString() {
+      var text = "syntax"
+      var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+      console.log(chars);
+      var string_length = 1;
+      var randomstring = '';
+      for (var i = 0; i < string_length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        randomstring += chars.substring(rnum, rnum + 1);
+      } // document.getElementById("showsyntax").innerHTML = randomstring;
+      console.log(randomstring);
+
+      document.getElementById("showsyntax1").innerHTML = "";
+      var text1 = "syntax"
+      var chars1 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+      console.log(chars1);
+
+
+      // random จำนวนที่ต้องการว่าต้องการกี่ตัว Math.floor(Math.random() * 4) + 1
+      var string_length1 = 4;
+      var randomstring1 = '';
+      for (var i = 0; i < string_length1; i++) {
+        var rnum1 = Math.floor(Math.random() * chars1.length);
+        randomstring1 += chars1.substring(rnum1, rnum1 + 1);
+      }
+
+      document.getElementById("showsyntax1").innerHTML += randomstring + randomstring1 + arr + "-" + s;
+      document.getElementById("randomidinvalidmix1").innerHTML += randomstring + randomstring1 + arr * arr + "-" + s;
+      document.getElementById("randomidinvalidmix2").innerHTML += arr + randomstring + randomstring1 + "-" + s;
+      document.getElementById("randomidinvalidmix3").innerHTML += arr + randomstring1 + "-" + s;
+      document.getElementById("randomidinvalidmix4").innerHTML += randomstring + randomstring1 + arr + "-" + s + "Extra";
+      localStorage.setItem('get1', randomstring);
+      localStorage.setItem('get2', randomstring1);
+      localStorage.setItem('get3', s);
+      // console.log(aaa+"AAAA");
+    }
+
+    // random postcode //
+    var postcode = "Postcode"
+    var showpostvalid = "Value Valid"
+    var showinvalidpost1 = "Invalid (Value)";
+    var showinvalidpost2 = "Invalid (Substitution)";
+    var showinvalidpost3 = "Invalid (Omission)";
+    var showinvalidpost4 = "Invalid (Addition)";
+    function post() {
+      document.getElementById("postcode").innerHTML = "";
+      document.getElementById("showValidpost").innerHTML = "";
+      document.getElementById("postcode").innerHTML = postcode;
+      document.getElementById("showpostvalid").innerHTML = showpostvalid;
+
+      document.getElementById("showinvalidpost1").innerHTML = showinvalidpost1;
+      document.getElementById("showinvalidpost2").innerHTML = showinvalidpost2;
+      document.getElementById("showinvalidpost3").innerHTML = showinvalidpost3;
+      document.getElementById("showinvalidpost4").innerHTML = showinvalidpost4;
+
+      document.getElementById("randomidinvalidpost1").innerHTML = "";
+      document.getElementById("randomidinvalidpost2").innerHTML = "";
+      document.getElementById("randomidinvalidpost3").innerHTML = "";
+      document.getElementById("randomidinvalidpost4").innerHTML = "";
+
+      var item = ['AB', 'AL', 'B', 'BA', 'BD', 'BF', 'BH', 'BL', 'BN', 'BR', 'BS', 'BT', 'CA', 'CB', 'CF', 'CH', 'CM', 'CO', 'CR', 'CT', 'CV',
+        'CW', 'DA', 'DD', 'DE', 'DG', 'DH', 'DL', 'DN', 'DT', 'DY', 'E', 'EC', 'EH', 'EN', 'EX', 'FK', 'FY', 'G', 'GL', 'GU', 'HA', 'HD', 'HG', 'HP'
+        , 'HR', 'HS', 'HU', 'HX', 'IG', 'IP', 'IV', 'KA', 'KT', 'KW', 'KY', 'L', 'LA', 'LD', 'LE', 'LL', 'LN', 'LS', 'LU', 'M', 'ME', 'MK', 'ML', 'N'
+        , 'NE', 'NG', 'NN', 'NP', 'NR', 'NW', 'OL', 'OX', 'PA', 'PE', 'PH', 'PL', 'PO', 'PO', 'PR', 'PG', 'RG', 'RH', 'RM', 'S', 'SA', 'SE', 'SL', 'SM'
+        , 'SN', 'SO', 'SP', 'SR', 'SS', 'ST', 'SW', 'SY', 'TA', 'TD', 'TF', 'TN', 'TQ', 'TR', 'TS', 'TW', 'UB', 'W', 'WA', 'WC', 'WD', 'WF', 'WN', 'WR'
+        , 'WS', 'WV', 'YO', 'ZE'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+      console.log(item);
+
+      // document.getElementById("demo3").innerHTML = item;
+      var hh = Math.floor(Math.random() * 9 + 1);
+      var gg = Math.floor(Math.random() * 9 + 1);
+
+      var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+      console.log(chars);
+      var string_length4 = 2;
+      var randomstringpost = '';
+      for (var i = 0; i < string_length4; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        randomstringpost += chars.substring(rnum, rnum + 1);
+      };
+      console.log(randomstringpost);
+      document.getElementById("showValidpost").innerHTML = item + hh + "&nbsp" + gg + randomstringpost;
+      document.getElementById("randomidinvalidpost1").innerHTML += item + hh + hh + "&nbsp" + gg + randomstringpost;
+      document.getElementById("randomidinvalidpost2").innerHTML += hh + item + "&nbsp" + gg + randomstringpost;
+      document.getElementById("randomidinvalidpost3").innerHTML += item + "&nbsp" + gg + randomstringpost;
+      document.getElementById("randomidinvalidpost4").innerHTML += item + hh + "&nbsp" + gg + randomstringpost + "Extra";
+    }
+    // --------------------------------------------------------------------------------------
+    //  Random car // 
+    var car = "[0-9][0-9][0-9][0-9]";
+    var cartext = "License plate";
+    var disValidcar = "Value Valid"
+    var showinvalidcar1 = "Invalid (Value)";
+    var showinvalidcar2 = "Invalid (Substitution)";
+    var showinvalidcar3 = "Invalid (Omission)";
+    var showinvalidcar4 = "Invalid (Addition)";
+
+
+    var patt1 = /\d/g;
+    //   var result = car.match(patt1);
+    var Arraycar = car.match(patt1);
+
+    //  Valid Random\
+    var test = ''
+    function numCar() {
+      document.getElementById("cartext").innerHTML = "";
+      document.getElementById("disValidcar").innerHTML = "";
+      document.getElementById("cartext").innerHTML = cartext;
+      document.getElementById("disValidcar").innerHTML = disValidcar;
+
+      document.getElementById("showinvalidcar1").innerHTML = showinvalidcar1;
+      document.getElementById("showinvalidcar2").innerHTML = showinvalidcar2;
+      document.getElementById("showinvalidcar3").innerHTML = showinvalidcar3;
+      document.getElementById("showinvalidcar4").innerHTML = showinvalidcar4;
+
+      document.getElementById("randomidinvalidcar1").innerHTML = "";
+      document.getElementById("randomidinvalidcar2").innerHTML = "";
+      document.getElementById("randomidinvalidcar3").innerHTML = "";
+      document.getElementById("randomidinvalidcar4").innerHTML = "";
+
+
+
+
+
+      console.log(Arraycar);
+
+
+      for (var i = 0; i < Arraycar.length; i++) {
+
+        if (i % 2 == 0) {
+          //  console.log("x" + no + " = " + [Math.floor(Math.random()* Arraycar.length)] );
+          // document.getElementById("show").innerHTML += "x" + no + " = " + Arraycar[i] + "<br>";
+          console.log(Arraycar[i + 1]);
+          var a = parseInt(Arraycar[i + 1])
+          var b = parseInt(Arraycar[i])
+          test = Math.floor(Math.random() * a) + b;
+          console.log(test);
+
+          //document.getElementById("show1").innerHTML += "x" + no + " = " + test + "<br>";
+
+        } else {
+          // document.getElementById("show").innerHTML += "y" + no + " = " + Arraycar[i] + "<br>";
+
+          foo5(i)
+          console.log(no);
+          // no++
+
+        }
+
+      } no = 1
+      randomCar()
+      arr = ''
+      var set1 = localStorage.getItem('get1');
+      var set2 = localStorage.getItem('get2');
+      var set3 = localStorage.getItem('get3');
+
+      // child.parentNode.insertBefore(text, child);
+    }
+
+
+
+    var no = 1;
+    var arr = ''
+    function foo5(x) {
+      //   วน [0-9]
+      dance:
+      for (var i = 1; i > 0; i++) {
+        if (i % 2 == 0) {
+          dance2:
+          for (var j = 1; j > 0; j++) {
+
+            var a = parseInt(Arraycar[i - 1])
+            var b = parseInt(Arraycar[i])
+            var t = Math.floor(Math.random() * a) + b
+            //  console.log(test, t);
+
+            // console.log('Break');
+
+            if (test == t) {
+              console.log("Break", test, t);
+              arr += test;
+              console.log(arr);
+
+              // document.getElementById("show4").innerHTML += "x" + no + " = " + test + "&nbsp;" + "&nbsp;" + "y" + no + " = " + t + "<br>";
+              // document.getElementById("show1").innerHTML += test;
+
+              no = no + 1;
+              break dance2;
+            }
+            // console.log("y" + no + " = " + [Math.floor(Math.random()* Arraycar.length)]);
+
+            // document.getElementById("show4").innerHTML +="y" + no + " = " + [Math.floor(Math.random()* Arraycar.length)] + "<br>";
+
+          } break dance;
+
+        }
+      }
+    }
+
+
+    function randomCar() {
+      var text = "syntax"
+      var charsCar = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+      console.log(charsCar);
+      var string4_length = 2;
+      var randomnumcar = '';
+      for (var i = 0; i < string4_length; i++) {
+        var rnum = Math.floor(Math.random() * charsCar.length);
+        randomnumcar += charsCar.substring(rnum, rnum + 1);
+      } // document.getElementById("showsyntax").innerHTML = randomnumcar;
+      console.log(randomnumcar);
+
+      document.getElementById("showcarrandom").innerHTML = "";
+      document.getElementById("showcarrandom").innerHTML += randomnumcar + arr;
+      document.getElementById("randomidinvalidcar1").innerHTML += randomnumcar + arr * arr;
+      document.getElementById("randomidinvalidcar2").innerHTML += arr + randomnumcar;
+      document.getElementById("randomidinvalidcar3").innerHTML += arr;
+      document.getElementById("randomidinvalidcar4").innerHTML += randomnumcar + "Extra";
+      localStorage.setItem('get1', randomnumcar);
+      localStorage.setItem('get2', randomnumcar);
+      // localStorage.setItem('get3', s);
+      // console.log(aaa+"AAAA");
+
+
+    }
+
+
+    //     Testcase EMS ////////////////////////////////////
+    var emstext = "EMS";
+    var disValidems = "Value Valid"
+    var showinvalidems1 = "Invalid (Value)";
+    var showinvalidems2 = "Invalid (Substitution)";
+    var showinvalidems3 = "Invalid (Omission)";
+    var showinvalidems4 = "Invalid (Addition)";
+    function showaDataems() {
+      document.getElementById("showallems").innerHTML = "";
+      document.getElementById("disValidems").innerHTML = "";
+      document.getElementById("emstext").innerHTML = emstext;
+      document.getElementById("disValidems").innerHTML = disValidems;
+
+      document.getElementById("showinvalidems1").innerHTML = showinvalidems1;
+      document.getElementById("showinvalidems2").innerHTML = showinvalidems2;
+      document.getElementById("showinvalidems3").innerHTML = showinvalidems3;
+      document.getElementById("showinvalidems4").innerHTML = showinvalidems4;
+
+      document.getElementById("randomidinvalidems1").innerHTML = "";
+      document.getElementById("randomidinvalidems2").innerHTML = "";
+      document.getElementById("randomidinvalidems3").innerHTML = "";
+      document.getElementById("randomidinvalidems4").innerHTML = "";
+
+
+
+
+      var item = ['E', 'R', 'P', 'V'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+      console.log(item);
+
+      // document.getElementById("demo3").innerHTML = item;
+      var num1 = Math.floor(Math.random() * 10);
+      var num2 = Math.floor(Math.random() * 10);
+      var num3 = Math.floor(Math.random() * 10);
+      var num4 = Math.floor(Math.random() * 10);
+      var num5 = Math.floor(Math.random() * 10);
+      var num6 = Math.floor(Math.random() * 10);
+      var num7 = Math.floor(Math.random() * 10);
+      var num8 = Math.floor(Math.random() * 10);
+      var num9 = Math.floor(Math.random() * 10);
+      var th = "TH";
+
+
+
+      var textems = "syntax"
+      var charsems = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+      console.log(charsems);
+      var string_lengthems = 1;
+      var randomstringems = '';
+      for (var i = 0; i < string_lengthems; i++) {
+        var rnumems = Math.floor(Math.random() * charsems.length);
+        randomstringems += charsems.substring(rnumems, rnumems + 1);
+      };
+
+
+
+
+      document.getElementById("showallems").innerHTML = item + randomstringems + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + th;
+      document.getElementById("randomidinvalidems1").innerHTML = item + randomstringems + randomstringems + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + th;
+      document.getElementById("randomidinvalidems2").innerHTML = item + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + randomstringems + th;
+      document.getElementById("randomidinvalidems3").innerHTML = item + randomstringems + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+      document.getElementById("randomidinvalidems4").innerHTML = item + randomstringems + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + th + "Extra";
+
+    }
+
+
+
+
+
+
+
+
+
+
   </script>
-
-
 </body>
 
 </html>

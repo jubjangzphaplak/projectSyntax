@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <UC>
+    <Input>
+            <Condition name="ID Product "   Description="ID of Product"  value="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][A-Z][A-Z][0-9][0-9]"    type="integer" Lenght ="15" />
+    </Input>
+    <Input>
+            <Condition name="User Name" Description="Username order of product" value="[A-Z][a-z][a-z][a-z][a-z]" type="string"  Lenght ="5" />
+    </Input>
+    <Input>
+            <Condition name="ProductName" Description="Name of Product" value="[A-Z][a-z][a-z][a-z][a-z]" type="integer" Lenght ="5"/>
+    </Input>
+    <Input>
+            <Condition name="TypeProduct" Description="Category of product" value="(Electronic | Dress | Cosmetic | Appliance )" type="list" Lenght ="-" />
+    </Input>
+    <Input>
+            <Condition name="Number Product" Description="Order amount" value="[0-9]" type="integer" Lenght ="1"/>
+    </Input>
+    <Input>
+            <Condition name="EMS" Description="Code of ems" value="(E|R|P|V)[A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][T][H]" type="string" Lenght="12"/>
+    </Input>  
+    <Input>
+        <Condition name="Date" Description="Laon Date" value="[0-9][0-9](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[0-9][0-9][0-9][0-9]" type="string" Lenght="12"/>
+    </Input>  
+    <Input>
+        <Condition name="PostCode" Description="Postcode UK" value="(AB| AL| B | BA| BD | BF | BH |BL | BN |BR | BS | BT | CA |CB | CF | CH | CM | CO | CR | CT | CV | CW | DA | DD | DE |DG |DH | DL| DN | DT | DY |E | EC | EH | EN | EX | FK | FY | G | GL | GU | HA | HD | HG | HP | HR | HS | HU | HX | IG | IP | IV | KA | KT | KW | KY | L |LA | LD | LE | LL | LN | LS | LU | M | ME | MK | ML |N | NE | NG | NN | NP | NR | NW | OL | OX | PA | PE | PH | PL | PO| PO | PR | PG | RG | RH | RM | S | SA | SE | SL | SM | SN |SO |SP | SR | SS | ST | SW | SY |TA |TD |TF |TN |TQ |TR |TS | TW |UB |W |WA | WC | WD |WF | WN | WR | WS | WV | YO | ZE)[0-9]  [0-9][A-Z][A-Z]" type="string" Lenght="6" />
+     </Input>
+</UC>

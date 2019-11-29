@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Syntax Test Case</title>
+    <link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Play|Saira+Stencil+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+
+    </script>
+
+
+</head>
+<style>
+    body {
+        background-color: #7979798e;
+        /* background-image: url("img/pic3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 60%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    .fa-check {
+        color: green;
+    }
+
+    .fa-remove {
+        color: red;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">&nbsp;&nbsp;SYNT</a>
+        &nbsp;&nbsp;<ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="browse.html"><b>&nbsp;&nbsp;XML Extraction</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="analysisxml.html">&nbsp;&nbsp;Syntax Testing</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="testcasexml.html">&nbsp;&nbsp;Test Case</a></b>
+            </li>
+           
+
+        </ul>
+    </nav><br>
+
+    <div class="container">
+        <center>
+            <br>
+            <div class="textanalysis">
+                <b>Syntax Testcase</b></div>
+            <br>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
+                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+            </div>
+        </center>
+
+
+        <center>
+            <br>
+
+            <button
+                onclick="getbookstore(),randomid(),randomString(),randomidbook(),randomtypebook(),randomNum(),randomDate(),randomIDproduct(),randomNamePro(), randomProductName(),randomtypeShop(),randomNumPro(),showaems(),randomDateShop(), post()  "
+                class="btn btn-warning">
+                <h5><b>Test Generation</b></h5>
+            </button>
+        </center>
+
+        <br>
+
+
+
+        <h4><b>Case study : Library System</b></h4><br>
+        <center>
+            <table class="bg-primary">
+                <tr>
+                    <th><b>Variable</b></th>
+                    <th><b>Testcase</b></th>
+                    <th><b>Note</b></th>
+
+                    <!-- ตาราง id student-->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="id"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showrandomidvalid"></div>
+
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValid"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomidInvalid1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidid1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomidInvalid2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidid2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomidInvalid3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidid3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+                    </td>
+                    <td>
+                        <div id="showrandomidInvalid4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidid4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- ตาราง Name Library-->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="name_id"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnamevalid"></div>
+
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValidname"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnameInvalid1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidname1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnameInvalid2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidname2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnameInvalid3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidname3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+                    </td>
+                    <td>
+                        <div id="showrandomnameInvalid4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="inavalidname4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- ตาราง id book Library-->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="idbook"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showrandomIdbookvalid"></div>
+
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValidbook"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomIDbookInvalid1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalididbook1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomIDbookInvalid2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalididbook2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomIDbookInvalid3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalididbook3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+                    </td>
+                    <td>
+                        <div id="showrandomIDbookInvalid4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalididbook4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <!-- ตาราง type book Library-->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="typebook"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showrandomTypebookvalid"></div>
+
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValidtypebook"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomTypebookInvalid1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidtypebook1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomTypebookInvalid2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidtypebook2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomTypebookInvalid3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidtypebook3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+                    </td>
+                    <td>
+                        <div id="showrandomTypebookInvalid4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidtypebook4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- ตาราง num book Library-->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="Numberbook"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnumvalid"></div>
+
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValidnumbook"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnumInvalid1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidnumbook1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnumInvalid2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidnumbook2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomnumInvalid3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidnumbook3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+                    </td>
+                    <td>
+                        <div id="showrandomnumInvalid4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invalidnumbook4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <!-- ตาราง Date book Library-->
+                </tr>
+                <tr class="table-light">
+                    <td>
+                        <b>
+                            <div id="datebook"></div>
+                        </b>
+
+                    </td>
+                    <td>
+                        <div id="showrandomDatevalid"></div>
+
+                    </td>
+                    <td><b>
+                            <font color="green">
+                                <div id="disValiddatebook"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomDateInvalid1"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invaliddatebook1"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomDateInvalid2"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invaliddatebook2"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+
+                    </td>
+                    <td>
+                        <div id="showrandomDateInvalid3"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invaliddatebook3"></div>
+                            </font>
+                        </b></td>
+                </tr>
+
+                <tr class="table-light">
+                    <td>
+                    </td>
+                    <td>
+                        <div id="showrandomDateInvalid4"></div>
+                    </td>
+                    <td><b>
+                            <font color="red">
+                                <div id="invaliddatebook4"></div>
+                            </font>
+                        </b></td>
+                </tr>
+            </table></center>
+            <br><br>
+            <!-- ///////////////////////////////////////////////////////////////// -->
+            <!-- SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP -->
+            <h4><b>Case study : Shop Online System</b></h4><br>
+            <center>
+                <table class="bg-primary">
+                    <tr>
+                        <th><b>Variable</b></th>
+                        <th><b>Testcase</b></th>
+                        <th><b>Note</b></th>
+
+                        <!-- ตาราง id student-->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="idproduct"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomIDprovalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValididPro"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomIDproInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalididProduct1"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomIDproInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalididProduct2"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomIDproInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalididProduct3"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomIDproInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalididProduct4"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <!-- ตาราง Name SHOP-->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="name_user"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnameProvalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValidnameUser"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnameProInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname01"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnameProInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname02"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnameProInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname03"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomnameProInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname04"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <!-- ตาราง PRODUCT Name SHOP-->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="product_name"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPronamevalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValidpro_name"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPronameInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname_product1"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPronameInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname_product2"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPronameInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname_product3"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomPronameInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidname_product4"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <!-- ตาราง type PRODUCT SHOP-->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="typeproduct"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomTypeProvalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValidtype_pro"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomTypeProInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidtype_product1"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomTypeProInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidtype_product2"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomTypeProInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidtype_product3"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomTypeProInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidtype_product4"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <!-- ตาราง num Product SHOP-->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="num_product"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnumProvalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValidnum_pro"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnumProInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidnum_product1"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnumProInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidnum_product2"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomnumProInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidnum_product3"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomnumProInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidnum_product4"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <!-- ตาราง EMS ShOP -->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="ems_pro"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomEMSvalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValidems_pro"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomEMSInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidems_product1"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomEMSInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidems_product2"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomEMSInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidems_product3"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomEMSInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidems_product4"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <!-- ตาราง Date ShOP -->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="date_pro"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomDateshopvalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValidDate_pro"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomDateshopInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invaliddate_product1"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomDateshopInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invaliddate_product2"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomDateshopInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invaliddate_product3"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomDateshopInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invaliddate_product4"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+                      <!-- ตาราง POSTCODE ShOP -->
+                    </tr>
+                    <tr class="table-light">
+                        <td>
+                            <b>
+                                <div id="postcode_pro"></div>
+                            </b>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPostvalid"></div>
+
+                        </td>
+                        <td><b>
+                                <font color="green">
+                                    <div id="disValidPost_pro"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPostInvalid1"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidPost_product1"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPostInvalid2"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidPost_product2"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+
+                        </td>
+                        <td>
+                            <div id="showrandomPostInvalid3"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidPost_product3"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+
+                    <tr class="table-light">
+                        <td>
+                        </td>
+                        <td>
+                            <div id="showrandomPostInvalid4"></div>
+                        </td>
+                        <td><b>
+                                <font color="red">
+                                    <div id="invalidPost_product4"></div>
+                                </font>
+                            </b></td>
+                    </tr>
+                </table>
+                <br><br>
+                <a href="testcasexml.html" class="btn btn-success btn-lg"><b> Back </a> &nbsp;&nbsp;&nbsp;&nbsp;<a
+                    href="summary.html" class="btn btn-primary btn-lg"><b> Next </b> </a>
+            </center>
+
+
+
+
+            <br><br><br>
+
+
+    </div>
+
+</body>
+
+
+<script>
+    function getbookstore() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "ucbooktest.xml", true);
+        xhttp.send();
+
+
+        function myFunction(xml) {
+            var x, i, xmlDoc, txt;
+            xmlDoc = xml.responseXML;
+            txtvalue = "";
+
+            noid = 1;
+            //  array ???? xml
+            var ucxmlvalue = [];
+            var ucxmltype = [];
+            x = xmlDoc.getElementsByTagName('Condition');
+
+            for (i = 0; i < x.length; i++) {
+                txtvalue = x[i].getAttribute('value');
+                txttype = x[i].getAttribute('type');
+
+
+                // ??????? value ???? array
+                ucxmlvalue.push(txtvalue);
+                ucxmltype.push(txttype);
+
+            }
+
+
+
+
+        }
+
+    }
+    // ---------------------------------ShowRandom ID-------------------------------
+    function randomid() {
+        var id = "ID";
+        var disValid = "Value Valid"
+        var invalidid1 = "Invalid (Value)";
+        var invalidid2 = "Invalid (Substitution)";
+        var invalidid3 = "Invalid (Omission)";
+        var invalidid4 = "Invalid (Addition)";
+        document.getElementById("disValid").innerHTML = disValid;
+        document.getElementById("id").innerHTML = id;
+        document.getElementById("invalidid1").innerHTML = invalidid1;
+        document.getElementById("invalidid2").innerHTML = invalidid2;
+        document.getElementById("invalidid3").innerHTML = invalidid3;
+        document.getElementById("invalidid4").innerHTML = invalidid4;
+
+        document.getElementById("showrandomidvalid").innerHTML = "";
+        document.getElementById("showrandomidInvalid1").innerHTML = "";
+        document.getElementById("showrandomidInvalid2").innerHTML = "";
+        document.getElementById("showrandomidInvalid3").innerHTML = "";
+        document.getElementById("showrandomidInvalid4").innerHTML = "";
+
+
+        var itemID = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var id1 = Math.floor(Math.random() * 10);
+        var id2 = Math.floor(Math.random() * 10);
+        var id3 = Math.floor(Math.random() * 10);
+        var id4 = Math.floor(Math.random() * 10);
+        var id5 = Math.floor(Math.random() * 10);
+        var id6 = Math.floor(Math.random() * 10);
+        var id7 = Math.floor(Math.random() * 10);
+        var id8 = Math.floor(Math.random() * 10);
+
+
+
+        document.getElementById("showrandomidvalid").innerHTML = itemID + id1 + id2 ;
+        document.getElementById("showrandomidInvalid1").innerHTML = id2 + itemID + id1 + id3 + id4;
+        document.getElementById("showrandomidInvalid2").innerHTML = "-";
+        document.getElementById("showrandomidInvalid3").innerHTML = itemID;
+        document.getElementById("showrandomidInvalid4").innerHTML = itemID + id3 + id4 + itemSymbol;
+    }
+
+
+    // --------------------------------RAndom Name---------------------------------------------------------
+    function randomString() {
+
+        var name_id = "Name";
+        var disValidname = "Value Valid"
+        var invalidname1 = "Invalid (Value)";
+        var invalidname2 = "Invalid (Substitution)";
+        var invalidname3 = "Invalid (Omission)";
+        var inavalidname4 = "Invalid (Addition)";
+        document.getElementById("disValidname").innerHTML = disValidname;
+        document.getElementById("name_id").innerHTML = name_id;
+        document.getElementById("invalidname1").innerHTML = invalidname1;
+        document.getElementById("invalidname2").innerHTML = invalidname2;
+        document.getElementById("invalidname3").innerHTML = invalidname3;
+        document.getElementById("inavalidname4").innerHTML = inavalidname4;
+        document.getElementById("showrandomnamevalid").innerHTML = "";
+        document.getElementById("showrandomnameInvalid1").innerHTML = "";
+        document.getElementById("showrandomnameInvalid2").innerHTML = "";
+        document.getElementById("showrandomnameInvalid3").innerHTML = "";
+        document.getElementById("showrandomnameInvalid4").innerHTML = "";
+        var text = "syntax"
+        var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        console.log(chars);
+        var string_length = 1;
+        //  ???????
+        var randomstringBig = '';
+        for (var i = 0; i < string_length; i++) {
+            var rnum = Math.floor(Math.random() * chars.length);
+            randomstringBig += chars.substring(rnum, rnum + 1);
+        }
+
+
+        document.getElementById("showrandomnamevalid").innerHTML = "";
+        var text1 = "syntax"
+        var chars1 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+        console.log(chars1);
+
+        var string_length = Math.floor(Math.random() * 4) + 1;
+        var string_length1 = '4';
+
+        var randomstring = '';
+        var randomstring4number = '';
+        // ??????? random
+        for (var i = 0; i < string_length; i++) {
+            var rnum1 = Math.floor(Math.random() * chars1.length);
+            randomstring += chars1.substring(rnum1, rnum1 + 1);
+        }
+
+        // ????????????4
+        for (var i = 0; i < string_length1; i++) {
+            var rnum1 = Math.floor(Math.random() * chars1.length);
+            randomstring4number += chars1.substring(rnum1, rnum1 + 1);
+        }
+
+
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var num = Math.floor(Math.random() * 10);
+        document.getElementById("showrandomnamevalid").innerHTML = randomstringBig + randomstring4number;
+        document.getElementById("showrandomnameInvalid1").innerHTML = randomstringBig + randomstring + randomstring4number;
+        document.getElementById("showrandomnameInvalid2").innerHTML = randomstring4number + randomstringBig;
+        document.getElementById("showrandomnameInvalid3").innerHTML = randomstring;
+        document.getElementById("showrandomnameInvalid4").innerHTML = randomstringBig + randomstring4number + itemSymbol + num;
+    }
+
+
+    // -------------------------------Ramdom ID Book--------------------------------------------------------------
+    function randomidbook() {
+        var idbook = "ID Book";
+        var disValidbook = "Value Valid"
+        var invalididbook1 = "Invalid (Value)";
+        var invalididbook2 = "Invalid (Substitution)";
+        var invalididbook3 = "Invalid (Omission)";
+        var invalididbook4 = "Invalid (Addition)";
+        document.getElementById("disValidbook").innerHTML = disValidbook;
+        document.getElementById("idbook").innerHTML = idbook;
+        document.getElementById("invalididbook1").innerHTML = invalididbook1;
+        document.getElementById("invalididbook2").innerHTML = invalididbook2;
+        document.getElementById("invalididbook3").innerHTML = invalididbook3;
+        document.getElementById("invalididbook4").innerHTML = invalididbook4;
+
+        document.getElementById("showrandomIdbookvalid").innerHTML = "";
+        document.getElementById("showrandomIDbookInvalid1").innerHTML = "";
+        document.getElementById("showrandomIDbookInvalid1").innerHTML = "";
+        document.getElementById("showrandomIDbookInvalid1").innerHTML = "";
+        document.getElementById("showrandomIDbookInvalid1").innerHTML = "";
+
+
+        var itemID = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var id1 = Math.floor(Math.random() * 10);
+        var id2 = Math.floor(Math.random() * 10);
+        var id3 = Math.floor(Math.random() * 10);
+        var id4 = Math.floor(Math.random() * 10);
+        var id5 = Math.floor(Math.random() * 10);
+        var id6 = Math.floor(Math.random() * 10);
+        var id7 = Math.floor(Math.random() * 10);
+        var id8 = Math.floor(Math.random() * 10);
+
+
+
+        document.getElementById("showrandomIdbookvalid").innerHTML = itemID + id1 + id2;
+        document.getElementById("showrandomIDbookInvalid1").innerHTML = id2 + itemID + id1 + id3 + id4;
+        document.getElementById("showrandomIDbookInvalid2").innerHTML = "-";
+        document.getElementById("showrandomIDbookInvalid3").innerHTML = itemID + id8;
+        document.getElementById("showrandomIDbookInvalid4").innerHTML = itemID + id3 + id4 + id6 + itemSymbol;
+    }
+
+    // -------------------- Random TypeBook----------------------------------------
+    function randomtypebook() {
+        var typebook = "Type Book";
+        var disValidtypebook = "Value Valid"
+        var invalidtypebook1 = "Invalid (Value)";
+        var invalidtypebook2 = "Invalid (Substitution)";
+        var invalidtypebook3 = "Invalid (Omission)";
+        var invalidtypebook4 = "Invalid (Addition)";
+        document.getElementById("disValidtypebook").innerHTML = disValidtypebook;
+        document.getElementById("typebook").innerHTML = typebook;
+        document.getElementById("invalidtypebook1").innerHTML = invalidtypebook1;
+        document.getElementById("invalidtypebook2").innerHTML = invalidtypebook2;
+        document.getElementById("invalidtypebook3").innerHTML = invalidtypebook3;
+        document.getElementById("invalidtypebook4").innerHTML = invalidtypebook4;
+
+        document.getElementById("showrandomTypebookvalid").innerHTML = "";
+        document.getElementById("showrandomTypebookInvalid1").innerHTML = "";
+        document.getElementById("showrandomTypebookInvalid2").innerHTML = "-";
+        document.getElementById("showrandomTypebookInvalid3").innerHTML = "";
+        document.getElementById("showrandomTypebookInvalid4").innerHTML = "";
+
+        var itemtypebook = ['Computer,science,information and generalworks', ' Philosophy and psychology', ' Religion', 'Social sciences', 'Language', ' PureScience ', ' Technology ', ' Arts and recreation', 'Literature', 'History and geography'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemtypebookIn1 = ['ComputerHaHA,science,information and generalworksNaka', ' PhilosophyNaja and psychologyOkay', ' Religionloveu', 'Social sciencesnothing', 'Languagebad', ' PureSciencepop ', ' Technologykak ', ' Arts and recreationjubb', 'Literaturemalee', 'History and geographybird'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemtypebookIn3 = ['Comput', ' Philoso and psycholo', ' Religioe', 'Social scie', 'Langu', ' Pure ', ' Technolo ', ' Arts and recr', 'Liter', 'History and geog'].find((_, i, ar) => Math.random() < 5 / (ar.length - i));
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        // document.getElementById("demo3").innerHTML = item;
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var num3 = Math.floor(Math.random() * 10);
+        var num4 = Math.floor(Math.random() * 10);
+        var num5 = Math.floor(Math.random() * 10);
+        var num6 = Math.floor(Math.random() * 10);
+        var num7 = Math.floor(Math.random() * 10);
+        var num8 = Math.floor(Math.random() * 10);
+        var num9 = Math.floor(Math.random() * 10);
+
+        document.getElementById("showrandomTypebookvalid").innerHTML = itemtypebook;
+        document.getElementById("showrandomTypebookInvalid1").innerHTML = itemtypebookIn1;
+        document.getElementById("showrandomTypebookInvalid2").innerHTML = "-";
+        document.getElementById("showrandomTypebookInvalid3").innerHTML = itemtypebookIn3;
+        document.getElementById("showrandomTypebookInvalid4").innerHTML = itemSymbol + itemtypebook + itemSymbol;
+    }
+    // ----------------------Random Num--------------------------------------
+    function randomNum() {
+        var Numberbook = "Number Book";
+        var disValidnumbook = "Value Valid"
+        var invalidnumbook1 = "Invalid (Value)";
+        var invalidnumbook2 = "Invalid (Substitution)";
+        var invalidnumbook3 = "Invalid (Omission)";
+        var invalidnumbook4 = "Invalid (Addition)";
+        document.getElementById("disValidnumbook").innerHTML = disValidnumbook;
+        document.getElementById("Numberbook").innerHTML = Numberbook;
+        document.getElementById("invalidnumbook1").innerHTML = invalidnumbook1;
+        document.getElementById("invalidnumbook2").innerHTML = invalidnumbook2;
+        document.getElementById("invalidnumbook3").innerHTML = invalidnumbook3;
+        document.getElementById("invalidnumbook4").innerHTML = invalidnumbook4;
+        document.getElementById("showrandomnumvalid").innerHTML = "";
+        document.getElementById("showrandomnumInvalid1").innerHTML = "";
+        document.getElementById("showrandomnumInvalid2").innerHTML = "";
+        document.getElementById("showrandomnumInvalid3").innerHTML = "";
+        document.getElementById("showrandomnumInvalid4").innerHTML = "";
+
+
+        var itemID = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var id1 = Math.floor(Math.random() * 10);
+        var id2 = Math.floor(Math.random() * 10);
+        var id3 = Math.floor(Math.random() * 10);
+        var id4 = Math.floor(Math.random() * 10);
+        var id5 = Math.floor(Math.random() * 10);
+        var id6 = Math.floor(Math.random() * 10);
+        var id7 = Math.floor(Math.random() * 10);
+        var id8 = Math.floor(Math.random() * 10);
+
+        document.getElementById("showrandomnumvalid").innerHTML = itemID;
+        document.getElementById("showrandomnumInvalid1").innerHTML = id2 + itemID;
+        document.getElementById("showrandomnumInvalid2").innerHTML = "-";
+        document.getElementById("showrandomnumInvalid3").innerHTML = "";
+        document.getElementById("showrandomnumInvalid4").innerHTML = itemID + itemSymbol;
+    }
+    // -------------------------- random Date Book ------------------------------------------
+
+    function randomDate() {
+        var datebook = "Date";
+        var disValiddatebook = "Value Valid"
+        var invaliddatebook1 = "Invalid (Value)";
+        var invaliddatebook2 = "Invalid (Substitution)";
+        var invaliddatebook3 = "Invalid (Omission)";
+        var invaliddatebook4 = "Invalid (Addition)";
+        document.getElementById("disValiddatebook").innerHTML = disValiddatebook;
+        document.getElementById("datebook").innerHTML = datebook;
+        document.getElementById("invaliddatebook1").innerHTML = invaliddatebook1;
+        document.getElementById("invaliddatebook2").innerHTML = invaliddatebook2;
+        document.getElementById("invaliddatebook3").innerHTML = invaliddatebook3;
+        document.getElementById("invaliddatebook4").innerHTML = invaliddatebook4;
+
+        document.getElementById("showrandomDatevalid").innerHTML = "";
+        document.getElementById("showrandomDateInvalid1").innerHTML = "";
+        document.getElementById("showrandomDateInvalid2").innerHTML = "";
+        document.getElementById("showrandomDateInvalid3").innerHTML = "";
+        document.getElementById("showrandomDateInvalid4").innerHTML = "";
+
+        var itemMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemNumDate = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        // document.getElementById("demo3").innerHTML = item;
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var num3 = Math.floor(Math.random() * 10);
+        var num4 = Math.floor(Math.random() * 10);
+        var num5 = Math.floor(Math.random() * 10);
+        var num6 = Math.floor(Math.random() * 10);
+        var num7 = Math.floor(Math.random() * 10);
+        var num8 = Math.floor(Math.random() * 10);
+        var num9 = Math.floor(Math.random() * 10);
+
+        document.getElementById("showrandomDatevalid").innerHTML = itemNumDate + num2 + itemMonth + num3 + num4 + num5 + num6;
+        document.getElementById("showrandomDateInvalid1").innerHTML = num8 + itemNumDate + num2 + itemMonth + num3 + num4 + num5 + num6 + num7;
+        document.getElementById("showrandomDateInvalid2").innerHTML = itemMonth + itemNumDate + num2 + num3 + num4 + num5 + num6;
+        document.getElementById("showrandomDateInvalid3").innerHTML = itemNumDate + num2 + itemMonth + num3 + num4;
+        document.getElementById("showrandomDateInvalid4").innerHTML = itemSymbol + itemNumDate + num2 + itemMonth + num3 + num4 + num5 + num6 + itemSymbol;
+
+
+    }
+    ///////////////////////////////////////////////  Book Shop ////////////////////////////////////////////
+
+    function randomIDproduct() {
+        var idproduct = "ID Product";
+        var disValididPro = "Value Valid"
+        var invalididProduct1 = "Invalid (Value)";
+        var invalididProduct2 = "Invalid (Substitution)";
+        var invalididProduct3 = "Invalid (Omission)";
+        var invalididProduct4 = "Invalid (Addition)";
+        document.getElementById("disValididPro").innerHTML = disValididPro;
+        document.getElementById("idproduct").innerHTML = idproduct;
+        document.getElementById("invalididProduct1").innerHTML = invalididProduct1;
+        document.getElementById("invalididProduct2").innerHTML = invalididProduct2;
+        document.getElementById("invalididProduct3").innerHTML = invalididProduct3;
+        document.getElementById("invalididProduct4").innerHTML = invalididProduct4;
+        document.getElementById("showrandomIDprovalid").innerHTML = "";
+        document.getElementById("showrandomIDproInvalid1").innerHTML = "";
+        document.getElementById("showrandomIDproInvalid2").innerHTML = "";
+        document.getElementById("showrandomIDproInvalid3").innerHTML = "";
+        document.getElementById("showrandomIDproInvalid4").innerHTML = "";
+
+
+        var itemIDpro = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var num3 = Math.floor(Math.random() * 10);
+        var num4 = Math.floor(Math.random() * 10);
+        var num5 = Math.floor(Math.random() * 10);
+        var num6 = Math.floor(Math.random() * 10);
+        var num7 = Math.floor(Math.random() * 10);
+        var num8 = Math.floor(Math.random() * 10);
+        var num9 = Math.floor(Math.random() * 10);
+        var num10 = Math.floor(Math.random() * 10);
+        var num11 = Math.floor(Math.random() * 10);
+
+        var text = "syntax"
+        var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        console.log(chars);
+        var string_length = 2;
+        //  ตัวใหญ่
+        var randomstringBig = '';
+        for (var i = 0; i < string_length; i++) {
+            var rnum = Math.floor(Math.random() * chars.length);
+            randomstringBig += chars.substring(rnum, rnum + 1);
+        }
+
+        var text = "syntax"
+        var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        console.log(chars);
+        var string_length1 = 2;
+        //  ตัวใหญ่
+        var randomstringBig1 = '';
+        for (var i = 0; i < string_length1; i++) {
+            var rnum1 = Math.floor(Math.random() * chars.length);
+            randomstringBig1 += chars.substring(rnum1, rnum1 + 1);
+        }
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+
+        document.getElementById("showrandomIDprovalid").innerHTML = itemIDpro + num2 + num1 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + randomstringBig + num10 + num11;
+        document.getElementById("showrandomIDproInvalid1").innerHTML = num2 + itemIDpro + num9 + num1 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + randomstringBig1 + num10 + num11 + num1 + num3;
+        document.getElementById("showrandomIDproInvalid2").innerHTML = randomstringBig + itemIDpro + num11 + num1 + +num4 + num5 + num6 + num2 + num7 + num8 + num9 + num10 + num3 + num10;
+        document.getElementById("showrandomIDproInvalid3").innerHTML = num9 + num1 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + num10 + randomstringBig1 + num10 + num11 + num1 + num3
+        document.getElementById("showrandomIDproInvalid4").innerHTML = num8 + itemIDpro + num2 + num9 + itemSymbol + num1 + num3 + num4 + num5 + num6 + num7 + num10 + randomstringBig + num10 + num11;
+
+    }
+    // ---------------------- NAme--------------------------------
+    function randomNamePro() {
+
+        var name_user = "Name";
+        var disValidnameUser = "Value Valid"
+        var invalidname01 = "Invalid (Value)";
+        var invalidname02 = "Invalid (Substitution)";
+        var invalidname03 = "Invalid (Omission)";
+        var invalidname04 = "Invalid (Addition)";
+        document.getElementById("disValidnameUser").innerHTML = disValidnameUser;
+        document.getElementById("name_user").innerHTML = name_user;
+        document.getElementById("invalidname01").innerHTML = invalidname01;
+        document.getElementById("invalidname02").innerHTML = invalidname02;
+        document.getElementById("invalidname03").innerHTML = invalidname03;
+        document.getElementById("invalidname04").innerHTML = invalidname04;
+        document.getElementById("showrandomnameProvalid").innerHTML = "";
+        document.getElementById("showrandomnameProInvalid1").innerHTML = "";
+        document.getElementById("showrandomnameProInvalid2").innerHTML = "";
+        document.getElementById("showrandomnameProInvalid3").innerHTML = "";
+        document.getElementById("showrandomnameProInvalid4").innerHTML = "";
+        var text = "syntax"
+        var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        console.log(chars);
+        var string_length = 1;
+        //  ตัวใหญ่
+        var randomstringBig = '';
+        for (var i = 0; i < string_length; i++) {
+            var rnum = Math.floor(Math.random() * chars.length);
+            randomstringBig += chars.substring(rnum, rnum + 1);
+        }
+
+
+        document.getElementById("showrandomnameProvalid").innerHTML = "";
+        var text1 = "syntax"
+        var chars1 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+        console.log(chars1);
+
+        var string_length = Math.floor(Math.random() * 4) + 1;
+        var string_length1 = '4';
+
+        var randomstring = '';
+        var randomstring4number = '';
+        // จำนวนจะ random
+        for (var i = 0; i < string_length; i++) {
+            var rnum1 = Math.floor(Math.random() * chars1.length);
+            randomstring += chars1.substring(rnum1, rnum1 + 1);
+        }
+
+        // จำนวนเท่ากับ4
+        for (var i = 0; i < string_length1; i++) {
+            var rnum1 = Math.floor(Math.random() * chars1.length);
+            randomstring4number += chars1.substring(rnum1, rnum1 + 1);
+        }
+
+
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var num = Math.floor(Math.random() * 10);
+        document.getElementById("showrandomnameProvalid").innerHTML = randomstringBig + randomstring4number;
+        document.getElementById("showrandomnameProInvalid1").innerHTML = randomstringBig + randomstring + randomstring4number;
+        document.getElementById("showrandomnameProInvalid2").innerHTML = randomstring4number + randomstringBig;
+        document.getElementById("showrandomnameProInvalid3").innerHTML = randomstring;
+        document.getElementById("showrandomnameProInvalid4").innerHTML = randomstringBig + itemSymbol + randomstring4number + + num;
+
+    }
+
+
+    function randomProductName() {
+        var product_name = "Product Name";
+        var disValidpro_name = "Value Valid"
+        var invalidname_product1 = "Invalid (Value)";
+        var invalidname_product2 = "Invalid (Substitution)";
+        var invalidname_product3 = "Invalid (Omission)";
+        var invalidname_product4 = "Invalid (Addition)";
+        document.getElementById("disValidpro_name").innerHTML = disValidpro_name;
+        document.getElementById("product_name").innerHTML = product_name;
+        document.getElementById("invalidname_product1").innerHTML = invalidname_product1;
+        document.getElementById("invalidname_product2").innerHTML = invalidname_product2;
+        document.getElementById("invalidname_product3").innerHTML = invalidname_product3;
+        document.getElementById("invalidname_product4").innerHTML = invalidname_product4;
+
+        document.getElementById("showrandomPronamevalid").innerHTML = "";
+        document.getElementById("showrandomPronameInvalid1").innerHTML = "";
+        document.getElementById("showrandomPronameInvalid2").innerHTML = "";
+        document.getElementById("showrandomPronameInvalid3").innerHTML = "";
+        document.getElementById("showrandomPronameInvalid4").innerHTML = "";
+        var text = "syntax"
+        var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        console.log(chars);
+        var string_length = 1;
+        //  ตัวใหญ่
+        var randomstringBig = '';
+        for (var i = 0; i < string_length; i++) {
+            var rnum = Math.floor(Math.random() * chars.length);
+            randomstringBig += chars.substring(rnum, rnum + 1);
+        }
+
+
+        document.getElementById("showrandomPronamevalid").innerHTML = "";
+        var text1 = "syntax"
+        var chars1 = String.fromCharCode(97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120);
+        console.log(chars1);
+
+        var string_length = Math.floor(Math.random() * 4) + 1;
+        var string_length1 = '4';
+
+        var randomstring = '';
+        var randomstring4number = '';
+        // จำนวนจะ random
+        for (var i = 0; i < string_length; i++) {
+            var rnum1 = Math.floor(Math.random() * chars1.length);
+            randomstring += chars1.substring(rnum1, rnum1 + 1);
+        }
+
+        // จำนวนเท่ากับ4
+        for (var i = 0; i < string_length1; i++) {
+            var rnum1 = Math.floor(Math.random() * chars1.length);
+            randomstring4number += chars1.substring(rnum1, rnum1 + 1);
+        }
+
+
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var num = Math.floor(Math.random() * 10);
+        document.getElementById("showrandomPronamevalid").innerHTML = randomstringBig + randomstring4number;
+        document.getElementById("showrandomPronameInvalid1").innerHTML = randomstringBig + randomstring + randomstring4number;
+        document.getElementById("showrandomPronameInvalid2").innerHTML = randomstring4number + randomstringBig;
+        document.getElementById("showrandomPronameInvalid3").innerHTML = randomstring;
+        document.getElementById("showrandomPronameInvalid4").innerHTML = randomstringBig + itemSymbol + randomstring4number + + num;
+
+    }
+
+    // ---------------------Type shop-----------------
+
+    function randomtypeShop() {
+        var typeproduct = "Type Product ";
+        var disValidtype_pro = "Value Valid"
+        var invalidtype_product1 = "Invalid (Value)";
+        var invalidtype_product2 = "Invalid (Substitution)";
+        var invalidtype_product3 = "Invalid (Omission)";
+        var invalidtype_product4 = "Invalid (Addition)";
+        document.getElementById("disValidtype_pro").innerHTML = disValidtype_pro;
+        document.getElementById("typeproduct").innerHTML = typeproduct;
+        document.getElementById("invalidtype_product1").innerHTML = invalidtype_product1;
+        document.getElementById("invalidtype_product2").innerHTML = invalidtype_product2;
+        document.getElementById("invalidtype_product3").innerHTML = invalidtype_product3;
+        document.getElementById("invalidtype_product4").innerHTML = invalidtype_product4;
+        document.getElementById("showrandomTypeProvalid").innerHTML = "";
+        document.getElementById("showrandomTypeProInvalid1").innerHTML = "";
+        document.getElementById("showrandomTypeProInvalid2").innerHTML = "-";
+        document.getElementById("showrandomTypeProInvalid3").innerHTML = "";
+        document.getElementById("showrandomTypeProInvalid4").innerHTML = "";
+
+        var itemtypePro = ['Electronic', 'Dress', 'Cosmetic', ' Appliance'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemtypeProIn1 = ['fsElectronic214', 'fsaDress123', 'afsCosmetic125', ' Appliance148fds'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemtypeProIn3 = ['tronic', 'Drs', 'smetic', ' Ance'].find((_, i, ar) => Math.random() < 5 / (ar.length - i));
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        // document.getElementById("demo3").innerHTML = item;
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var num3 = Math.floor(Math.random() * 10);
+        var num4 = Math.floor(Math.random() * 10);
+        var num5 = Math.floor(Math.random() * 10);
+        var num6 = Math.floor(Math.random() * 10);
+        var num7 = Math.floor(Math.random() * 10);
+        var num8 = Math.floor(Math.random() * 10);
+        var num9 = Math.floor(Math.random() * 10);
+
+        document.getElementById("showrandomTypeProvalid").innerHTML = itemtypePro;
+        document.getElementById("showrandomTypeProInvalid1").innerHTML = itemtypeProIn1;
+        document.getElementById("showrandomTypeProInvalid2").innerHTML = "-";
+        document.getElementById("showrandomTypeProInvalid3").innerHTML = itemtypeProIn3;
+        document.getElementById("showrandomTypeProInvalid4").innerHTML = itemSymbol + itemtypePro + itemSymbol;
+
+    }
+
+    // -----------NumPro------------------------
+    function randomNumPro() {
+        var num_product = " Number ";
+        var disValidnum_pro = "Value Valid"
+        var invalidnum_product1 = "Invalid (Value)";
+        var invalidnum_product2 = "Invalid (Substitution)";
+        var invalidnum_product3 = "Invalid (Omission)";
+        var invalidnum_product4 = "Invalid (Addition)";
+        document.getElementById("disValidnum_pro").innerHTML = disValidnum_pro;
+        document.getElementById("num_product").innerHTML = num_product;
+        document.getElementById("invalidnum_product1").innerHTML = invalidnum_product1;
+        document.getElementById("invalidnum_product2").innerHTML = invalidnum_product2;
+        document.getElementById("invalidnum_product3").innerHTML = invalidnum_product3;
+        document.getElementById("invalidnum_product4").innerHTML = invalidnum_product4;
+        document.getElementById("showrandomnumProvalid").innerHTML = "";
+        document.getElementById("showrandomnumProInvalid1").innerHTML = "";
+        document.getElementById("showrandomnumProInvalid2").innerHTML = "";
+        document.getElementById("showrandomnumProInvalid3").innerHTML = "";
+        document.getElementById("showrandomnumProInvalid4").innerHTML = "";
+
+        var itemID = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var id1 = Math.floor(Math.random() * 10);
+        var id2 = Math.floor(Math.random() * 10);
+        var id3 = Math.floor(Math.random() * 10);
+        var id4 = Math.floor(Math.random() * 10);
+        var id5 = Math.floor(Math.random() * 10);
+        var id6 = Math.floor(Math.random() * 10);
+        var id7 = Math.floor(Math.random() * 10);
+        var id8 = Math.floor(Math.random() * 10);
+        document.getElementById("showrandomnumProvalid").innerHTML = itemID;
+        document.getElementById("showrandomnumProInvalid1").innerHTML = id2 + itemID;
+        document.getElementById("showrandomnumProInvalid2").innerHTML = "-";
+        document.getElementById("showrandomnumProInvalid3").innerHTML = "-";
+        document.getElementById("showrandomnumProInvalid4").innerHTML = itemID + itemSymbol;
+    }
+
+    // ---------------------- Ems --------------------
+    function showaems() {
+        var ems_pro = " EMS ";
+        var disValidems_pro = "Value Valid"
+        var invalidems_product1 = "Invalid (Value)";
+        var invalidems_product2 = "Invalid (Substitution)";
+        var invalidems_product3 = "Invalid (Omission)";
+        var invalidems_product4 = "Invalid (Addition)";
+        document.getElementById("disValidems_pro").innerHTML = disValidems_pro;
+        document.getElementById("ems_pro").innerHTML = ems_pro;
+        document.getElementById("invalidems_product1").innerHTML = invalidems_product1;
+        document.getElementById("invalidems_product2").innerHTML = invalidems_product2;
+        document.getElementById("invalidems_product3").innerHTML = invalidems_product3;
+        document.getElementById("invalidems_product4").innerHTML = invalidems_product4;
+        var item = ['E', 'R', 'P', 'V'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        console.log(item);
+
+        // document.getElementById("demo3").innerHTML = item;
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var num3 = Math.floor(Math.random() * 10);
+        var num4 = Math.floor(Math.random() * 10);
+        var num5 = Math.floor(Math.random() * 10);
+        var num6 = Math.floor(Math.random() * 10);
+        var num7 = Math.floor(Math.random() * 10);
+        var num8 = Math.floor(Math.random() * 10);
+        var num9 = Math.floor(Math.random() * 10);
+        var th = "TH";
+
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+
+        var textems = "syntax"
+        var charsems = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        console.log(charsems);
+        var string_lengthems = 1;
+        var randomstringems = '';
+        for (var i = 0; i < string_lengthems; i++) {
+            var rnumems = Math.floor(Math.random() * charsems.length);
+            randomstringems += charsems.substring(rnumems, rnumems + 1);
+        };
+
+        var string_lengthems1 = 1;
+        var randomstringems1 = '';
+        for (var i = 0; i < string_lengthems1; i++) {
+            var rnumems1 = Math.floor(Math.random() * charsems.length);
+            randomstringems1 += charsems.substring(rnumems1, rnumems1 + 1);
+        };
+        document.getElementById("showrandomEMSvalid").innerHTML = item + randomstringems + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9 + th;
+        document.getElementById("showrandomEMSInvalid1").innerHTML = item + randomstringems1 + randomstringems + num8 + num2 + num9 + num3 + num4 + num7 + num5 + num6 + num1 + num9 + th;
+        document.getElementById("showrandomEMSInvalid2").innerHTML = randomstringems + item + num1 + num2 + th + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+        document.getElementById("showrandomEMSInvalid3").innerHTML = item + randomstringems + num1 + num2 + num5 + num6 + num7 + num8 + num9 + th;
+        document.getElementById("showrandomEMSInvalid4").innerHTML = item + randomstringems + num1 + itemSymbol + num5 + num6 + num7 + num8 + num9 + num2 + num3 + th;
+    }
+
+
+    function randomDateShop() {
+        var date_pro = " Date ";
+        var disValidDate_pro = "Value Valid"
+        var invaliddate_product1 = "Invalid (Value)";
+        var invaliddate_product2 = "Invalid (Substitution)";
+        var invaliddate_product3 = "Invalid (Omission)";
+        var invaliddate_product4 = "Invalid (Addition)";
+        document.getElementById("disValidDate_pro").innerHTML = disValidDate_pro;
+        document.getElementById("date_pro").innerHTML = date_pro;
+        document.getElementById("invaliddate_product1").innerHTML = invaliddate_product1;
+        document.getElementById("invaliddate_product2").innerHTML = invaliddate_product2;
+        document.getElementById("invaliddate_product3").innerHTML = invaliddate_product3;
+        document.getElementById("invaliddate_product4").innerHTML = invaliddate_product4;
+        document.getElementById("showrandomDateshopvalid").innerHTML = "";
+        document.getElementById("showrandomDateshopInvalid1").innerHTML = "";
+        document.getElementById("showrandomDateshopInvalid2").innerHTML = "";
+        document.getElementById("showrandomDateshopInvalid3").innerHTML = "";
+        document.getElementById("showrandomDateshopInvalid4").innerHTML = "";
+
+        var itemMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var itemNumDate = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        // document.getElementById("demo3").innerHTML = item;
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var num3 = Math.floor(Math.random() * 10);
+        var num4 = Math.floor(Math.random() * 10);
+        var num5 = Math.floor(Math.random() * 10);
+        var num6 = Math.floor(Math.random() * 10);
+        var num7 = Math.floor(Math.random() * 10);
+        var num8 = Math.floor(Math.random() * 10);
+        var num9 = Math.floor(Math.random() * 10);
+        document.getElementById("showrandomDateshopvalid").innerHTML = itemNumDate + num2 + itemMonth + num3 + num4 + num5 + num6;
+        document.getElementById("showrandomDateshopInvalid1").innerHTML = num8 + itemNumDate + num2 + itemMonth + num3 + num4 + num5 + num6 + num7;
+        document.getElementById("showrandomDateshopInvalid2").innerHTML = itemMonth + itemNumDate + num2 + num3 + num4 + num5 + num6;
+        document.getElementById("showrandomDateshopInvalid3").innerHTML = itemNumDate + num2 + itemMonth + num3 + num4;
+        document.getElementById("showrandomDateshopInvalid4").innerHTML = itemSymbol + itemNumDate + num2 + itemMonth + num3 + num4 + num5 + num6 + itemSymbol;
+
+    }
+    // --------------------- Postcode-----------------
+    function post() {
+        var postcode_pro = " Post Code ";
+        var disValidPost_pro = "Value Valid"
+        var invalidPost_product1 = "Invalid (Value)";
+        var invalidPost_product2 = "Invalid (Substitution)";
+        var invalidPost_product3 = "Invalid (Omission)";
+        var invalidPost_product4 = "Invalid (Addition)";
+        document.getElementById("disValidPost_pro").innerHTML = disValidPost_pro;
+        document.getElementById("postcode_pro").innerHTML = postcode_pro;
+        document.getElementById("invalidPost_product1").innerHTML = invalidPost_product1;
+        document.getElementById("invalidPost_product2").innerHTML = invalidPost_product2;
+        document.getElementById("invalidPost_product3").innerHTML = invalidPost_product3;
+        document.getElementById("invalidPost_product4").innerHTML = invalidPost_product4;
+        var item = ['AB', 'AL', 'B', 'BA', 'BD', 'BF', 'BH', 'BL', 'BN', 'BR', 'BS', 'BT', 'CA', 'CB', 'CF', 'CH', 'CM', 'CO', 'CR', 'CT', 'CV',
+            'CW', 'DA', 'DD', 'DE', 'DG', 'DH', 'DL', 'DN', 'DT', 'DY', 'E', 'EC', 'EH', 'EN', 'EX', 'FK', 'FY', 'G', 'GL', 'GU', 'HA', 'HD', 'HG', 'HP'
+            , 'HR', 'HS', 'HU', 'HX', 'IG', 'IP', 'IV', 'KA', 'KT', 'KW', 'KY', 'L', 'LA', 'LD', 'LE', 'LL', 'LN', 'LS', 'LU', 'M', 'ME', 'MK', 'ML', 'N'
+            , 'NE', 'NG', 'NN', 'NP', 'NR', 'NW', 'OL', 'OX', 'PA', 'PE', 'PH', 'PL', 'PO', 'PO', 'PR', 'PG', 'RG', 'RH', 'RM', 'S', 'SA', 'SE', 'SL', 'SM'
+            , 'SN', 'SO', 'SP', 'SR', 'SS', 'ST', 'SW', 'SY', 'TA', 'TD', 'TF', 'TN', 'TQ', 'TR', 'TS', 'TW', 'UB', 'W', 'WA', 'WC', 'WD', 'WF', 'WN', 'WR'
+            , 'WS', 'WV', 'YO', 'ZE'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        console.log(item);
+        var hh = Math.floor(Math.random() * 9 + 1);
+        var gg = Math.floor(Math.random() * 9 + 1);
+        var num1 = Math.floor(Math.random() * 10);
+        var num2 = Math.floor(Math.random() * 10);
+        var num3 = Math.floor(Math.random() * 10);
+        var num4 = Math.floor(Math.random() * 10);
+        var num5 = Math.floor(Math.random() * 10);
+        var num6 = Math.floor(Math.random() * 10);
+        var num7 = Math.floor(Math.random() * 10);
+        var num8 = Math.floor(Math.random() * 10);
+        var num9 = Math.floor(Math.random() * 10);
+        var itemSymbol = ['!', '@', '#', '$', '%', '^', '.', '&', '*', '+'].find((_, i, ar) => Math.random() < 1 / (ar.length - i));
+        var text = "syntax"
+        var chars = String.fromCharCode(65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90);
+        console.log(chars);
+        var string_length = 2;
+        var randomstring = '';
+        for (var i = 0; i < string_length; i++) {
+            var rnum = Math.floor(Math.random() * chars.length);
+            randomstring += chars.substring(rnum, rnum + 1);
+        };
+        console.log(randomstring);
+        document.getElementById("showrandomPostvalid").innerHTML = item + hh + "&nbsp" + gg + randomstring;
+        document.getElementById("showrandomPostInvalid1").innerHTML = item + num1 + "&nbsp" + num2 + num3 + randomstring;
+        document.getElementById("showrandomPostInvalid2").innerHTML = num9 + item + "&nbsp" + randomstring + num4;
+        document.getElementById("showrandomPostInvalid3").innerHTML = item + "&nbsp" + gg + randomstring;
+        document.getElementById("showrandomPostInvalid4").innerHTML = item + itemSymbol + num4 + "&nbsp" + gg + randomstring;
+    }
+
+</script>
+
+
+</html>
